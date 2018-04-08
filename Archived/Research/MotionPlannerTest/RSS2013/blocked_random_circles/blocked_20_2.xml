@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<point2d_cspace>
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <circle center="0.460079 0.946178" radius="0.178412" />
+      <circle center="0.609902 0.0728097" radius="0.178412" />
+      <circle center="0.252487 0.490612" radius="0.178412" />
+      <circle center="0.0849343 0.0545978" radius="0.178412" />
+      <circle center="0.668749 0.535715" radius="0.178412" />
+      <circle center="0.975032 0.287389" radius="0.178412" />
+      <circle center="0.281989 0.345302" radius="0.178412" />
+      <circle center="0.958431 0.36522" radius="0.178412" />
+      <circle center="0.239664 0.357015" radius="0.178412" />
+      <circle center="0.264689 0.90905" radius="0.178412" />
+      <circle center="0.105458 0.880363" radius="0.178412" />
+      <circle center="0.249964 0.919386" radius="0.178412" />
+      <circle center="0.998329 0.651513" radius="0.178412" />
+      <circle center="0.20986 0.551491" radius="0.178412" />
+      <circle center="0.466807 0.19808" radius="0.178412" />
+      <circle center="0.86271 0.61498" radius="0.178412" />
+      <circle center="0.774256 0.712336" radius="0.178412" />
+      <circle center="0.906853 0.808603" radius="0.178412" />
+      <circle center="0.39981 0.636332" radius="0.178412" />
+      <circle center="0.177613 0.528547" radius="0.178412" />
+    </geometry2d>
+  </obstacles>
+</point2d_cspace>

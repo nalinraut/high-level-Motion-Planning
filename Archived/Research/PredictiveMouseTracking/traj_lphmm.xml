@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<predictor>
+  <setup name="traj" numVariables="4" timestep="0.025" observation = "widget x;widget y" hidden="target x;target y" />
+  <preprocessor scale="1 1 1 1" offset="0 0 0 0 " />
+  <observation_model lphmm="out.lphmm" hidden="0 1" observation="2 3" goal="0 1" history="4 5; 6 7"/>
+</predictor>

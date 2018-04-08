@@ -1,0 +1,8 @@
+prefix=/home/motion/ros_ws/install
+
+Name: roboteq_driver
+Description: Description of roboteq_driver
+Version: 0.1.1
+Cflags: -I/home/motion/ros_ws/install/include
+Libs: -L/home/motion/ros_ws/install/lib 
+Requires: 

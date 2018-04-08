@@ -1,0 +1,10 @@
+mesh "spike_plane.stl"
+geomscale 0.4 0.4 1.0
+geomtranslate 0 0 0
+T 1 0 0 0 1 0 0 0 1      1.0 0.0 0.06
+mass 5
+autoMass
+kStiffness 10000
+kDamping 3000
+kRestitution 0
+kFriction 0.5

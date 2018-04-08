@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<point2d_cspace>
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <!-- moving obstacle -->
+      <circle center="0.1 0.3" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.2 0.3" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.3 0.3" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.4 0.3" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.5 0.3" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.6 0.3" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.7 0.3" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.8 0.3" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.9 0.3" radius = "0.025"/>
+
+      <!-- moving obstacle -->
+      <circle center="0.1 0.4" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.2 0.4" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.3 0.4" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.4 0.4" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.5 0.4" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.6 0.4" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.7 0.4" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.8 0.4" radius = "0.025"/>
+      <!-- moving obstacle -->
+      <circle center="0.9 0.4" radius = "0.025"/>
+
+      <!-- moving obstacle -->
+      <circle center="0.1 0.5" radius = "0.025"/>
+      <circle center="0.2 0.5" radius = "0.025"/>
+      <circle center="0.3 0.5" radius = "0.025"/>
+      <circle center="0.4 0.5" radius = "0.025"/>
+      <circle center="0.5 0.5" radius = "0.025"/>
+      <circle center="0.6 0.5" radius = "0.025"/>
+      <circle center="0.7 0.5" radius = "0.025"/>
+      <circle center="0.8 0.5" radius = "0.025"/>
+      <circle center="0.9 0.5" radius = "0.025"/>
+
+      <circle center="0.1 0.6" radius = "0.025"/>
+      <circle center="0.2 0.6" radius = "0.025"/>
+      <circle center="0.3 0.6" radius = "0.025"/>
+      <circle center="0.4 0.6" radius = "0.025"/>
+      <circle center="0.5 0.6" radius = "0.025"/>
+      <circle center="0.6 0.6" radius = "0.025"/>
+      <circle center="0.7 0.6" radius = "0.025"/>
+      <circle center="0.8 0.6" radius = "0.025"/>
+      <circle center="0.9 0.6" radius = "0.025"/>
+
+      <circle center="0.1 0.7" radius = "0.025"/>
+      <circle center="0.2 0.7" radius = "0.025"/>
+      <circle center="0.3 0.7" radius = "0.025"/>
+      <circle center="0.4 0.7" radius = "0.025"/>
+      <circle center="0.5 0.7" radius = "0.025"/>
+      <circle center="0.6 0.7" radius = "0.025"/>
+      <circle center="0.7 0.7" radius = "0.025"/>
+      <circle center="0.8 0.7" radius = "0.025"/>
+      <circle center="0.9 0.7" radius = "0.025"/>
+
+      <circle center="0.1 0.8" radius = "0.025"/>
+      <circle center="0.2 0.8" radius = "0.025"/>
+      <circle center="0.3 0.8" radius = "0.025"/>
+      <circle center="0.4 0.8" radius = "0.025"/>
+      <circle center="0.5 0.8" radius = "0.025"/>
+      <circle center="0.6 0.8" radius = "0.025"/>
+      <circle center="0.7 0.8" radius = "0.025"/>
+      <circle center="0.8 0.8" radius = "0.025"/>
+      <circle center="0.9 0.8" radius = "0.025"/>
+
+      <circle center="0.1 0.9" radius = "0.025"/>
+      <circle center="0.2 0.9" radius = "0.025"/>
+      <circle center="0.3 0.9" radius = "0.025"/>
+      <circle center="0.4 0.9" radius = "0.025"/>
+      <circle center="0.5 0.9" radius = "0.025"/>
+      <circle center="0.6 0.9" radius = "0.025"/>
+      <circle center="0.7 0.9" radius = "0.025"/>
+      <circle center="0.8 0.9" radius = "0.025"/>
+      <circle center="0.9 0.9" radius = "0.025"/>
+
+
+      <circle center="0.1 0.2" radius = "0.025"/>
+      <circle center="0.2 0.2" radius = "0.025"/>
+      <circle center="0.3 0.2" radius = "0.025"/>
+      <circle center="0.4 0.2" radius = "0.025"/>
+      <circle center="0.5 0.2" radius = "0.025"/>
+      <circle center="0.6 0.2" radius = "0.025"/>
+      <circle center="0.7 0.2" radius = "0.025"/>
+      <circle center="0.8 0.2" radius = "0.025"/>
+      <circle center="0.9 0.2" radius = "0.025"/>
+
+
+      <circle center="0.1 0.1" radius = "0.025"/>
+      <circle center="0.2 0.1" radius = "0.025"/>
+      <circle center="0.3 0.1" radius = "0.025"/>
+      <circle center="0.4 0.1" radius = "0.025"/>
+      <circle center="0.5 0.1" radius = "0.025"/>
+      <circle center="0.6 0.1" radius = "0.025"/>
+      <circle center="0.7 0.1" radius = "0.025"/>
+      <circle center="0.8 0.1" radius = "0.025"/>
+      <circle center="0.9 0.1" radius = "0.025"/>
+
+    </geometry2d>
+  </obstacles>
+
+  <planning_query name="corner to corner">
+    <start>
+      <config data="2 0.05 0.05"/>
+    </start>
+    <goal>
+      <config data="2 0.95 0.95"/>
+    </goal>
+  </planning_query>
+
+</point2d_cspace>

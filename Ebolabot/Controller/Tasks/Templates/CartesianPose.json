@@ -1,0 +1,9 @@
+{
+  "task":"CartesianPose",
+  "limb":"left",
+  "position":[0.5,0.5,0.3],
+  "rotation":[1,0,0,0,1,0,0,0,1],
+  "speed":1,
+  "maxJointDeviation":0.5,
+  "safe":0
+}

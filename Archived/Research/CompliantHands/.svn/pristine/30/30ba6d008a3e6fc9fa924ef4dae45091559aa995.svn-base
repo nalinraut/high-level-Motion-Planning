@@ -1,0 +1,47 @@
+### Kinematics of a floating (translating and rotating) cube with the reflex hand mounted on it
+TParent 1 0 0   0 1 0   0 0 1   0 0 0  \
+1 0 0   0 1 0   0 0 1   0 0 0  \
+1 0 0   0 1 0   0 0 1   0 0 0  \
+1 0 0   0 1 0   0 0 1   0 0 0  \
+1 0 0   0 1 0   0 0 1   0 0 0  \
+1 0 0   0 1 0   0 0 1   0 0 0  
+parents -1 0 1 2 3 4 
+axis 1 0 0   0 1 0    0 0 1     0 0 1     0 1 0     1 0 0 
+jointtype p p p r r r 
+qMin -1 -1 -1  -100 -100 -100 
+qMax 1 1 1  100 100 100 
+q 0 0 0 0 0 0 
+geometry   ""   ""   ""   ""    ""    "../../objects/cube.tri"
+geomscale 1 1 1 1 1 0.05 
+mass       0.1 0.1 0.1 0.1 0.1 0.1
+com 0 0 0   0 0 0   0 0 0   0 0 0   0 0 0   0 0 0   
+inertia 0.001 0 0 0 0.001 0 0 0 0.001 \
+   0.001 0 0 0 0.001 0 0 0 0.001 \
+   0.001 0 0 0 0.001 0 0 0 0.001 \
+   0.001 0 0 0 0.001 0 0 0 0.001 \
+   0.001 0 0 0 0.001 0 0 0 0.001 \
+   0.001 0 0 0 0.001 0 0 0 0.001 
+torqueMax  500 500 500 20 20 20 
+accMax     10 10 10 10 10 10 10
+velMax     2 2 2 3 3 3
+
+joint normal 0
+joint normal 1
+joint normal 2
+joint spin 3
+joint spin 4
+joint spin 5
+
+driver normal 0
+driver normal 1
+driver normal 2
+driver normal 3
+driver normal 4
+driver normal 5
+
+servoP 5000 5000 5000 500 500 500
+servoI 10 10 10 .5 .5 .5
+servoD 500 500 500 25 25 25
+viscousFriction 20 20 20 20 20 20
+
+mount 5 "reflex_col.rob" 1 0 0   0 1 0   0 0 1   0 0 0 as "reflex"

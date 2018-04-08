@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="setSegment" public="false" >
+    <description />
+    <paramSection>
+      <param name="index" type="num" byVal="true" />
+      <param name="q0" type="joint" byVal="true" />
+      <param name="t0" type="num" byVal="true" />
+      <param name="q1" type="joint" byVal="true" />
+      <param name="dt" type="num" byVal="true" />
+    </paramSection>
+    <localSection>
+      <local name="n" type="num" size="1" />
+      <local name="iwrap" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  //Sets the segment &apos;index&apos; to interpolate between q0 and q1 at times t0 and t0+dt
+  //Note: this is unprotected, and requires the calling process to acquire bTrajMutex
+  //and to ensure that the arguments don&apos;t clobber the existing path
+  n=size(nTrajTimes)-1
+  iwrap=index%n
+  nTrajTimes[iwrap]=t0
+  nTrajTimes[iwrap+1]=t0+dt
+  jTrajMilestones[iwrap]=q0
+  jTrajMilestones[iwrap+1]=q1
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

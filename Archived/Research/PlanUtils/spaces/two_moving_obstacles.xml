@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<point2d_cspace>
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <!-- moving obstacle -->
+      <circle center="0.1 0.9" radius = "0.05"/>
+      <!-- moving obstacle -->
+      <circle center="0.9 0.1" radius = "0.05"/>
+    </geometry2d>
+  </obstacles>
+</point2d_cspace>

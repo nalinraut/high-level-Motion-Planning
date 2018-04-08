@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="pallet" public="false" >
+    <description />
+    <paramSection>
+      <param name="x_p" type="point" byVal="false" />
+    </paramSection>
+    <localSection>
+      <local name="l_tr" type="trsf" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  l_tr.x=nRow*nRowDistance
+  l_tr.y=nCol*nColDistance
+  x_p=compose(pOrigin,fPallet,l_tr)
+  nRow=nRow+1
+  if nRow&gt;nRowLast
+    nRow=0
+    nCol=nCol+1
+    if nCol&gt;nColLast
+      nCol=0
+    endIf
+  endIf
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

@@ -1,0 +1,224 @@
+#Converted using URDFtoRob
+#Drivers were added manually
+#
+#Important notes:
+#
+#Mass and motor calibration set essentially at random
+#
+#The tendon drive's connection between the proximal and distal joint
+#needs to be simulated manually
+#
+#1/17/2015
+#Kris Hauser
+
+links	"base" "pad" "swivel_1" "proximal_1" "finger[1]-flex_link[1]" "finger[1]-flex_link[2]" "finger[1]-flex_link[3]" "finger[1]-flex_link[4]" "finger[1]-flex_link[5]" "finger[1]-flex_link[6]" "finger[1]-flex_link[7]" "finger[1]-flex_link[8]" "finger[1]-flex_link[9]" "distal_1" "distal_pad_1" "proximal_pad_1" "swivel_2" "proximal_2" "finger[2]-flex_link[1]" "finger[2]-flex_link[2]" "finger[2]-flex_link[3]" "finger[2]-flex_link[4]" "finger[2]-flex_link[5]" "finger[2]-flex_link[6]" "finger[2]-flex_link[7]" "finger[2]-flex_link[8]" "finger[2]-flex_link[9]" "distal_2" "distal_pad_2" "proximal_pad_2" "proximal_3" "finger[3]-flex_link[1]" "finger[3]-flex_link[2]" "finger[3]-flex_link[3]" "finger[3]-flex_link[4]" "finger[3]-flex_link[5]" "finger[3]-flex_link[6]" "finger[3]-flex_link[7]" "finger[3]-flex_link[8]" "finger[3]-flex_link[9]" "distal_3" "distal_pad_3" "proximal_pad_3" 
+
+parents	-1 0 0 2 3 4 5 6 7 8 9 10 11 12 13 3 0 16 17 18 19 20 21 22 23 24 25 26 27 17 0 30 31 32 33 34 35 36 37 38 39 40 30 
+
+axis	0 0 1	0 0 1	0 0 -1	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 0 1	0 0 1	0 0 -1	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 0 1	0 0 1	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 -1 0	0 0 1	0 0 1	
+
+jointtype	r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r r 
+
+Tparent	1 0 0	0 1 0	0 0 1	0 0 0 \
+-3.55271e-15 -3.60822e-15 -1	-1 0 3.60822e-15	-5.55112e-17 1 -3.55271e-15	0.02 0 0.063 \
+1 2.77556e-16 1.97994e-16	-2.77556e-16 1 -6.75551e-16	-1.97994e-16 6.75551e-16 1	0.0503974 -0.026 0.063 \
+1 -2.22045e-16 2.40508e-17	2.22045e-16 1 6.2004e-16	-2.40508e-17 -6.2004e-16 1	0.01 0 0.0186 \
+1 0 0	0 1 0	0 0 1	0.06 0 0.003 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	-0.00822222 0 0.003 \
+-3.55271e-15 -3.60822e-15 -1	-1 0 3.60822e-15	-5.55112e-17 1 -3.55271e-15	-0.076 0 -0.0025 \
+-3.55271e-15 -3.60822e-15 -1	-1 0 3.60822e-15	-5.55112e-17 1 -3.55271e-15	0 0 0 \
+1 1.66533e-16 -7.33448e-16	-1.66533e-16 1 -1.22459e-15	7.33448e-16 1.22459e-15 1	0.0503974 0.026 0.063 \
+1 -1.11022e-16 9.55493e-16	1.11022e-16 1 1.16908e-15	-9.55493e-16 -1.16908e-15 1	0.01 0 0.0186 \
+1 0 0	0 1 0	0 0 1	0.06 0 0.003 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	-0.00822222 0 0.003 \
+-3.55271e-15 -3.60822e-15 -1	-1 0 3.60822e-15	-5.55112e-17 1 -3.55271e-15	-0.076 0 -0.0025 \
+-3.55271e-15 -3.60822e-15 -1	-1 0 3.60822e-15	-5.55112e-17 1 -3.55271e-15	0 0 0 \
+-1 -3.23109e-15 2.22045e-16	3.23109e-15 -1 -5.55112e-17	2.22045e-16 -5.55112e-17 1	-0.03 0 0.0816 \
+1 0 0	0 1 0	0 0 1	0.06 0 0.003 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	0.00177778 0 0 \
+1 0 0	0 1 0	0 0 1	-0.00822222 0 0.003 \
+-3.44169e-15 -3.4972e-15 -1	-1 2.22045e-16 3.4972e-15	1.11022e-16 1 -3.44169e-15	-0.076 0 -0.0025 \
+-3.9968e-15 -3.71925e-15 -1	-1 -4.44089e-16 3.71925e-15	-2.22045e-16 1 -3.9968e-15	0 0 0
+
+qmin	0 0 0 -0.34 -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf 0 0 -1.5708 -0.34 -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf 0 0 -0.34 -inf -inf -inf -inf -inf -inf -inf -inf -inf -inf 0 0 
+
+qmax	0 0 1.5708 2.83 inf inf inf inf inf inf inf inf inf inf 0 0 0 2.83 inf inf inf inf inf inf inf inf inf inf 0 0 2.83 inf inf inf inf inf inf inf inf inf inf 0 0 
+
+geometry	"reflex/base_link.tri" "reflex/pad.tri" "reflex/swivel_1.tri" "reflex/proximal_1.tri" "reflex/finger[1]-flex_link[1].tri" "reflex/finger[1]-flex_link[2].tri" "reflex/finger[1]-flex_link[3].tri" "reflex/finger[1]-flex_link[4].tri" "reflex/finger[1]-flex_link[5].tri" "reflex/finger[1]-flex_link[6].tri" "reflex/finger[1]-flex_link[7].tri" "reflex/finger[1]-flex_link[8].tri" "reflex/finger[1]-flex_link[9].tri" "reflex/distal_1.tri" "reflex/distal_pad_1.tri" "reflex/proximal_pad_1.tri" "reflex/swivel_2.tri" "reflex/proximal_2.tri" "reflex/finger[2]-flex_link[1].tri" "reflex/finger[2]-flex_link[2].tri" "reflex/finger[2]-flex_link[3].tri" "reflex/finger[2]-flex_link[4].tri" "reflex/finger[2]-flex_link[5].tri" "reflex/finger[2]-flex_link[6].tri" "reflex/finger[2]-flex_link[7].tri" "reflex/finger[2]-flex_link[8].tri" "reflex/finger[2]-flex_link[9].tri" "reflex/distal_2.tri" "reflex/distal_pad_2.tri" "reflex/proximal_pad_2.tri" "reflex/proximal_3.tri" "reflex/finger[3]-flex_link[1].tri" "reflex/finger[3]-flex_link[2].tri" "reflex/finger[3]-flex_link[3].tri" "reflex/finger[3]-flex_link[4].tri" "reflex/finger[3]-flex_link[5].tri" "reflex/finger[3]-flex_link[6].tri" "reflex/finger[3]-flex_link[7].tri" "reflex/finger[3]-flex_link[8].tri" "reflex/finger[3]-flex_link[9].tri" "reflex/distal_3.tri" "reflex/distal_pad_3.tri" "reflex/proximal_pad_3.tri" 
+
+mass	0.5	0.1	0.05	0.03	0.012	0.012	0.012	0.012	0.012	0.012	0.012	0.012	0.012	0.05	0.005	0.005	0.05	0.03	0.012	0.012	0.012	0.012	0.012	0.012	0.012	0.012	0.012	0.03	0.005	0.005	0.03	0.012	0.012	0.012	0.012	0.012	0.012	0.012	0.012	0.012	0.03	0.005	0.005
+
+automass
+
+torquemax	inf	inf	30	30	20	20	20	20	20	20	20	20	20	20	inf	inf	30	30	20	20	20	20	20	20	20	20	20	20	inf	inf	30	20	20	20	20	20	20	20	20	20	20	inf	inf
+
+velmax	0 0 1 1 inf inf inf inf inf inf inf inf inf inf 0 0 1 1 inf inf inf inf inf inf inf inf inf inf 0 0 1 inf inf inf inf inf inf inf inf inf inf 0 0 
+
+accmax	0 0 10 10 10 10 10 10 10 10 10 10 10 10 0 0 10 10 10 10 10 10 10 10 10 10 10 10 0 0 10 10 10 10 10 10 10 10 10 10 10 0 0 
+
+noselfcollision	0 3	0 4	0 5	0 6	0 7	0 8	0 9	0 10	0 11	0 12	0 13	0 14	0 15	0 17	0 18	0 19	0 20	0 21	0 22	0 23	0 24	0 25	0 26	0 27	0 28	0 29	0 31	0 32	0 33	0 34	0 35	0 36	0 37	0 38	0 39	0 40	0 41	0 42
+noselfcollision	1 2	1 3	1 4	1 5	1 6	1 7	1 8	1 9	1 10	1 11	1 12	1 13	1 16	1 17	1 18	1 19	1 20	1 21	1 22	1 23	1 24	1 25	1 26	1 27	1 31	1 32	1 33	1 34	1 35	1 36	1 37	1 38	1 39	1 40	
+noselfcollision	2 4	2 5	2 6	2 7	2 8	2 9	2 10	2 11	2 12	2 13	2 14	2 15	2 26 	2 17	2 18	2 19	2 20	2 21	2 22	2 23	2 24	2 25	2 26	2 27	2 28	2 29	2 30	2 31	2 32	2 33	2 34	2 35	2 36	2 37	2 38	2 39	2 40	2 41	2 42
+noselfcollision	3 5	3 6	3 7	3 8	3 9	3 10	3 11	3 12	3 13	3 16
+noselfcollision	4 6	4 7	4 8	4 9	4 10	4 11	4 12	4 13	4 14	4 15	4 16	
+noselfcollision	5 7	5 8	5 9	5 10	5 11	5 12	5 13	5 14	5 15	5 16	
+noselfcollision	6 8	6 9	6 10	6 11	6 12	6 13	6 14	6 15	6 16	
+noselfcollision	7 9	7 10	7 11	7 12	7 13	7 14	7 15	7 16	
+noselfcollision	8 10	8 11	8 12	8 13	8 14	8 15	8 16	
+noselfcollision	9 11	9 12	9 13	9 14	9 15	9 16	
+noselfcollision	10 12	10 13	10 14	10 15	10 16	
+noselfcollision	11 13	11 14	11 15	11 16	
+noselfcollision	12 14	12 15	12 16	
+noselfcollision	13 15	13 16	
+noselfcollision	14 16	
+noselfcollision	15 16	
+noselfcollision	16 18	16 19	16 20	16 21	16 22	16 23	16 24	16 25	16 26	16 27	16 28	16 29	16 30	16 31	16 32	16 33	16 34	16 35	16 36	16 37	16 38	16 39	16 40	16 41	
+noselfcollision	17 19	17 20	17 21	17 22	17 23	17 24	17 25	17 26	17 27	
+noselfcollision	18 20	18 21	18 22	18 23	18 24	18 25	18 26	18 27	18 28	18 29	
+noselfcollision	19 21	19 22	19 23	19 24	19 25	19 26	19 27	19 28	19 29	
+noselfcollision	20 22	20 23	20 24	20 25	20 26	20 27	20 28	20 29	
+noselfcollision	21 23	21 24	21 25	21 26	21 27	21 28	21 29	
+noselfcollision	22 24	22 25	22 26	22 27	22 28	22 29	
+noselfcollision	23 25	23 26	23 27	23 28	23 29	
+noselfcollision	24 26	24 27	24 28	24 29	
+noselfcollision	25 27	25 28	25 29	
+noselfcollision	26 28	26 29	
+noselfcollision	27 29	
+noselfcollision	30 32	30 33	30 34	30 35	30 36	30 37	30 38	30 39	30 40	
+noselfcollision	31 33	31 34	31 35	31 36	31 37	31 38	31 39	31 40	31 41	31 42	
+noselfcollision	32 34	32 35	32 36	32 37	32 38	32 39	32 40	32 41	32 42	
+noselfcollision	33 35	33 36	33 37	33 38	33 39	33 40	33 41	33 42	
+noselfcollision	34 36	34 37	34 38	34 39	34 40	34 41	34 42	
+noselfcollision	35 37	35 38	35 39	35 40	35 41	35 42	
+noselfcollision	36 38	36 39	36 40	36 41	36 42	
+noselfcollision	37 39	37 40	37 41	37 42	
+noselfcollision	38 40	38 41	38 42	
+noselfcollision	39 41	39 42	
+noselfcollision	40 42	
+noselfcollision	41 42	
+
+joint weld 0
+joint weld 1
+joint spin 2
+joint spin 3
+joint spin 4
+joint spin 5
+joint spin 6
+joint spin 7
+joint spin 8
+joint spin 9
+joint spin 10
+joint spin 11
+joint spin 12
+joint spin 13
+joint weld 14
+joint weld 15
+joint spin 16
+joint spin 17
+joint spin 18
+joint spin 19
+joint spin 20
+joint spin 21
+joint spin 22
+joint spin 23
+joint spin 24
+joint spin 25
+joint spin 26
+joint spin 27
+joint weld 28
+joint weld 29
+joint spin 30
+joint spin 31
+joint spin 32
+joint spin 33
+joint spin 34
+joint spin 35
+joint spin 36
+joint spin 37
+joint spin 38
+joint spin 39
+joint spin 40
+joint weld 41
+joint weld 42
+
+#added manually
+driver affine 2   2 16    1.5708 -1.5708  0  0    0 1   0 1  -10 10
+driver normal 3
+#do you want to link all the flex links?
+driver normal 4
+driver normal 5
+driver normal 6
+driver normal 7
+driver normal 8
+driver normal 9
+driver normal 10
+driver normal 11
+driver normal 12
+driver normal 13
+#driver affine 10  4 5 6 7 8 9 10 11 12 13    0.19 0.19 0.19 0.19 0.19 0.19 0.19 0.19 0.19 0.19    0 0 0 0 0 0 0 0 0 0   0 1   0 1   -1 10
+
+driver normal 17
+#driver affine 10  18 19 20 21 22 23 24 25 26 27   0.19 0.19 0.19 0.19 0.19 0.19 0.19 0.19 0.19 0.19    0 0 0 0 0 0 0 0 0 0   0 1   0 1   -1 10
+driver normal 18
+driver normal 19
+driver normal 20
+driver normal 21
+driver normal 22
+driver normal 23
+driver normal 24
+driver normal 25
+driver normal 26
+driver normal 27
+
+driver normal 30
+#driver affine 10  31 32 33 34 35 36 37 38 39 40    0.19 0.19 0.19 0.19 0.19 0.19 0.19 0.19 0.19 0.19    0 0 0 0 0 0 0 0 0 0   0 1   0 1   -1 10
+driver normal 31
+driver normal 32
+driver normal 33
+driver normal 34
+driver normal 35
+driver normal 36
+driver normal 37
+driver normal 38
+driver normal 39
+driver normal 40
+
+
+#for affine-linked flex links
+#servoP	2 2 10 2 10 2 10
+#servoI	0 0 0 0 0 0 0 
+#servoD	0 0 0 0 0 0 0
+
+#dryFriction	0.5 0.5 0.5 0.5 0.5 0.5 0.5 
+#viscousFriction	0 0 0 0 0 0 0 
+
+#for separated normal links
+servoP 	10	10	0.5	0.5	0.5	0.5	0.5	0.5	0.5	0.5	0.5	0.5	10	0.5	0.5	0.5	0.5	0.5	0.5	0.5	0.5	0.5	0.5	10	0.5	0.5	0.5	0.5	0.5	0.5	0.5	0.5	0.5	0.5
+servoI	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+servoD	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+																																		
+dryFriction	0.1	0.1	0.005	0.005	0.005	0.005	0.005	0.005	0.005	0.005	0.005	0.005	0.1	0.005	0.005	0.005	0.005	0.005	0.005	0.005	0.005	0.005	0.005	0.1	0.005	0.005	0.005	0.005	0.005	0.005	0.005	0.005	0.005	0.005
+viscousFriction	0.5	0.5	1.5	1.5	1.5	1.5	1.5	1.5	1.5	1.5	1.5	1.5	0.5	1.5	1.5	1.5	1.5	1.5	1.5	1.5	1.5	1.5	1.5	0.5	1.5	1.5	1.5	1.5	1.5	1.5	1.5	1.5	1.5	1.5

@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="userInterface" public="true" >
+    <description />
+    <paramSection/>
+    <localSection>
+      <local name="nKey" type="num" size="1" />
+      <local name="beginTime" type="num" size="1" />
+      <local name="endTime" type="num" size="1" />
+      <local name="jCur" type="joint" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  // user interface
+  title(sTitle)
+  userPage()
+  while !bEnd
+    // redraw screen each time
+    cls()
+    // system messages from monitor
+    putln(sMessage[0])
+    putln(sMessage[1])
+    putln(sMessage[2])
+    // example counter and timer
+    gotoxy(0,4)
+    put(&quot;Segment  &quot;+toString(&quot;.&quot;,nTrajCurIndex)+&quot; of &quot;+toString(&quot;.&quot;,nTrajMaxIndex))
+    putln(&quot; (&quot;+toString(&quot;.&quot;,nTrajMaxIndex-nTrajCurIndex+1)+&quot; left)&quot;)
+    beginTime=0
+    endTime=0
+    if nTrajMaxIndex&gt;=0
+      beginTime=nTrajTimes[nTrajCurIndex%(size(nTrajTimes)-1)]
+      endTime=nTrajTimes[nTrajMaxIndex%(size(nTrajTimes)-1)+1]
+    endIf
+    putln(&quot;Time &quot;+toString(&quot;.3&quot;,nCurTime-nTimeStart)+&quot;, of range [&quot;+toString(&quot;.3&quot;,beginTime)+&quot;,&quot;+toString(&quot;.3&quot;,endTime)+&quot;]&quot;)
+    put(&quot;Current desired: &quot;)
+    put(jCmd.j1)
+    put(&quot; &quot;)
+    put(jCmd.j2)
+    put(&quot; &quot;)
+    put(jCmd.j3)
+    put(&quot; &quot;)
+    put(jCmd.j4)
+    put(&quot; &quot;)
+    put(jCmd.j5)
+    put(&quot; &quot;)
+    put(jCmd.j6)
+    putln(&quot;&quot;)
+    put(&quot;Current estimate: &quot;)
+    put(jEstimate.j1)
+    put(&quot; &quot;)
+    put(jEstimate.j2)
+    put(&quot; &quot;)
+    put(jEstimate.j3)
+    put(&quot; &quot;)
+    put(jEstimate.j4)
+    put(&quot; &quot;)
+    put(jEstimate.j5)
+    put(&quot; &quot;)
+    put(jEstimate.j6)
+    putln(&quot;&quot;)
+    jCur=herej()
+    put(&quot;Errors: &quot;)
+    put(jCmd.j1-jCur.j1)
+    put(&quot; &quot;)
+    put(jCmd.j2-jCur.j2)
+    put(&quot; &quot;)
+    put(jCmd.j3-jCur.j3)
+    put(&quot; &quot;)
+    put(jCmd.j4-jCur.j4)
+    put(&quot; &quot;)
+    put(jCmd.j5-jCur.j5)
+    put(&quot; &quot;)
+    put(jCmd.j6-jCur.j6)
+    putln(&quot;&quot;)
+    put(&quot;Current velocities: &quot;)
+    put(ngVels[0])
+    put(&quot; &quot;)
+    put(ngVels[1])
+    put(&quot; &quot;)
+    put(ngVels[2])
+    put(&quot; &quot;)
+    put(ngVels[3])
+    put(&quot; &quot;)
+    put(ngVels[4])
+    put(&quot; &quot;)
+    put(ngVels[5])
+    putln(&quot;&quot;)
+    //    // add F buttons
+    if bOkStart and !bExecute
+      call putButton(1,&quot;Start&quot;)
+    endIf
+    if !bQuit
+      // once we do quit don&apos;t display button
+      call putButton(8,&quot;QUIT&quot;)
+    endIf
+    //see if we have a button press
+    nKey=getKey()
+    switch nKey
+      case 271
+        // begin executing
+        if bOkStart
+          bExecute=true
+        endIf
+      break
+      case 278
+        // stop after next cycle
+        bQuit=true
+      break
+    endSwitch
+    // this delay prevents screen from flickering
+    delay(0)
+  endWhile
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

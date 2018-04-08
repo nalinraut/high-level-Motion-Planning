@@ -1,0 +1,15 @@
+### Object File ###
+
+mesh  "sphere.stl"
+
+T  0.0 0.0 -1.0 0.0 1.0 0.0 1.0 0.0 0.0 0.0 0.0 0.28
+
+geomscale  0.1  0.1  0.1
+mass  0.1
+automass
+
+kFriction  0.2
+kDamping  3000
+kRestitution  0
+kStiffness  10000
+

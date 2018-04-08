@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="parseJoint" public="false" >
+    <description />
+    <paramSection>
+      <param name="s" type="string" byVal="true" />
+      <param name="out" type="joint" byVal="false" />
+    </paramSection>
+    <localSection>
+      <local name="vals" type="num" size="6" />
+    </localSection>
+    <source>
+      <code>begin
+  call parseValue(s,vals)
+  out.j1=vals[0]
+  out.j2=vals[1]
+  out.j3=vals[2]
+  out.j4=vals[3]
+  out.j5=vals[4]
+  out.j6=vals[5]
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

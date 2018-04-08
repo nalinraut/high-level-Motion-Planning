@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="initialize" public="false" >
+    <description />
+    <paramSection/>
+    <localSection/>
+    <source>
+      <code>begin
+  bRun=true
+  bQuit=false
+  nCount=0
+  nTime=0
+end
+
+      
+      </code>
+    </source>
+  </program>
+</programList>

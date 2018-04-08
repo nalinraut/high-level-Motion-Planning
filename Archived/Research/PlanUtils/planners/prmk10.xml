@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- PRM with 10 nearest neighbor threshold-->
+<planner type="prm" knn="10" connectionThreshold="inf"/>

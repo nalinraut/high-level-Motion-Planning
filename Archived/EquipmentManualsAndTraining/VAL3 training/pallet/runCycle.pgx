@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="runCycle" public="false" >
+    <description />
+    <paramSection/>
+    <localSection>
+      <local name="l_pPallet" type="point" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  call getPart(pPick,trAbove,tGripper,mFast,mSlow)
+  call pallet(l_pPallet)
+  call putPart(l_pPallet,trAbove,tGripper,mFast,mSlow)
+end
+
+      
+      </code>
+    </source>
+  </program>
+</programList>

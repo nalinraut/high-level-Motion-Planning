@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<programList xmlns="ProgramNameSpace">
+  <program name="handleIO" public="false">
+    <description />
+    <paramSection />
+    <localSection>
+      <local name="i" type="num" size="1" />
+      <local name="cmd" type="string" size="1" />
+      <local name="args" type="string" size="1" />
+      <local name="nReceived" type="num" size="1" />
+      <local name="nCalls" type="num" size="1" />
+      <local name="sTemp" type="string" size="1" />
+      <local name="cmdSep" type="num" size="1" />
+      <local name="bEndMsg" type="bool" size="1" />
+      <local name="nSent" type="num" size="1" />
+      <local name="n" type="num" size="1" />
+      <local name="k" type="num" size="1" />
+      <local name="callIndex" type="num" size="1" />
+      <local name="times" type="num" size="4" />
+      <local name="timeTemp" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  nReceived=0
+  nSent=0
+  nCalls=0
+  times[0] = times[1] = times[2] = times[3] = 0
+  bSioInOk=false
+  while !bEnd
+    //parse IO
+    bSioGetError=false
+    bSioSetError=false
+    bParseError=false
+    timeTemp = clock()
+    call sioGetString(sioIn,sMsgId,asc(" ",0))
+    times[0] = clock()
+    times[1] = times[1] + times[0]-timeTemp
+    timeTemp = times[0]
+    sMessage[2]=sMsgId
+    //form the reply message
+    call bigStringSet(sReply,nReplySize,sMsgId+" ")
+    callIndex=0
+    bEndMsg=false
+    times[0] = clock()
+    times[2] = times[2] + times[0]-timeTemp
+    timeTemp = times[0]
+    while !bSioGetError and !bEndMsg
+      bSioInOk=true
+      call sioGetString(sioIn,cmd,asc("(",0))
+      if !bSioGetError
+        call sioGetString(sioIn,args,asc(")",0))
+      endIf
+      times[0] = clock()
+      times[1] = times[1] + times[0]-timeTemp
+      timeTemp = times[0]
+      if !bSioGetError
+        nCalls=nCalls+1
+        callIndex=callIndex+1
+        call dispatchCommand(cmd,args,sTemp)
+        //append the return string
+        if sMsgId!="*"
+          if bParseError
+            call bigStringApp(sReply,nReplySize,"ParseError")
+          else
+            call bigStringApp(sReply,nReplySize,sTemp)
+          endIf
+          times[0] = clock()
+          times[2] = times[2] + times[0]-timeTemp
+          timeTemp = times[0]
+        endIf
+      endIf
+      n=sioGet(sioIn,cmdSep)
+      if n!=1
+        bSioGetError=true
+      else
+        //add the separator
+        if sMsgId!="*"
+          call bigStringApp(sReply,nReplySize,chr(cmdSep))
+        endIf
+        times[0] = clock()
+        times[2] = times[2] + times[0]-timeTemp
+        timeTemp = times[0]
+        if chr(cmdSep)==";"
+          sMessage[1]="Finished reading cmd "+toString("",callIndex)
+          sMessage[2]=cmd+"("+args+")"
+          nReceived=nReceived+1
+          bEndMsg=true
+        endIf
+      endIf
+    endWhile
+    if bEndMsg
+      //End of message, fire back the reply
+      if sMsgId=="*"
+        sMessage[1]="No reply needed"
+      else
+        sMessage[1]="Replying..."
+        //sending the reply while error checking
+        k=0
+        while k&lt;=nReplySize
+          call sioSetString(sioIn,sReply[k])
+          k=k+1
+        endWhile
+        times[0] = clock()
+        times[3] = times[3] + times[0]-timeTemp
+        timeTemp = times[0]
+        if !bSioSetError
+          nSent=nSent+1
+          sMessage[1]="Completed exchange"
+          sMessage[2]=toString("",nSent)
+        else
+          sMessage[1]="Failed while sending reply"
+        endIf
+      endIf
+    endIf
+    //some error may have been encountered
+    if (bSioGetError or bSioSetError) and bSioInOk
+      sMessage[2]="Error, did client disconnect?"
+      bSioInOk=false
+      logMsg("Sio error")
+    endIf
+    if nReceived &gt; 0
+      sMessage[2]="rcv "+toString(".2",times[1]/nReceived)+" str "+toString(".2",times[2]/nReceived)+" snd "+toString(".2",times[3]/nReceived)
+    endIf
+    //wait
+    delay(0)
+  endWhile
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

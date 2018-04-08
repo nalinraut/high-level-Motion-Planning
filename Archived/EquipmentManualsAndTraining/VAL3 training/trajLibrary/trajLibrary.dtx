@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dataList xmlns="DataNameSpace" >
+  <aioSection>
+  </aioSection>
+  <boolSection>
+    <bool name="bLoadedLibrary" public="false" privilege="0" >
+      <valueBool index="0" value="true" />
+    </bool>
+    <bool name="bQuit" public="false" privilege="0" >
+      <valueBool index="0" value="true" />
+    </bool>
+    <bool name="bRun" public="false" privilege="0" >
+      <valueBool index="0" value="false" />
+    </bool>
+  </boolSection>
+  <configRsSection>
+  </configRsSection>
+  <configSection>
+  </configSection>
+  <configVrbSection>
+  </configVrbSection>
+  <dioSection>
+  </dioSection>
+  <frameSection>
+    <frame name="fPath" public="false" privilege="0" >
+      <fFather name="world" alias="" fatherIndex="0" />
+      <valueFrame index="0" >
+        <tfValue x="338.699607" y="146.248565" z="-220.056759" rx="179.99998" ry="0.000231" rz="0.000422" />
+      </valueFrame>
+    </frame>
+    <frame name="world" public="false" privilege="0" >
+      <fFather name="" alias="" fatherIndex="0" />
+      <valueFrame index="0" >
+        <tfValue x="0" y="0" z="0" rx="0" ry="0" rz="0" />
+      </valueFrame>
+    </frame>
+  </frameSection>
+  <jointRsSection>
+  </jointRsSection>
+  <jointSection>
+    <joint name="jHome" public="false" privilege="0" >
+      <valueJoint index="0" >
+        <jointValue j1="-2.519474" j2="17.553578" j3="90.290654" j4="-0.382347" j5="71.831664" j6="-9.146422" />
+      </valueJoint>
+    </joint>
+  </jointSection>
+  <jointVrbSection>
+  </jointVrbSection>
+  <mdescSection>
+    <mdesc name="mFast" public="false" privilege="0" >
+      <valueMdesc index="0" >
+        <mdescValue accel="100" vel="100" decel="100" tmax="99999" rmax="99999" blend="joint" leave="20" reach="20" />
+      </valueMdesc>
+    </mdesc>
+    <mdesc name="mSlow" public="true" privilege="0" >
+      <valueMdesc index="0" >
+        <mdescValue accel="25" vel="50" decel="25" tmax="99999" rmax="99999" blend="joint" leave="2" reach="2" />
+      </valueMdesc>
+    </mdesc>
+  </mdescSection>
+  <numSection>
+    <num name="nCount" public="false" privilege="0" >
+      <valueNum index="0" value="4" />
+    </num>
+    <num name="nTime" public="false" privilege="0" >
+      <valueNum index="0" value="16.979" />
+    </num>
+    <num name="nTimeStart" public="false" privilege="0" >
+      <valueNum index="0" value="3663.9" />
+    </num>
+  </numSection>
+  <pointRsSection>
+  </pointRsSection>
+  <pointSection>
+    <point name="pPathOrigin" public="false" privilege="0" >
+      <pFather name="world" alias="" fatherIndex="0" />
+      <valuePoint index="0" >
+        <tpValue x="338.699607" y="146.248565" z="-220.056759" rx="-0.376452" ry="179.691644" rz="-6.744491" />
+        <cpValue shoulder="ssame" elbow="esame" wrist="wsame" />
+      </valuePoint>
+    </point>
+    <point name="pPathX" public="false" privilege="0" >
+      <pFather name="world" alias="" fatherIndex="0" />
+      <valuePoint index="0" >
+        <tpValue x="460.622575" y="146.247668" z="-220.056268" rx="-0.376093" ry="179.690611" rz="-6.744564" />
+        <cpValue shoulder="ssame" elbow="esame" wrist="wsame" />
+      </valuePoint>
+    </point>
+    <point name="pPathY" public="false" privilege="0" >
+      <pFather name="world" alias="" fatherIndex="0" />
+      <valuePoint index="0" >
+        <tpValue x="460.622123" y="-67.748564" z="-220.056195" rx="-0.376623" ry="179.690122" rz="-6.744124" />
+        <cpValue shoulder="ssame" elbow="esame" wrist="wsame" />
+      </valuePoint>
+    </point>
+  </pointSection>
+  <pointVrbSection>
+  </pointVrbSection>
+  <sioSection>
+  </sioSection>
+  <stringSection>
+    <string name="sLibraries" public="false" privilege="0" >
+      <valueString index="0" value="square" />
+      <valueString index="1" value="triangle" />
+    </string>
+    <string name="sTitle" public="false" privilege="0" >
+      <valueString index="0" value="Pick and Place" />
+    </string>
+  </stringSection>
+  <toolSection>
+    <tool name="flange" public="false" privilege="0" >
+      <tFather name="" alias="" fatherIndex="0" />
+      <valueTool index="0" >
+        <ttValue x="0" y="0" z="0" rx="0" ry="0" rz="0" />
+        <io name="valve1" alias="io" ioIndex="0" open="0" close="0" />
+      </valueTool>
+    </tool>
+    <tool name="tTool" public="false" privilege="0" >
+      <tFather name="flange" alias="" fatherIndex="0" />
+      <valueTool index="0" >
+        <ttValue x="-55" y="0" z="80" rx="0" ry="0" rz="0" />
+        <io name="valve1" alias="io" ioIndex="0" open="0.1" close="0.1" />
+      </valueTool>
+    </tool>
+  </toolSection>
+  <trsfSection>
+  </trsfSection>
+</dataList>

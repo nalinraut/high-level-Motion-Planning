@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<point2d_cspace>
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <circle center="0.906117 0.136788" radius="0.178412" />
+      <circle center="0.20364 0.0346351" radius="0.178412" />
+      <circle center="0.816549 0.471957" radius="0.178412" />
+      <circle center="0.133744 0.338467" radius="0.178412" />
+      <circle center="0.602564 0.825238" radius="0.178412" />
+      <circle center="0.913111 0.727337" radius="0.178412" />
+      <circle center="0.486851 0.20964" radius="0.178412" />
+      <circle center="0.961985 0.205482" radius="0.178412" />
+      <circle center="0.286643 0.907153" radius="0.178412" />
+      <circle center="0.100214 0.923876" radius="0.178412" />
+      <circle center="0.892453 0.320083" radius="0.178412" />
+      <circle center="0.28079 0.724961" radius="0.178412" />
+      <circle center="0.988814 0.654918" radius="0.178412" />
+      <circle center="0.00426008 0.0814984" radius="0.178412" />
+      <circle center="0.113483 0.85991" radius="0.178412" />
+      <circle center="0.96874 0.30439" radius="0.178412" />
+      <circle center="0.190499 0.469596" radius="0.178412" />
+      <circle center="0.277901 0.389407" radius="0.178412" />
+      <circle center="0.240316 0.770008" radius="0.178412" />
+      <circle center="0.188092 0.648338" radius="0.178412" />
+      <circle center="0.944657 0.501184" radius="0.178412" />
+      <circle center="0.0551326 0.561309" radius="0.178412" />
+      <circle center="0.851542 0.858985" radius="0.178412" />
+      <circle center="0.445992 0.0836986" radius="0.178412" />
+      <circle center="0.701395 0.0354086" radius="0.178412" />
+      <circle center="0.303158 0.363437" radius="0.178412" />
+      <circle center="0.534036 0.429148" radius="0.178412" />
+      <circle center="0.269317 0.800257" radius="0.178412" />
+      <circle center="0.9782 0.932341" radius="0.178412" />
+      <circle center="0.913721 0.599336" radius="0.178412" />
+    </geometry2d>
+  </obstacles>
+</point2d_cspace>

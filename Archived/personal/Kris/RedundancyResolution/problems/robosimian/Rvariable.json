@@ -1,0 +1,10 @@
+{ 
+	"orientation":"variable",
+	"Nw":10000,
+	"filename":"/home/motion/rockclimber/platform/caesar/models/robosimian_caesar_limited_joints.urdf",
+	"useCollision":true,
+	"link":"limb1_link7",
+	"eelocal":[0.13,0,0],
+	"domain":[[-0.5,-1.2,-1.1],[1.5,0.6,0.9]],
+	"links":["limb1_link1","limb1_link2","limb1_link3","limb1_link4","limb1_link5","limb1_link6","limb1_link7"]
+}

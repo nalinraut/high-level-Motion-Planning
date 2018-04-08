@@ -1,0 +1,9 @@
+#---------------------------------------#
+#  joystick 
+#---------------------------------------#
+# change
+ACTION=="change", KERNEL=="js[0-9]*", ATTRS{idProduct}=="c21*", ATTRS{idVendor}=="046d", MODE="666", GROUP="dialout", SYMLINK+="ros/joystick_base"
+# add 
+ACTION=="add", KERNEL=="js[0-9]*", ATTRS{idProduct}=="c21*", ATTRS{idVendor}=="046d", MODE="666", GROUP="dialout", SYMLINK+="ros/joystick_base", RUN+="/usr/local/bin/ht-usb-device joystick_base", OWNER="user"
+# remove 
+ACTION=="remove", KERNEL=="js[0-9]*", ATTRS{idProduct}=="c21*", ATTRS{idVendor}=="046d", RUN+="/usr/local/bin/ht-usb-device joystick_base"

@@ -1,0 +1,9 @@
+mesh "meshes/hammer.ply"
+geomscale 1 1 1
+mass 0.948
+autoMass
+#com 0.225 0 0.016 #
+com 0.185 0 0.016 #
+kStiffness 30000
+kDamping 10000
+kRestitution 0

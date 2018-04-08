@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<programList xmlns="ProgramNameSpace">
+  <program name="bigStringApp" public="true">
+    <description />
+    <paramSection>
+      <param name="bigString" type="string" byVal="false" />
+      <param name="stringIndex" type="num" byVal="false" />
+      <param name="str" type="string" byVal="true" />
+    </paramSection>
+    <localSection>
+      <local name="i" type="num" size="1" />
+      <local name="n" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  //skip ahead to an entry that can accept characters
+  i=stringIndex
+  if i==size(bigString)
+    popUpMsg("Big string overflow! "+toString("",size(bigString)*128)+" chars")
+    return
+  endIf
+  
+  //append to entry i
+  n=min(len(str),128-len(bigString[i]))
+  bigString[i]=bigString[i]+left(str,n)
+  str=right(str,len(str)-n)
+  i=i+1
+  
+  //append new entries of size 128 until str is empty
+  while i&lt;size(bigString) and len(str)&gt;0
+    stringIndex = stringIndex+1
+    //set entry i
+    n=min(len(str),128)
+    bigString[i]=left(str,n)
+    str=right(str,len(str)-n)
+    if len(str)!=0 and len(bigString[i])!=128
+      popUpMsg("Error in bigStringApp "+toString("",len(bigString[i]))+", "+str)
+    endIf
+    i=i+1
+  endWhile
+  if i==size(bigString)
+    popUpMsg("Big string overflow! "+toString("",size(bigString)*128)+" chars")
+  endIf
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

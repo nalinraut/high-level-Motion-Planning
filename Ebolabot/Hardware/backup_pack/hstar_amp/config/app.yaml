@@ -1,0 +1,51 @@
+base_driver:
+  base_type: mecanum 
+  wheelbase_width: 0.5715
+  publish_tf: true
+  publish_wheel_tf: true
+  publish_hall_count: true
+  publish_enc_count: true
+  publish_joint_trajectory: true
+  motor_dirs:
+    - 1
+    - -1
+    - -1
+    - 1
+  enc_dirs: 
+    - 1
+    - -1
+    - -1
+    - 1
+  enc_types: 
+    - hall
+    - hall
+    - hall
+    - hall
+  use_dyn_config: false
+  use_init_config: false 
+  use_joint_config: true
+  debug: false
+  debug_print_rate: 0.5 
+  motor_gain: 200
+  enc2m: 0.00000191859
+  hall2m: 0.000833333
+  wheel_dia: 0.2032
+  enc2rad: 0.000020933
+  hall2rad: 0.00826
+roboteq_driver:
+  driver0:
+    baud: 115200
+    channels:
+      - j0
+  driver1:
+    baud: 115200
+    channels:
+      - j1
+  driver2:
+    baud: 115200
+    channels:
+      - j2
+  driver3:
+    baud: 115200
+    channels:
+      - j3

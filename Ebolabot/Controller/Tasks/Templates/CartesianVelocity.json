@@ -1,0 +1,8 @@
+{
+  "task":"CartesianVelocity",
+  "limb":"left",
+  "linear":[0,0,0],
+  "angular":[0,0,0],
+  "speed":1,
+  "safe":0
+}

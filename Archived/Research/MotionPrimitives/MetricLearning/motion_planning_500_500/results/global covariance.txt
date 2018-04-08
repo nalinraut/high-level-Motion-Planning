@@ -1,0 +1,3 @@
+global covariance train loss 171.610000 error 0.958000 clustererror 0.374000
+
+global covariance test loss 163.680000 error 0.952000 clustererror 0.374000

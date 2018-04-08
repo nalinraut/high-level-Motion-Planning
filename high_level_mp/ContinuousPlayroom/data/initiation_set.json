@@ -1,0 +1,23 @@
+{
+	"hand_to_green_button": [],
+	"hand_to_red_button": [],
+	"hand_to_bell": [],
+	"hand_to_ball": [],
+	"hand_to_light": [],
+	"marker_to_green_button": [],
+	"marker_to_red_button": [],
+	"marker_to_bell": [],
+	"marker_to_ball": [],
+	"marker_to_light": [],
+	"eye_to_green_button": [],
+	"eye_to_red_button": [],
+	"eye_to_bell": [],
+	"eye_to_ball": [],
+	"eye_to_light": [],
+	"interact_green_button": ["g32", "g1", "g2", "g21", "g22"],
+	"interact_red_button": ["g32", "g3", "g4", "g23", "g24"],
+	"interact_bell": ["g32", "g5", "g6", "g25", "g26"],
+	"interact_ball": ["g35", "g31", "g7", "g8", "g15", "g16", "g27", "g28"],
+	"interact_light_on": ["g9", "g10", "g29", "g30", "g35"],
+	"interact_light_off": ["g9", "g10", "g29", "g30", "g32"]
+}

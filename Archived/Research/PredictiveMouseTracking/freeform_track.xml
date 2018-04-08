@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<freeform>
+  <task name="Track" >
+    <gmr file="traj_55.xml" maxComponents="20" samplingStrategy="fit"/>
+  </task>
+</freeform>

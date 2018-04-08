@@ -1,0 +1,2 @@
+100 primitives, 17942 edges, close set [76,173] avg 121.000000, far set [8,102] avg 58.000000
+Minimum train loss 13.400000, test loss 2.200000

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+
+  <param name="robot_description" textfile= "$(find hstar_amp)/config/model.urdf"/>
+
+  <node name="tf_base_link_to_base_footprint" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 base_footprint base_link 30" />
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+    <param name="tf_prefix" value="hstar_amp" />
+  </node>
+
+</launch>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="stop" public="false" >
+    <description />
+    <paramSection/>
+    <localSection/>
+    <source>
+      <code>begin
+  resetMotion()
+  gotoxy(0,12)
+  putln(&quot;App stopped, use Run to restart&quot;)
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

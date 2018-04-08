@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch> 
+
+	<!-- Start Kinect -->
+	<include file="$(find iml_grasp_acquisition)/launch/kinect2_bridge.launch"/>
+
+	<!-- Kinect TF -->
+	<include file="$(find iml_grasp_acquisition)/launch/kinect2_tf.launch"/>
+
+
+
+</launch>
+

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<world>
+  <!--
+    SUMMARY
+    - Sliding Test
+  -->
+  <!-- 
+    #SLIDING TEST
+    Notice how with regular actuation systems one would have distal phalanxs turn backwards. With tendon transmission, this should not happen
+  <robot name="RobotiQ 3-Finger Adaptive Gripper" file="reflex_col_with_moving_base.rob" rotateRPY="0 3.1416 0"/>
+-->
+  <terrain name="floor" file="terrains/plane.env"/>
+  
+  <robot name="RobotiQ 3-Finger Adaptive Gripper" file="../data/reflex_col_with_moving_base.rob" position="0.0 -0.13 0.06" rotateRPY="-1.57 0 0"/>
+
+  <rigidObject name="spray_bottle" file="objects/spray_bottle.obj"  position="0.0 0.0 0.00">
+  </rigidObject>
+  <simulation>
+    <globals maxContacts="20" robotSelfCollisions="0" timestep="0.001"/>
+    <robot index="0" body="6"> 
+       <geometry preshrink="2" kFriction="1.5" kRestitution="0.0" padding="0.002" stiffness="200000" damping="1000000" />
+    </robot>
+    <robot index="0" body="7"> 
+       <geometry preshrink="2" kFriction="1.5" kRestitution="0.0" padding="0.002" stiffness="2000000" damping="1000000" />
+    </robot>
+    <robot index="0" body="8"> 
+       <geometry preshrink="2" kFriction="1.5" kRestitution="0.0" padding="0.002" stiffness="2000000" damping="1000000" />
+    </robot>
+    <robot index="0" body="9"> 
+       <geometry preshrink="2" kFriction="1.5" kRestitution="0.0" padding="0.002" stiffness="2000000" damping="1000000" />
+    </robot>
+    <robot index="0" body="10"> 
+       <geometry preshrink="2" kFriction="1.5" kRestitution="0.0" padding="0.002" stiffness="2000000" damping="1000000" />
+    </robot>
+    <robot index="0" body="11"> 
+       <geometry preshrink="2" kFriction="1.5" kRestitution="0.0" padding="0.002" stiffness="2000000" damping="1000000" />
+    </robot>
+   <robot index="0" body="12"> 
+       <geometry preshrink="2" kFriction="1.5" kRestitution="0.0" padding="0.002" stiffness="2000000" damping="1000000" />
+    </robot>
+   <robot index="0" body="13"> 
+       <geometry preshrink="2" kFriction="1.5" kRestitution="0.0" padding="0.002" stiffness="2000000" damping="1000000" />
+    </robot>
+   <robot index="0" body="14"> 
+       <geometry preshrink="2" kFriction="1.5" kRestitution="0.0" padding="0.002" stiffness="2000000" damping="1000000" />
+    </robot>
+   <robot index="0" body="15"> 
+       <geometry preshrink="2" kFriction="1.5" kRestitution="0.0" padding="0.002" stiffness="2000000" damping="1000000" />
+    </robot>
+   <robot index="0" body="16"> 
+       <geometry preshrink="2" kFriction="1.5" kRestitution="0.0" padding="0.002" stiffness="2000000" damping="1000000" />
+    </robot>
+   <robot index="0" body="17"> 
+       <geometry preshrink="2" kFriction="1.5" kRestitution="0.0" padding="0.002" stiffness="2000000" damping="1000000" />
+    </robot>
+   <robot index="0" body="18"> 
+       <geometry preshrink="2" kFriction="1.5" kRestitution="0.0" padding="0.002" stiffness="2000000" damping="1000000" />
+    </robot>
+   <robot index="0" body="19"> 
+       <geometry preshrink="2" kFriction="1.5" kRestitution="0.0" padding="0.002" stiffness="2000000" damping="1000000" />
+    </robot>
+   <robot index="0" body="20"> 
+       <geometry preshrink="2" kFriction="1.5" kRestitution="0.0" padding="0.002" stiffness="2000000" damping="1000000" />
+    </robot>
+    <object index="0">
+      <geometry  padding="0.002" preshrink="2" kFriction="0.3" kRestitution="0.0"/>
+    </object>
+  </simulation>
+</world>

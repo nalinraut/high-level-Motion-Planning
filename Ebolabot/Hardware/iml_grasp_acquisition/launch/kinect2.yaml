@@ -1,0 +1,74 @@
+
+
+# updated tf to (0.24539, 0.0893425, 0.00112145) (0.425383, 0.426796, 0.563848, 0.564775)
+child_frame: kinect2_link
+parent_frame: pedestal
+transform:
+  translation:
+    x: 0.273078
+    y: 0.0893398
+    z: -0.00182539
+  rotation:
+    x: 0.425383
+    y: 0.426796
+    z: 0.563848
+    w: 0.564775
+
+
+#===== Before 2016-02-10 ======
+# child_frame: kinect2_link
+# parent_frame: pedestal
+# transform:
+#   translation:
+#     x: 0.227677
+#     y: 0.0916972
+#     z: 0.0974174
+#   rotation:
+#     x: 0.425383
+#     y: 0.426796
+#     z: 0.563848
+#     w: 0.564775
+
+
+# (0.227677, 0.0916972, 0.0974174) (0.425383, 0.426796, 0.563848, 0.564775)
+
+# ======= calibration before 2015-10-02 ================
+# calibration: up-side-down
+# transform:
+#   rotation:
+#     x: 0.423455
+#     y: 0.424871
+#     z: 0.5653
+#     w: 0.566222
+#   translation:
+#     x: 0.228665
+#     y: 0.0591513
+#     z: 0.0977748
+
+
+# ===== calibration before 2015-09-15 ==================
+
+# = calibration: upright
+
+# transform:
+#   rotation:
+#     x: -0.566135
+#     y: 0.597978
+#     z: -0.415557
+#     w: 0.386298
+#   translation:
+#     x: 0.240204
+#     y: -0.0781071
+#     z: 0.276551
+
+
+# Initial extrinsic calibtion
+  # rotation:
+  #   w: -0.346186
+  #   x: 0.60946
+  #   y: -0.597066
+  #   z: 0.390161
+  # translation:
+  #   x: 0.24037
+  #   y: -0.0500898
+  #   z: 0.323648

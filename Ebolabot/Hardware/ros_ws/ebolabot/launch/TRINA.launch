@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find hstar_amp)/launch/start.launch" ns="hstar_amp1"/>
+  <include file="$(find reflex)/launch/left_hand.launch" />
+  <include file="$(find reflex)/launch/right_hand.launch" />
+</launch>

@@ -1,0 +1,64 @@
+Author: Kris Hauser
+
+Python / C / C++ interfaces for the Robotiq 3-finger adaptive gripper.
+
+Currently supports the Modbus RTU protocol.  Requires libmodbus.
+
+Build system only tested on Ubuntu Linux 12.04.
+
+***************     Usage     ************
+
+C++ API: Defined in Robotiq.hpp
+
+- Manual method:
+  1. Copy Robotiq.hpp and Robotiq.cpp to your own project.
+  2. Add #include "Robotiq.hpp" in your files.
+  3. Compile / link Robotiq.cpp manually with your own source files.
+
+- Static library method:
+  1. Run "make static" to build the static library.
+  2. Add #include "Robotiq.hpp" in your files.
+  3. When building your project, add this directory to your include/
+     link paths, and link to libRobotiq.a.
+
+
+C API: Defined in Robotiq.h
+
+- Shared library method, installed:
+  1. Run "sudo make install" to copy the include files and library to
+     your /usr/local directory.
+  2. Add #include "Robotiq.h" in your files. 
+  3. Link to libRobotiq.a when building your own project.
+
+- Shared library method, local:
+  1. Run "make shared" to build the shared library.
+  2. Add this directory to your include/link paths, and link to libRobotiq.a.
+  3. Add this path to your LD_LIBRARY_PATH or /etc/ld.so.conf.d/ directory.
+
+- Static library method:
+  1. Same as for the C++ API, but #include "Robotiq.h" in your files.
+
+
+Python API: Defined in Python/robotiq/robotiq.py
+
+- Manual method:
+  1. Create the libRobotiq.so shared library via "make shared"
+  2. Copy Python/robotiq/robotiq.py into your own project.
+  3. Manually call robotiq.setup(dllpath) where dllpath gives the absolute
+     path to libRobotiq.so.
+
+- Installed method:
+  1. Install the shared library via "sudo make install"
+  2. Install the robotiq module into your python path by running
+    "sudo python setup.py install" inside the Python directory.
+
+
+*************** Build Targets ************
+
+make shared: builds the shared library files.
+make static: builds the static library files.
+make install: installs the C header file and shared library files to
+  /usr/local/include and /usr/local/lib, respectively.
+make test: builds a test program.
+make test-lib: builds a test program that links to the static/shared library.
+make clean: removes intermediate build files

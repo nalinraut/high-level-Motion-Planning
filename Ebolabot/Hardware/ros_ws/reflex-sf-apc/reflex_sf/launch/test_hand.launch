@@ -1,0 +1,6 @@
+<!-- -*- mode: XML -*- -->
+
+<launch>
+    <rosparam file="$(find reflex_sf)/yaml/reflex_sf.yaml" command="load"/>
+    <rosparam file="$(find reflex_sf)/yaml/reflex_sf_zero_points.yaml" command="load"/>
+</launch>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="checkTrajectory" public="false" >
+    <description />
+    <paramSection>
+      <param name="res" type="string" byVal="false" />
+    </paramSection>
+    <localSection>
+      <local name="index" type="num" size="1" />
+      <local name="i" type="num" size="1" />
+      <local name="n" type="num" size="1" />
+      <local name="dt" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  setMutex(bTrajMutex)
+  if nTrajMaxIndex&lt;0 or nTrajCurIndex&gt;nTrajMaxIndex
+    res=&quot;&quot;
+    bTrajMutex=false
+    return
+  endIf
+  bTrajMutex=false
+  n=size(nTrajTimes)-1
+  for index=nTrajCurIndex to nTrajMaxIndex
+    i=index%n
+    setMutex(bTrajMutex)
+    if jTrajMilestones[i+1].j1&lt;jMin.j1 or jTrajMilestones[i+1].j1&gt;jMax.j1
+      res=&quot;Milestone &quot;+toString(&quot;&quot;,i+1)+&quot; J1 out of joint limits&quot;
+      bTrajMutex=false
+      return
+    endIf
+    if jTrajMilestones[i+1].j2&lt;jMin.j2 or jTrajMilestones[i+1].j2&gt;jMax.j2
+      res=&quot;Milestone &quot;+toString(&quot;&quot;,i+1)+&quot; J2 out of joint limits&quot;
+      bTrajMutex=false
+      return
+    endIf
+    if jTrajMilestones[i+1].j3&lt;jMin.j3 or jTrajMilestones[i+1].j3&gt;jMax.j3
+      res=&quot;Milestone &quot;+toString(&quot;&quot;,i+1)+&quot; J3 out of joint limits&quot;
+      bTrajMutex=false
+      return
+    endIf
+    if jTrajMilestones[i+1].j4&lt;jMin.j4 or jTrajMilestones[i+1].j4&gt;jMax.j4
+      res=&quot;Milestone &quot;+toString(&quot;&quot;,i+1)+&quot; J4 out of joint limits&quot;
+      bTrajMutex=false
+      return
+    endIf
+    if jTrajMilestones[i+1].j5&lt;jMin.j5 or jTrajMilestones[i+1].j5&gt;jMax.j5
+      res=&quot;Milestone &quot;+toString(&quot;&quot;,i+1)+&quot; J5 out of joint limits&quot;
+      bTrajMutex=false
+      return
+    endIf
+    if jTrajMilestones[i+1].j6&lt;jMin.j6 or jTrajMilestones[i+1].j6&gt;jMax.j6
+      res=&quot;Milestone &quot;+toString(&quot;&quot;,i+1)+&quot; J6 out of joint limits&quot;
+      bTrajMutex=false
+      return
+    endIf
+    bTrajMutex=false
+    setMutex(bTrajMutex)
+    dt=nTrajTimes[i+1]-nTrajTimes[i]
+    if abs(jTrajMilestones[i+1].j1-jTrajMilestones[i].j1)&gt;nVelMax[0]*dt
+      res=&quot;Segment &quot;+toString(&quot;&quot;,i+1)+&quot; J1 exceeds velocity limits&quot;
+      bTrajMutex=false
+      return
+    endIf
+    if abs(jTrajMilestones[i+1].j2-jTrajMilestones[i].j2)&gt;nVelMax[1]*dt
+      res=&quot;Segment &quot;+toString(&quot;&quot;,i+1)+&quot; J2 exceeds velocity limits&quot;
+      bTrajMutex=false
+      return
+    endIf
+    if abs(jTrajMilestones[i+1].j3-jTrajMilestones[i].j3)&gt;nVelMax[2]*dt
+      res=&quot;Segment &quot;+toString(&quot;&quot;,i+1)+&quot; J3 exceeds velocity limits&quot;
+      bTrajMutex=false
+      return
+    endIf
+    if abs(jTrajMilestones[i+1].j4-jTrajMilestones[i].j4)&gt;nVelMax[3]*dt
+      res=&quot;Segment &quot;+toString(&quot;&quot;,i+1)+&quot; J4 exceeds velocity limits&quot;
+      bTrajMutex=false
+      return
+    endIf
+    if abs(jTrajMilestones[i+1].j5-jTrajMilestones[i].j5)&gt;nVelMax[4]*dt
+      res=&quot;Segment &quot;+toString(&quot;&quot;,i+1)+&quot; J5 exceeds velocity limits&quot;
+      bTrajMutex=false
+      return
+    endIf
+    if abs(jTrajMilestones[i+1].j6-jTrajMilestones[i].j6)&gt;nVelMax[5]*dt
+      res=&quot;Segment &quot;+toString(&quot;&quot;,i+1)+&quot; J6 exceeds velocity limits&quot;
+      bTrajMutex=false
+      return
+    endIf
+    bTrajMutex=false
+  endFor
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

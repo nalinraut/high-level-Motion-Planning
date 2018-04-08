@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<point2d_cspace>
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <aabb bmin = "0.025 0.025" bmax = "0.475 0.475"/>
+      <aabb bmin = "0.025 0.525" bmax = "0.475 0.975"/>
+      <aabb bmin = "0.525 0.025" bmax = "0.975 0.475"/>
+      <aabb bmin = "0.525 0.525" bmax = "0.975 0.975"/>
+    </geometry2d>
+  </obstacles>
+</point2d_cspace>

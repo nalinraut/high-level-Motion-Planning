@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<programList xmlns="ProgramNameSpace">
+  <program name="addMilestone" public="true">
+    <description>Appends a milestone to the back of the motion queue</description>
+    <paramSection>
+      <param name="q" type="joint" byVal="true" />
+      <param name="dt" type="num" byVal="true" />
+      <param name="res" type="num" byVal="false" />
+    </paramSection>
+    <localSection>
+      <local name="n" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  //Adds a milestone to the back of the motion queue, at time dt after the
+  //last added milestone (or the current time, if the queue is empty)
+  n=size(nTrajTimes)-1
+  setMutex(bTrajMutex)
+  if nTrajMaxIndex&lt;0
+    //no currently set milestone
+    if bExecute
+      call setSegment(0,herej(),clock()-nTimeStart,q,dt)
+    else
+      call setSegment(0,herej(),0,q,dt)
+    endIf
+    nTrajCurIndex=0
+    nTrajMaxIndex=0
+    res=0
+  else
+    //extend the current motion queue
+    if nTrajMaxIndex-nTrajCurIndex+1&gt;=n
+      //check for overrun
+      sMessage[1]="Overran motion queue buffer!"
+      res=-1
+    elseIf nTrajCurIndex&gt;nTrajMaxIndex
+      //currently stationary, add the segment starting from the current time
+      sMessage[1]="Added stationary segment"
+      call setSegment(nTrajCurIndex,jEstimate,clock()-nTimeStart,q,dt)
+      //call setSegment(nTrajCurIndex,herej(),clock()-nTimeStart,q,dt)
+      nTrajMaxIndex=nTrajCurIndex
+      res=nTrajCurIndex
+    else
+      sMessage[1]="Appended segment"
+      call setSegment(nTrajMaxIndex+1,jTrajMilestones[nTrajMaxIndex%n+1],nTrajTimes[nTrajMaxIndex%n+1],q,dt)
+      nTrajMaxIndex=nTrajMaxIndex+1
+      res=nTrajMaxIndex
+    endIf
+  endIf
+  bTrajMutex=false
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

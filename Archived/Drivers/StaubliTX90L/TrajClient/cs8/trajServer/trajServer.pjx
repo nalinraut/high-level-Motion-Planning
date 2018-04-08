@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="ProjectNameSpace">
+  <parameters version="s6.6.2" stackSize="5000" millimeterUnit="true" />
+  <programSection>
+    <program file="addMilestone.pgx" />
+    <program file="bigStringApp.pgx" />
+    <program file="bigStringSet.pgx" />
+    <program file="checkTrajectory.pgx" />
+    <program file="clientSim.pgx" />
+    <program file="dispatchCommand.pgx" />
+    <program file="evalSegment.pgx" />
+    <program file="handleIO.pgx" />
+    <program file="initialize.pgx" />
+    <program file="jointToString.pgx" />
+    <program file="monitor.pgx" />
+    <program file="numToString.pgx" />
+    <program file="parseJoint.pgx" />
+    <program file="parseValue.pgx" />
+    <program file="putButton.pgx" />
+    <program file="qDes.pgx" />
+    <program file="resetTrajectory.pgx" />
+    <program file="robotMotion.pgx" />
+    <program file="setSegment.pgx" />
+    <program file="sioGetString.pgx" />
+    <program file="sioSetString.pgx" />
+    <program file="start.pgx" />
+    <program file="stop.pgx" />
+    <program file="trajDuration.pgx" />
+    <program file="trajEndTime.pgx" />
+    <program file="trajGetIndex.pgx" />
+    <program file="userInterface.pgx" />
+  </programSection>
+  <dataSection>
+    <data file="trajServer.dtx" />
+  </dataSection>
+  <aliasSection>
+    <alias name="io" interface="io" autoload="true" />
+  </aliasSection>
+</project>

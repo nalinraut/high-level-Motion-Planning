@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="trajGetIndex" public="false" >
+    <description />
+    <paramSection>
+      <param name="t" type="num" byVal="true" />
+      <param name="index" type="num" byVal="false" />
+      <param name="u" type="num" byVal="false" />
+    </paramSection>
+    <localSection>
+      <local name="i" type="num" size="1" />
+      <local name="n" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  //returns the trajectory segment index (and interpolation parameter u) for the time t.
+  //index=-1 is returned if t is before the currently executed segment
+  //or if the motion queue has not yet been initialized
+  //if index = nTrajMaxIndex, u is set to the amount of time t exceeds the last milestone
+  //if t is before the current segment, u is set to the amount of time t precedes the first milestone
+  //Note: not protected
+  //Note: the index is not normalized to the range [0,n]
+  u=0
+  n=size(nTrajTimes)-1
+  if nTrajMaxIndex&lt;0
+    index=-1
+    return
+  endIf
+  index=nTrajCurIndex
+  if t&lt;nTrajTimes[nTrajCurIndex%n]
+    index=-1
+    u=t-nTrajTimes[nTrajCurIndex%n]
+    return
+  endIf
+  while index&lt;=nTrajMaxIndex and t&gt;=nTrajTimes[index%n+1]
+    index=index+1
+  endWhile
+  //valid interpolation range
+  if index&lt;=nTrajMaxIndex
+    i=index%(size(nTrajTimes)-1)
+    u=(t-nTrajTimes[i])/(nTrajTimes[i+1]-nTrajTimes[i])
+  else
+    i=(index-1)%(size(nTrajTimes)-1)+1
+    u=t-nTrajTimes[i]
+  endIf
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

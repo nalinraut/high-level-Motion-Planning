@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<launch> 
+
+	<!-- Start Kinect -->
+	<include file="$(find iml_grasp_acquisition)/launch/kinect2_bridge.launch"/>
+
+	<!-- Kinect TF -->
+	<include file="$(find iml_grasp_acquisition)/launch/kinect2_tf.launch"/>
+
+	<!-- Depth to Point Cloud for Kinect2 -->
+<!-- 	<include file="$(find iml_grasp_acquisition)/launch/kinect_pointcloud.launch"/> -->
+
+	<!-- Start Reflex Hand -->
+	<!-- <include file="$(find reflex_sf)/launch/reflex_hand1.launch"/>  -->
+
+	<!-- start reflex control script -->
+	
+	<!-- <node pkg="iml_grasp_acquisition" type="reflex_incremental.py" name="ReflexControl"/> -->
+	
+
+	<!-- start position tracking script -->
+	
+<!-- 	<node pkg="position_tracking" type="kinect2_position_tracking.py" name="kinect_tracking_1"/>
+ -->
+	<!-- moveit startup -->
+	<include file="$(find iml_grasp_acquisition)/launch/demo_baxter.launch"/>
+
+	<!-- <node pkg="baxter_interface" type="joint_trajectory_action_server.py" name="BaxterJointTrajectoryServer"/> -->
+
+
+	<!-- real sense image -->
+<!--
+ 	<node pkg="usb_cam" type="usb_cam_node" name="RealSenseCamera"/>
+ -->
+	<!-- AR Tracking -->
+	<!-- <include file="$(find iml_grasp_acquisition)/launch/ar_tracking.launch" />  -->
+
+
+</launch>

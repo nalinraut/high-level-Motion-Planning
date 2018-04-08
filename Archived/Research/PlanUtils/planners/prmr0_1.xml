@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- PRM with radius 0.1 threshold-->
+<planner type="prm" knn="0" connectionThreshold="0.1"/>

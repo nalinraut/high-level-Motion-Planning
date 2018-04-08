@@ -1,0 +1,19 @@
+What to install:
+
+Can use pip:
+—pyserial
+-pyudev: Dependency of BaseSensing to recognize Lidar port
+
+From Source:
+-protobuf (python version): Dependency of Hokuyo Library
+https://github.com/google/protobuf
+
+-hokuyo-python-lib-master: Driver for Hokuyo UTM30LX Lidar (lidar_num = 1)
+	Local file adapted from:
+	https://github.com/SuderPawel/hokuyo-python-lib#egg=hokuyo-python-lib
+
+-hokuyolx: Driver for Hokuyo UST-10LX Lidar (lidar_num = 2)
+https://github.com/SkRobo/hokuyolx (or pip hokuyolx)
+
+If using motion test (plotting interface):
+-pyplot

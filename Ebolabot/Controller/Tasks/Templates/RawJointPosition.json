@@ -1,0 +1,5 @@
+{
+  "task":"RawJointPosition",
+  "limb":"left",
+  "value":[0,0,0,0,0,0,0]
+}

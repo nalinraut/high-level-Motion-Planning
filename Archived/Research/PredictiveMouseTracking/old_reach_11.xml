@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<predictor>
+  <setup name="reach" numVariables="10" timestep="0.025" observation = "widget dx;widget dy" hidden="target r;target rel x;target rel y;speed"/>
+  <preprocessor scale="18.82128385 111.2233463 65.9643603 188.048232 11.764764 7.617999581 11.764764 7.617999581 11.764764 7.617999581" offset="31.30069652 7.11E-14 3.86E-15 287.550504 5.79E-16 1.05E-16 5.79E-16 1.05E-16 5.79E-16 1.05E-16" />
+  <observation_model gmm="Old/models/reach_obs1_h3.gmm" hidden="0 1 2 3 " observation="4 5" history="6 7; 8 9" goal="1 2"/>
+  <transition_model gmm="Old/models/reach_trans1_h3.gmm" current="0 1 2 3 " history="4 5; 6 7" next="8 9 10 11"/>
+</predictor>

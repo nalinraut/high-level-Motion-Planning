@@ -1,0 +1,9 @@
+#----------------------------------#
+# roboteq sbl1360 driver
+#----------------------------------#
+# change
+ACTION=="change", ATTRS{idVendor}=="20d2", ATTRS{idProduct}=="5740", MODE="0666", SYMLINK+="ros/roboteq_sbl1360_$attr{serial}", RUN+="/usr/local/bin/ht-usb-device roboteq_sbl1360 /dev/ros/roboteq_sbl1360_$attr{serial}"
+# add
+ACTION=="add", ATTRS{idVendor}=="20d2", ATTRS{idProduct}=="5740", MODE="0666", SYMLINK+="ros/roboteq_sbl1360_$attr{serial}", RUN+="/usr/local/bin/ht-usb-device roboteq_sbl1360 /dev/ros/roboteq_sbl1360_$attr{serial}", OWNER="user"
+# remove
+ACTION=="remove", ATTRS{idVendor}=="20d2", ATTRS{idProduct}=="5740", RUN+="/usr/local/bin/ht-usb-device roboteq_sbl1360 /dev/ros/roboteq_sbl1360_$attr{serial}", OWNER="user"

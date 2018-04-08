@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<programList xmlns="ProgramNameSpace">
+  <program name="start" public="false">
+    <description />
+    <paramSection />
+    <localSection />
+    <source>
+      <code>
+begin
+  call frc:initialize("io:ini",nOk)
+  while true
+    delay(1)
+    call frc:readForce(nStatus,nForce,nMonitor,bZero,bClear)
+    
+  endWhile
+end
+            
+      </code>
+    </source>
+  </program>
+</programList>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Basic PRM -->
+<planner type="prm" knn="0" connectionThreshold="inf"/>
+
+<!-- PRM with 10 nearest neighbor threshold-->
+<planner type="prm" knn="10" connectionThreshold="inf"/>
+
+<!-- PRM with radius 0.1 threshold-->
+<planner type="prm" knn="0" connectionThreshold="0.1"/>
+
+<!-- Unidirectional RRT with radius 0.1 extension limit-->
+<planner type="rrt" perturbationRadius="0.1" bidirectional="0"/>
+
+<!-- Bidirectional RRT with radius 0.1 extension limit-->
+<planner type="rrt" perturbationRadius="0.1" bidirectional="1"/>
+
+ 

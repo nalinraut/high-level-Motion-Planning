@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="evalSegment" public="false" >
+    <description />
+    <paramSection>
+      <param name="index" type="num" byVal="true" />
+      <param name="u" type="num" byVal="true" />
+      <param name="q" type="joint" byVal="false" />
+    </paramSection>
+    <localSection>
+      <local name="n" type="num" size="1" />
+      <local name="i" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  //Note: not protected
+  n=size(nTrajTimes)-1
+  i=index%n
+  q.j1=(1-u)*jTrajMilestones[i].j1+u*jTrajMilestones[i+1].j1
+  q.j2=(1-u)*jTrajMilestones[i].j2+u*jTrajMilestones[i+1].j2
+  q.j3=(1-u)*jTrajMilestones[i].j3+u*jTrajMilestones[i+1].j3
+  q.j4=(1-u)*jTrajMilestones[i].j4+u*jTrajMilestones[i+1].j4
+  q.j5=(1-u)*jTrajMilestones[i].j5+u*jTrajMilestones[i+1].j5
+  q.j6=(1-u)*jTrajMilestones[i].j6+u*jTrajMilestones[i+1].j6
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

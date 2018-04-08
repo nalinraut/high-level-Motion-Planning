@@ -1,0 +1,13 @@
+Dropped After Opening,Grasped After Shaking,Object grasped and lifted,file
+TRUE,TRUE,TRUE,hammer_P1.pickle
+TRUE,TRUE,TRUE,hammer_P2.pickle
+FALSE,TRUE,TRUE,hammer_P3.pickle
+TRUE,TRUE,TRUE,heinz_P1.pickle
+TRUE,TRUE,TRUE,heinz_P2.pickle
+FALSE,TRUE,TRUE,heinz_P3.pickle
+TRUE,TRUE,TRUE,heinz_P4.pickle
+TRUE,TRUE,TRUE,spray_full_P1.pickle
+TRUE,TRUE,TRUE,spray_P1.pickle
+TRUE,TRUE,TRUE,spray_P2.pickle
+TRUE,TRUE,TRUE,spray_P3.pickle
+TRUE,TRUE,TRUE,spray_P4.pickle

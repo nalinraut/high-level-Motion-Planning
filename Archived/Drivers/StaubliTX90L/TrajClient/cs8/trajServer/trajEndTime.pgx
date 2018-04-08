@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="trajEndTime" public="true" >
+    <description />
+    <paramSection>
+      <param name="tEnd" type="num" byVal="false" />
+    </paramSection>
+    <localSection/>
+    <source>
+      <code>begin
+  //returns the time of the final milestone in the motion queue, relative to the time from which the
+  //motion queue was started
+  //Note: not protected
+  if nTrajMaxIndex&lt;0
+    tEnd=0
+  else
+    tEnd=nTrajTimes[nTrajMaxIndex%(size(nTrajTimes)-1)+1]
+  endIf
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

@@ -1,0 +1,1 @@
+{ type:"sbl", perturbationRadius:0.5, randomizeFrequency:100, shortcut:1, restart:1, restartTermCond:"{foundSolution:1,maxIters:100}" }

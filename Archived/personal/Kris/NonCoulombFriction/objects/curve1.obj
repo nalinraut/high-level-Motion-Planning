@@ -1,0 +1,12 @@
+mesh "curve1_mesh.obj"
+geomtranslate 0 0 0.015
+geomscale 0.5 1 0.5
+T 1 0 0 0 1 0 0 0 1      0.0 0.0 0.0
+mass 0.077
+autoMass
+kStiffness 10000
+kDamping 3000
+kRestitution 0
+
+#mesh "cylinder.tri"
+#geomscale 0.15 0.15 0.02

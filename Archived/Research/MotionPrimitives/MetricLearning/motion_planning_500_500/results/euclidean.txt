@@ -1,0 +1,3 @@
+euclidean train loss 177.010000 error 0.962000 clustererror 0.392000
+
+euclidean test loss 173.790000 error 0.962000 clustererror 0.402000

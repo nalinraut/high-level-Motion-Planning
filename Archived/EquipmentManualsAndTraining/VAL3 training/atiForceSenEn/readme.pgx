@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<programList xmlns="ProgramNameSpace">
+  <program name="readme" public="false">
+    <description />
+    <paramSection />
+    <localSection />
+    <source>
+      <code>begin
+  //TITLE             : ATI force sensor
+  //General desription: reads values from ATI force sensor with TCP/IP Socket interface
+  //Hardware Required : ATI Force Sensor
+  //Library Version   : 6.6.1.0
+  //Public Variables  : None
+  //Included Libraries: None
+  //Miscellaneous     : Requires a TCP/IP Client socket
+  //Keywords          : ATI Force Sensor
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

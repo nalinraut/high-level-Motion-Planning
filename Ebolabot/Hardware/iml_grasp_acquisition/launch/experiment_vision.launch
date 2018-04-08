@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<launch> 
+	<arg name="sd_image"		default="/kinect2/sd/image_color" />
+	<arg name="sd_image_flip"	default="/kinect2/sd/image_color_flip" />
+	<arg name="flip_type"	default="v" />
+
+	<!-- <include file="$(find realsense_camera)/launch/realsense_camera.launch"/> -->
+
+
+	<!-- Start Kinect -->
+	<!-- <include file="$(find iml_grasp_acquisition)/launch/kinect2_bridge.launch"/> -->
+
+	<!-- Kinect TF -->
+	<!-- <include file="$(find iml_grasp_acquisition)/launch/kinect2_tf.launch"/> -->
+
+
+	
+	<node pkg="image_flip" type="image_flip" name="image_flip_sd_v" args="image:=/kinect2/sd/image_color flipped:=/kinect2/sd/image_color_rotate_v v" >    	
+  	</node>
+
+	<node pkg="image_flip" type="image_flip" name="image_flip_sd_vh" args="image:=/kinect2/sd/image_color_rotate_v flipped:=/kinect2/sd/image_color_rotate_vh h" >    	
+  	</node>
+
+	<!-- <node pkg="image_flip" type="image_flip" name="image_flip_hd" args="image:=$(arg hd_image) flipped:=$(arg hd_image_flip) $(arg flip_type)" >    	
+  	</node> -->
+
+
+<!-- 	rosrun image_flip image_flip image:=/kinect2/hd/image_color flipped:=/kinect2/hd/image_color_rotate_v v
+	rosrun image_flip image_flip image:=/kinect2/qhd/image_color flipped:=/kinect2/qhd/image_color_rotate_v v
+	rosrun image_flip image_flip image:=/kinect2/sd/image_color flipped:=/kinect2/sd/image_color_rotate_v v
+ -->
+
+</launch>
+

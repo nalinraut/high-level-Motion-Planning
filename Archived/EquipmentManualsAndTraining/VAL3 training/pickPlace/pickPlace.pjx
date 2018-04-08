@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<project xmlns="ProjectNameSpace" >
+  <parameters version="s6.6.3" stackSize="5000" millimeterUnit="true" />
+  <programSection>
+    <program file="home.pgx" />
+    <program file="initialize.pgx" />
+    <program file="main.pgx" />
+    <program file="runCycle.pgx" />
+    <program file="start.pgx" />
+    <program file="stop.pgx" />
+    <program file="user.pgx" />
+  </programSection>
+  <dataSection>
+    <data file="pickPlace.dtx" />
+  </dataSection>
+  <aliasSection>
+    <alias name="io" interface="io" autoload="true" password="" />
+  </aliasSection>
+</project>

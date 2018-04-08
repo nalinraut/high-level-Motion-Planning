@@ -1,0 +1,27 @@
+### A 3R planar robot ###
+geometry	 "ppu/ppu-link-1.STL"  "ppu/ppu-link-2.STL"  "ppu/ppu-link-3.STL"  "ppu/ppu-link-4.STL"
+
+tparent 1 0 0   0 1 0   0 0 1   0 0 .0455    \
+	1 0 0   0 1 0   0 0 1   0 0 0    \
+	1 0 0   0 1 0   0 0 1   0 0 .024    \
+	1 0 0	0 1 0	0 0 1	0 0 .184
+
+jointtype r r r p
+axis	0 0 1	0 0 1	0 1 0	0 0 1
+qMin	0 -3.14159 -3.14159 0
+qMax	0 3.14159 3.14159 .1
+q	0 1.5708 -1.5708 0
+joint weld 0
+joint normal 1
+joint normal 2
+joint normal 3
+
+# complete guesses
+mass       1 1 1 1
+automass
+torqueMax  100 100 100 100
+accMax     0.5 0.5 0.5 .25
+velMax     1 1 1 .5
+
+#no collisions
+noselfcollision 0 2 0 3 1 3

@@ -1,0 +1,138 @@
+user #LOGIN# #PASSWORD#
+hash on
+cd /sys/hw_v0
+mdelete *.hex
+cd /sys
+delete /sys/hw_v0
+mkdir /sys/hw_v1
+mkdir /sys/hw_v2
+mkdir /sys/mcp
+mkdir /sys/app
+mkdir /sys/configs
+mkdir /sys/configs/resources
+mkdir /sys/templates
+mkdir /sys/Starc
+mkdir /sys/Starc/drive
+mkdir /sys/Starc/dsi
+mkdir /sys/Starc/dsp1
+mkdir /sys/Starc/dsp2
+mkdir /sys/Starc/fpga
+mkdir /sys/Starc/starc2
+mkdir /sys/Starc/lib
+mkdir /sys/cds
+mkdir /sys/can
+mkdir /usr/app
+mkdir /usr/configs
+mkdir /usr/configs/profiles
+mkdir /usr/configs/templates
+mkdir /usr/configs/templates/can
+mkdir /usr/configs/templates/iomap
+mkdir /usr/usrapp
+mkdir /usr/recorder
+mkdir /usr/templates
+mkdir /usr/applicom
+mkdir /usr/applicom/io
+mkdir /usr/applicom/modbus
+mkdir /usr/temp
+mkdir /log/app
+cd /sys/Starc/drive
+mdelete *.*
+cd /sys/Starc/dsi
+mdelete *.*
+cd /sys/Starc/dsp1
+mdelete *.*
+cd /sys/Starc/dsp2
+mdelete *.*
+cd /sys/Starc/fpga
+mdelete *.*
+cd /sys/Starc/starc2
+mdelete *.*
+cd /sys/Starc
+mdelete *.*
+cd /sys/Starc/lib/
+mdelete *.*
+cd /usr/app
+mdelete *.*
+cd /log/app
+mdelete *.*
+cd /sys
+del /sys/Starc/lib
+del /sys/Starc/drive
+del /sys/Starc/dsi
+del /sys/Starc/dsp1
+del /sys/Starc/dsp2
+del /sys/Starc/fpga
+del /sys/Starc/starc2
+del /sys/Starc
+del /log/app
+del testfile
+del vxworks
+del men
+del men07n
+del men007
+del men_hp
+del teknor
+del cs8.out
+lcd flash\sys
+bin
+del bootline.dat
+send #TEMP#\sys\bootline.dat bootline.dat
+del bootrom.sys
+send #TARGET#.sys bootrom.sys
+send #TARGET# #TARGET#
+send cs8.out cs8.out
+mdelete *.b
+del hw_v1/usb_dev.hex
+send hw_v1/usb_dev.hex hw_v1\usb_dev.hex
+del hw_v2/usb_dev.hex
+send hw_v2/usb_dev.hex hw_v2\usb_dev.hex
+cd /sys/app
+lcd
+lcd flash\sys\app
+mdelete *.o
+mput *.o
+cd /sys/mcp
+lcd
+lcd flash\sys\mcp
+mdelete *.mcp
+cd /sys/configs
+lcd
+lcd flash\sys\configs
+mdelete *.res
+del system.cf
+put system.cf
+del fontsize.cfx
+put fontsize.cfx
+cd /sys/configs/resources
+lcd
+lcd flash\sys\configs\resources
+mput *.cfx
+cd /sys/templates
+lcd
+lcd flash\sys\templates
+mdelete *.cfx
+mput *.cfx
+cd /usr/configs
+mdelete iomapExample.cf
+cd /usr/configs/templates/iomap
+lcd
+lcd flash/usr/configs/templates/iomap
+mdelete *.cf
+mput *.cf
+cd /usr/recorder
+lcd
+lcd flash\usr\recorder
+mput *.cfx
+cd /usr/configs/profiles
+lcd
+lcd flash\usr\configs\profiles
+mput *.cfx
+mkdir /usr/templates/default
+cd /usr/templates/default
+lcd
+lcd flash/usr/templates/default
+mdelete default.*
+mdelete *.pgm
+mput default.*
+mput *.pgx
+quit

@@ -1,0 +1,75 @@
+reflex_hand1_f1:
+    angle_range: 5.0
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    flipped: False
+    overload_threshold: -0.21
+    calibration_threshold: -0.02
+    calibration_count: 1
+    calibration_flip: 1
+    joint_name: reflex_hand1_f1
+    joint_speed: 10
+    motor:
+        id: 1
+        init: 100 
+        min: 0
+        max: 28672
+
+reflex_hand1_f2:
+    angle_range: 5.0
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    flipped: True
+    overload_threshold: -0.21
+    calibration_threshold: -0.02
+    calibration_count: 1
+    calibration_flip: -1
+    joint_name: reflex_hand1_f2
+    joint_speed: 10
+    motor:
+        id: 2
+        init: 0 
+        min: 0
+        max: 28672
+
+reflex_hand1_f3:
+    angle_range: 5.0
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    flipped: False
+    overload_threshold: -0.2
+    calibration_threshold: -0.02
+    calibration_count: 3
+    calibration_flip: 1
+    joint_name: reflex_hand1_f3
+    joint_speed: 10
+    motor:
+        id: 3
+        init: 100 
+        min: 0
+        max: 28672
+
+reflex_hand1_preshape:
+    angle_range: 2.5
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    flipped: True
+    overload_threshold: -0.18
+    calibration_threshold: -0.02
+    calibration_count: 1
+    calibration_flip: 1
+    joint_name: reflex_hand1_preshape
+    joint_speed: 10
+    motor:
+        id: 4
+        init: 100 
+        min: 0
+        max: 28672

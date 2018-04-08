@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="start" public="false" >
+    <description />
+    <paramSection/>
+    <localSection/>
+    <source>
+      <code>begin
+  call initialize()
+  taskCreate &quot;main&quot;,100,main()
+  taskCreate &quot;user&quot;,100,user()
+end
+
+      
+      </code>
+    </source>
+  </program>
+</programList>

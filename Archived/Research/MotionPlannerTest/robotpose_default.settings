@@ -1,0 +1,20 @@
+{
+  "configResourceColor": [0.5, 0.5, 0.5, 0.25], 
+  "linkCOMRadius": 0.01, 
+  "envCollideColor": [1, 0.5, 0, 1], 
+  "cleanContactsXTol": 0.01, 
+  "hoverColor": [1, 1, 0, 1], 
+  "defaultStanceFriction": 0.5, 
+  "selfCollideColor": [1, 0, 0, 1], 
+  "linkFrameSize": 0.2, 
+  "flatContactTolerance": 0.001, 
+  "contact": {"normalLength": 0.05, "pointSize": 5, "forceScale": 0.01}, 
+  "cleanContactsNTol": 0.01, 
+  "poser": {
+    "color": [1, 1, 0, 0.5]
+  }, 
+  "pathOptimize": {"contactTol": 0.05, "outputResolution": 0.01}, 
+  "movieWidth": 640, 
+  "robotColor": [0.5, 0.5, 0.5, 1], 
+  "movieHeight": 480
+}

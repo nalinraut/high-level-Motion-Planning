@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<robot name="amp1">
+  <link name="base_link">
+  </link>
+  <link name="cad_model">
+    <visual>
+      <geometry>
+        <mesh filename="package://ht_core_amp/config/amp1_cover.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="shell_material">
+        <color rgba="0.1 0.1 0.9 0.8"/>
+      </material>
+    </visual>
+  </link> 
+  <!--<link name="cad_model">
+    <visual>
+      <geometry>
+  			<box size="0.9271 0.5461 0.2413"/> 
+      </geometry>
+      <material name="shell_material">
+        <color rgba="0.1 0.1 0.9 0.5"/>
+      </material>
+    </visual>
+  </link>-->
+  <link name="wheel0">
+    <visual>
+      <geometry name="wheel_geometry">
+  			<cylinder length="0.0762" radius="0.1"/> 
+      </geometry>
+      <material name="wheel_material">
+        <color rgba="0.5 0.5 0.5 0.6"/>
+      </material>
+    </visual>
+  </link>
+  <link name="wheel1">
+    <visual>
+      <geometry name="wheel_geometry">
+  			<cylinder length="0.0762" radius="0.1"/> 
+      </geometry>
+      <material name="wheel_material">
+        <color rgba="0.5 0.5 0.5 0.6"/>
+      </material>
+    </visual>
+  </link>
+  <link name="wheel2">
+    <visual>
+      <geometry name="wheel_geometry">
+  			<cylinder length="0.0762" radius="0.1"/> 
+      </geometry>
+      <material name="wheel_material">
+        <color rgba="0.5 0.5 0.5 0.6"/>
+      </material>
+    </visual>
+  </link>
+  <link name="wheel3">
+    <visual>
+      <geometry name="wheel_geometry">
+  			<cylinder length="0.0762" radius="0.1"/> 
+      </geometry>
+      <material name="wheel_material">
+        <color rgba="0.5 0.5 0.5 0.6"/>
+      </material>
+    </visual>
+  </link>
+  <link name="frame_laser_front">
+    <visual>
+      <material name="laser_material">
+        <color rgba="0.0 0.0 0.4 1.0"/>
+      </material>
+      <geometry name="laser_geometry">
+        <box size=".05 .05 .03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="frame_laser_back">
+    <visual>
+      <material name="laser_material">
+        <color rgba="0.0 0.4 0.0 1.0"/>
+      </material>
+      <geometry name="laser_geometry">
+        <box size=".05 .05 .03"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="j_cad_model" type="fixed">
+       <parent link="base_link"/>
+       <child link="cad_model"/>
+       <!--<origin xyz="0.0 0.0 0.1587" rpy="0 0 0" />-->
+       <origin xyz="0.0 0.0 0.0381" rpy="0 0 0" />
+  </joint>
+  <joint name="j_laser_front" type="fixed">
+       <parent link="base_link"/>
+       <child link="frame_laser_front"/>
+       <!--<origin xyz="0.4318 -0.23 0.24" rpy="0 0 -0.52" />-->
+       <origin xyz="0.45 -0.23 0.24" rpy="0 0 -0.52" />
+  </joint>
+  <joint name="j_laser_back" type="fixed">
+       <parent link="base_link"/>
+       <child link="frame_laser_back"/>
+       <!--<origin xyz="-0.4318 0.23 0.24" rpy="0 0 2.61" />-->
+       <origin xyz="-0.45 0.23 0.24" rpy="0 0 2.61" />
+  </joint>
+  <joint name="wheel0" type="continuous">
+     <parent link="base_link"/>
+     <child link="wheel0"/>
+     <axis xyz="0 0 1"/>
+     <origin xyz="0.3 0.3 0.1" rpy="1.57 0 0" />
+  </joint>
+  <joint name="wheel1" type="continuous">
+     <parent link="base_link"/>
+     <child link="wheel1"/>
+     <axis xyz="0 0 1"/>
+     <origin xyz="0.3 -0.3 0.1" rpy="1.57 0 0" />
+  </joint>
+  <joint name="wheel2" type="continuous">
+     <parent link="base_link"/>
+     <child link="wheel2"/>
+     <axis xyz="0 0 1"/>
+     <origin xyz="-0.3 -0.3 0.1" rpy="1.57 0 0" />
+  </joint>
+  <joint name="wheel3" type="continuous">
+     <parent link="base_link"/>
+     <child link="wheel3"/>
+     <axis xyz="0 0 1"/>
+     <origin xyz="-0.3 0.3 0.1" rpy="1.57 0 0" />
+  </joint>
+</robot>

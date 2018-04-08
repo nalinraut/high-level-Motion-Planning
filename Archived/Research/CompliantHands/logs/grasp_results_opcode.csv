@@ -1,0 +1,14 @@
+Dropped After Opening,Grasped After Shaking,Object grasped and lifted,file
+FALSE,TRUE,TRUE,hammer_P1_opcode.pickle
+TRUE,TRUE,TRUE,hammer_P2_opcode.pickle
+FALSE,TRUE,TRUE,hammer_P3_opcode.pickle
+,,FALSE,heinz_P1_opcode.pickle
+,,FALSE,heinz_P2_opcode.pickle
+FALSE,TRUE,TRUE,heinz_P3_opcode.pickle
+FALSE,TRUE,TRUE,heinz_P4_opcode.pickle
+TRUE,TRUE,TRUE,heinz_P5_opcode.pickle
+TRUE,TRUE,TRUE,spray_full_P1_opcode.pickle
+FALSE,TRUE,TRUE,spray_P1_opcode.pickle
+FALSE,TRUE,TRUE,spray_P2_opcode.pickle
+TRUE,TRUE,TRUE,spray_P3_opcode.pickle
+FALSE,TRUE,TRUE,spray_P4_opcode.pickle

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="parseValue" public="false" >
+    <description>parses a num out of s, deletes the values from the string</description>
+    <paramSection>
+      <param name="s" type="string" byVal="false" />
+      <param name="out" type="num" byVal="false" />
+    </paramSection>
+    <localSection>
+      <local name="res" type="bool" size="1" />
+      <local name="i" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  for i=0 to size(out)-1
+    s=toNum(s,out[i],res)
+    if !res
+      bParseError=true
+    endIf
+  endFor
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

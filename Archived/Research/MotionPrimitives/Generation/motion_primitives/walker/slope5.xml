@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<world>
+  <robot name="walker" file="data/footed_2d_biped.rob" config="12  0 0 1.045 0 0 0 1.570796 0 -1.320796 1.570796 0 -1.320796" />
+  <terrain file="data/terrains/plane.tri" position="0 0 0" rotateY="0.25" kFriction="1"/>
+</world>

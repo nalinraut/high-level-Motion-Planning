@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="runCycle" public="false" >
+    <description />
+    <paramSection/>
+    <localSection>
+      <local name="l_nIndex" type="num" size="1" />
+      <local name="l_nLast" type="num" size="1" />
+      <local name="l_p" type="point" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  movej(jHome,tTool,mFast)
+  l_nLast=size(part:trPath)-1
+  for l_nIndex=0 to l_nLast
+    l_p=compose(pPathOrigin,fPath,part:trPath[l_nIndex])
+    movel(l_p,tTool,mSlow)
+  endFor
+  l_p=compose(pPathOrigin,fPath,part:trPath[0])
+  movel(l_p,tTool,mSlow)
+  movej(jHome,tTool,mFast)
+  waitEndMove()
+end
+
+      
+      </code>
+    </source>
+  </program>
+</programList>

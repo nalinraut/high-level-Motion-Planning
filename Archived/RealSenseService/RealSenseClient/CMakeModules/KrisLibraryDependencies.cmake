@@ -1,0 +1,59 @@
+# Finds KrisLibrary
+# defines the following symbols:
+# - KRISLIBRARY_INCLUDE_DIRS
+# - KRISLIBRARY_LIBRARIES
+# - KRISLIBRARY_DEFINITIONS
+
+  SET(KRISLIBRARY_ROOT "/home/motion/Klampt/Library"
+     CACHE PATH
+     "Path for finding KrisLibrary external dependencies"
+     FORCE)
+
+
+#initialize to empty string
+SET(KRISLIBRARY_DEFINITIONS "")
+SET(KRISLIBRARY_INCLUDE_DIRS "")
+SET(KRISLIBRARY_LIBRARIES "")
+
+# Boost threads vs pthreads
+SET(Boost_USE_STATIC_LIBS OFF)
+SET(Boost_USE_MULTITHREADED ON)
+SET(Boost_USE_STATIC_RUNTIME OFF)
+# Boost settings
+set(Boost_NO_BOOST_CMAKE ON CACHE BOOL "Enable fix for FindBoost.cmake" )
+add_definitions(-DBOOST_ALL_NO_LIB) # Don't use 'pragma lib' on Windows
+add_definitions(-DBoost_NO_BOOST_CMAKE) # Fix for CMake problem in FindBoost
+if(NOT Boost_USE_STATIC_LIBS)
+add_definitions(-DBOOST_TEST_DYN_LINK) # generates main() for unit tests
+endif()
+FIND_PACKAGE(Boost COMPONENTS thread system)
+IF(Boost_FOUND)
+  SET(KRISLIBRARY_DEFINITIONS ${KRISLIBRARY_DEFINITIONS} -DUSE_BOOST_THREADS=1)
+  SET(KRISLIBRARY_INCLUDE_DIRS ${KRISLIBRARY_INCLUDE_DIRS} ${Boost_INCLUDE_DIR})
+  SET(KRISLIBRARY_LIBRARIES ${KRISLIBRARY_LIBRARIES} ${Boost_LIBRARIES})
+ELSE(Boost_FOUND)
+  MESSAGE("Boost library not found, trying pthreads for multithreading...")
+  FIND_PACKAGE(pthreads)
+  IF(pthreads_FOUND) 
+    SET(KRISLIBRARY_DEFINITIONS ${KRISLIBRARY_DEFINITIONS} -USE_PTHREADS)
+    SET(KRISLIBRARY_LIBRARIES ${KRISLIBRARY_LIBRARIES} pthreads)
+  ENDIF(pthreads_FOUND)
+ENDIF(Boost_FOUND)
+
+IF(WIN32)
+  SET(KRISLIBRARY_DEFINITIONS ${KRISLIBRARY_DEFINITIONS} -DNOMINMAX -DGLUI_NO_LIB_PRAGMA)
+  SET(KRISLIBRARY_LIBRARIES ${KRISLIBRARY_LIBRARIES} Ws2_32.lib Winmm.lib Gdiplus.lib)
+ENDIF(WIN32)
+
+SET(KRISLIBRARY_INCLUDE_DIRS ${KRISLIBRARY_INCLUDE_DIRS}
+  CACHE STRING
+  "KrisLibrary include directories"
+  FORCE)
+SET(KRISLIBRARY_LIBRARIES ${KRISLIBRARY_LIBRARIES}
+  CACHE STRING
+  "KrisLibrary link libraries"
+  FORCE)
+SET(KRISLIBRARY_DEFINITIONS ${KRISLIBRARY_DEFINITIONS}
+  CACHE STRING
+  "KrisLibrary defines"
+  FORCE)

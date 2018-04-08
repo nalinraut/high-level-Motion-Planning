@@ -1,0 +1,15 @@
+user #LOGIN# #PASSWORD#
+hash on
+cd /sys
+asc
+del bootline.dat
+send #TEMP#\sys\bootline.dat bootline.dat
+bin
+del vxworks
+del men
+del teknor
+del cs8.out
+send flash\sys\vxworks vxworks
+del bootrom.sys
+send flash\sys\vxworks.sys bootrom.sys
+quit

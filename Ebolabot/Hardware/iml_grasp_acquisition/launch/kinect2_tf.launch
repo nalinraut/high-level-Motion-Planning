@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="dynamic_transform_publisher" type="dynamic_transform_publisher" name="dynamic_tf_publisher" output="screen" >
+    <rosparam file="$(find iml_grasp_acquisition)/launch/kinect2.yaml" command="load" />
+  </node>
+</launch>

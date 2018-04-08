@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!--===============================================--> 
+  <!--  coord frames & map -->
+  <!--===============================================--> 
+  <!--
+  <param name="robot_description" textfile= "$(find hstar_amp)/config/model.urdf"/>
+  <include file="$(find hstar_amp)/launch/tf.launch"/> 
+  -->
+
+  <!-- @TODO load map -->
+  <!-- <include file="$(find ht_core)/launch/load_map.launch"/>-->
+
+  <!--===============================================--> 
+  <!--  joy & parse -->
+  <!--===============================================--> 
+  <node name="base_joystick"
+        pkg="joy"
+        type="joy_node"
+        output="screen">
+    <param name="deadzone" value="0.05"/>
+    <param name="dev" type="string" value="/dev/input/js0"/>
+  </node>
+
+  <node name="joystick_parser"
+        pkg="hstar_amp"
+        type="joystick_parser.py"
+        output="screen">
+    <param name="drive_type" value="mecanum"/>
+  </node>
+
+  <!--===============================================--> 
+  <!--  mux commands -->
+  <!--===============================================--> 
+  <node name="cmd_mux"
+        pkg="hstar_amp"
+        type="cmd_mux.py"
+        output="screen">
+  </node>
+
+  <!--===============================================--> 
+  <!--  convert task-space cmd to joint-space cmd    -->
+  <!--===============================================--> 
+  <node name="ts_to_js_mechanum"
+        pkg="hstar_amp"
+        type="ts_to_js_converter.py"
+        output="screen">
+    <param name="app_type" value="mecanum"/>
+    <param name="topic_prefix" value="base/output/cmd"/>
+  </node>
+
+  <!--===============================================--> 
+  <!--  lcd                                          -->
+  <!--===============================================--> 
+  <node name="lcd"
+        pkg="hstar_amp"
+        type="serial_lcd.py"
+        output="screen">
+    <param name="port" value="$(env HSTAR_AMP_LCD_DEVICE)"/>
+    <param name="display_type" value="ip addr"/>
+    <param name="dim_timeout" value="3.0"/>
+    <param name="refresh_rate" value="1.0"/>
+    <param name="enable_dimming" value="false"/>
+    <param name="init_display_time" value="3.0"/>
+    <param name="use_rosserial" value="true"/>
+  </node>
+
+  <!-- @TODO rosserial -->
+
+</launch>

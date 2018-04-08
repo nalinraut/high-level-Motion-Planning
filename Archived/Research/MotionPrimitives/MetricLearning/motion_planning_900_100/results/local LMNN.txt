@@ -1,0 +1,3 @@
+local LMNN train loss 159.890000 error 9.000000 clustererror 1.710000
+
+local LMNN test loss 30.200000 error 1.000000 clustererror 0.350000

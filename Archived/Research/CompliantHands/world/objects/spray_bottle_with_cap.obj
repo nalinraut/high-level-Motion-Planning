@@ -1,0 +1,8 @@
+mesh "meshes/spray_bottle_with_cap_mesh.ply"
+geomscale 1 1 1
+mass 0.726
+autoMass
+kStiffness 300000
+kDamping 30000
+kRestitution 0
+

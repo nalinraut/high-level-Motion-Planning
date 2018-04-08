@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<point2d_cspace>
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <!-- borders -->
+      <aabb bmin = "0 0" bmax = "0.02 1"/>
+      <aabb bmin = "0.98 0" bmax = "1 1"/>
+      <aabb bmin = "0 0" bmax = "1 0.02"/>
+      <aabb bmin = "0 0.98" bmax = "1 1"/>
+
+      <!-- bottom -->
+      <aabb bmin = "0.3 0" bmax = "0.4 0.495"/>
+      <aabb bmin = "0.4 0" bmax = "0.5 0.495"/>
+      <aabb bmin = "0.5 0" bmax = "0.6 0.495"/>
+      <aabb bmin = "0.6 0" bmax = "0.7 0.495"/>
+      <!-- top -->
+      <aabb bmin = "0.3 0.505" bmax = "0.4 1"/>
+      <aabb bmin = "0.4 0.505" bmax = "0.5 1"/>
+      <aabb bmin = "0.5 0.505" bmax = "0.6 1"/>
+      <aabb bmin = "0.6 0.505" bmax = "0.7 1"/>
+    </geometry2d>
+  </obstacles>
+
+  <planning_query name="same side">
+    <start>
+      <config data="2 0.2 0.75"/>
+    </start>
+    <goal>
+      <config data="2 0.8 0.75"/>
+    </goal>
+  </planning_query>
+
+  <planning_query name="opposite side">
+    <start>
+      <config data="2 0.2 0.25"/>
+    </start>
+    <goal>
+      <config data="2 0.8 0.75"/>
+    </goal>
+  </planning_query>
+
+</point2d_cspace>

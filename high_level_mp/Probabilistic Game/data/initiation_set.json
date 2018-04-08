@@ -1,0 +1,50 @@
+{
+
+    "move_left_1": ['no wall/ledge/door'],
+    "move_left_2": ['no wall/ledge/door'],
+    "move_left_3": ['no wall/ledge/door'],
+    "move_left_4": ['no wall/ledge/door'],
+    "move_left_5": ['no wall/ledge/door'],
+    "move_left_6": ['no wall/ledge/door'],
+    "move_left_7": ['no wall/ledge/door'],
+
+    "move_right_1": ['no wall/ledge/door'],
+    "move_right_2": ['no wall/ledge/door'],
+    "move_right_3": ['no wall/ledge/door'],
+    "move_right_4": ['no wall/ledge/door'],
+    "move_right_5": ['no wall/ledge/door'],
+    "move_right_6": ['no wall/ledge/door'],
+    "move_right_7": ['no wall/ledge/door'],
+
+    "up_ladder_1": ['ladder above'],
+    "up_ladder_2": ['ladder above'],
+    "up_ladder_3": ['ladder above'],
+
+    "down_ladder_1": ['ladder below'],
+    "down_ladder_2": ['ladder below'],
+    "down_ladder_3": ['ladder below'],
+
+    "down_left_1": ['down-left empty'],
+    "down_left_2": ['down-left empty'],
+    "down_left_3": ['down-left empty'],
+    "down_left_4": ['down-left empty'],
+    "down_left_5": ['down-left empty'],
+
+    "down_right_1": ['down-right empty'],
+    "down_right_2": ['down-right empty'],
+
+    "jump_left_1": ['three spaces above empty'],
+    "jump_left_2": ['three spaces above empty'],
+
+    "jump_right_1": ['three spaces above empty'],
+    "jump_right_2": ['three spaces above empty'],
+    "jump_right_3": ['three spaces above empty'],
+    "jump_right_4": ['three spaces above empty'],
+    "jump_right_5": ['three spaces above empty'],
+
+    "interact_b1": ['next to lever/key/chest'],
+    "interact_b2": ['next to lever/key/chest'],
+    "interact_shovel": ['next to lever/key/chest'],
+    "interact_grave": ['next to lever/key/chest'],
+    "interact_treasure": ['next to lever/key/chest']
+}

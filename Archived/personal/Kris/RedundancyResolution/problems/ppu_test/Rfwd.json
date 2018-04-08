@@ -1,0 +1,11 @@
+{ 
+	"orientation":"fixed",
+	"Nw":2000,
+	"filename":"/home/motion/iml-internal/Ebolabot/klampt_models/ebolabot_col.rob",
+	"useCollision":true,
+	"link":"ppu:Link 3",
+	"eelocal":[0,0,0.03],
+	"fixedOrientation":"so3.rotation([0,1,0],math.pi/2)",
+	"domain":[[0.3,-1.0,0.5],[1.5,0.9,2.3]],
+	"links":["right_upper_shoulder","right_lower_shoulder","right_upper_elbow","right_lower_elbow","right_upper_forearm","right_lower_forearm","right_wrist","ppu:Link 1","ppu:Link 2"]
+}

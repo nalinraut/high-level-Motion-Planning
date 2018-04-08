@@ -1,0 +1,28 @@
+1. Significance of the paper's contribution
+
+This paper proposed a framework to increase the calibration accuracy of camera with respect to the glass plane, when using a 6-DOF industrial robot to autonomously pick and place glass pieces into the grinder.
+
+This task was difficulty for it is hard to accurately (1) calibrate the pickup point relative to the robot's tool flange frame, (2) pick up the glass at its center, and (3) detect the slot location for placing.
+
+Due to the above system uncertainty, the TCP is not fixed relative to the robot's tool flange frame, and therefore standard TCP calibration methods cannot be used. External calibration methods that only use checkboards cannot provide satisfactory accuracy.
+
+Hence, this paper proposed (1) to adopt a dual-camera structure (eye-in-hand camera and eye-to-hand camera), and (2) to use MAP (Maximum a Posteriori) method to correct the errors when calibrating the virtual glass plane, in order to precisely determine the location of the glass after it is picked up.
+
+Experimental results showed that MAP method reduced the placing error to 20% of the prior (2 mm vs 10 mm), given that the desired glass position is at 5cm height from the slot.
+
+2. Originality of the work:
+The paper integrated several available calibration technologies (e.g. dual-camera, MAP for error correction) for a specific autonomous manufacturing task, which is technically useful but weak in intellectual innovation.
+
+3. Validity of the work presented:
+The proposed calibration framework has been experimentally validated.
+
+4. Presentation clarity:
+This paper is clear enough for the reviewer to understand the work, yet the authors are advised to clean the grammatical errors (such as "The result will be illustrate in other publications")
+
+5. Relevant previous work:
+Bayesian approaches such as MAP and ML have been used in calibrating the hand-eye kinematics of an anthropomorphic robot [1] . The authors are advised to cite such those relevant work, and distinguish it unique contribution in methodology.
+
+[1] Hubert, Uwe, Jorg Stuckler, and Sven Behnke. "Bayesian calibration of the hand-eye kinematics of an anthropomorphic robot." Humanoid Robots (Humanoids), 2012 12th IEEE-RAS International Conference on. IEEE, 2012.
+
+I feel it did not strongly represent the benefits that this method has over others.
+I am also unsure about the validity of the results, it seems like the KNN parameters were optimized by hand for each dataset individually

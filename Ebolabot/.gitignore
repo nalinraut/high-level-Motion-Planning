@@ -1,0 +1,14 @@
+Makefile
+CMakeFiles
+CMakeCache.txt
+*.cmake
+Logs
+Common/system_config.json
+ControllerService
+ControllerDispatcher
+RealSenseROSEmitter
+MotionServer*
+TaskGUIDemo
+libmotion*
+motion*.so
+RealSense_ROS_Emitter

@@ -1,0 +1,2 @@
+default:
+	gcc -O2 test.cpp ParabolicRamp.cpp DynamicPath.cpp -lstdc++ -o Test

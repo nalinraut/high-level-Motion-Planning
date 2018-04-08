@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<point2d_cspace>
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <aabb bmin = "0.025 0.025" bmax = "0.175 0.175"/>
+      <aabb bmin = "0.025 0.225" bmax = "0.175 0.375"/>
+      <aabb bmin = "0.025 0.425" bmax = "0.175 0.575"/>
+      <aabb bmin = "0.025 0.625" bmax = "0.175 0.775"/>
+      <aabb bmin = "0.025 0.825" bmax = "0.175 0.975"/>
+      <aabb bmin = "0.225 0.025" bmax = "0.375 0.175"/>
+      <aabb bmin = "0.225 0.225" bmax = "0.375 0.375"/>
+      <aabb bmin = "0.225 0.425" bmax = "0.375 0.575"/>
+      <aabb bmin = "0.225 0.625" bmax = "0.375 0.775"/>
+      <aabb bmin = "0.225 0.825" bmax = "0.375 0.975"/>
+      <aabb bmin = "0.425 0.025" bmax = "0.575 0.175"/>
+      <aabb bmin = "0.425 0.225" bmax = "0.575 0.375"/>
+      <aabb bmin = "0.425 0.425" bmax = "0.575 0.575"/>
+      <aabb bmin = "0.425 0.625" bmax = "0.575 0.775"/>
+      <aabb bmin = "0.425 0.825" bmax = "0.575 0.975"/>
+      <aabb bmin = "0.625 0.025" bmax = "0.775 0.175"/>
+      <aabb bmin = "0.625 0.225" bmax = "0.775 0.375"/>
+      <aabb bmin = "0.625 0.425" bmax = "0.775 0.575"/>
+      <aabb bmin = "0.625 0.625" bmax = "0.775 0.775"/>
+      <aabb bmin = "0.625 0.825" bmax = "0.775 0.975"/>
+      <aabb bmin = "0.825 0.025" bmax = "0.975 0.175"/>
+      <aabb bmin = "0.825 0.225" bmax = "0.975 0.375"/>
+      <aabb bmin = "0.825 0.425" bmax = "0.975 0.575"/>
+      <aabb bmin = "0.825 0.625" bmax = "0.975 0.775"/>
+      <aabb bmin = "0.825 0.825" bmax = "0.975 0.975"/>
+    </geometry2d>
+  </obstacles>
+</point2d_cspace>

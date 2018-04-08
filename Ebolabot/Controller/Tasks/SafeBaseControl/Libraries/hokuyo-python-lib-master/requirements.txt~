@@ -1,0 +1,3 @@
+pyserial
+protobuf
+-e git+git://github.com/SuderPawel/hokuyo-python-lib#egg=hokuyo-python-lib

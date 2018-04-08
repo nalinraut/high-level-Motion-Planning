@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="getPart" public="false" >
+    <description />
+    <paramSection>
+      <param name="x_p" type="point" byVal="true" />
+      <param name="x_tr" type="trsf" byVal="true" />
+      <param name="x_tl" type="tool" byVal="true" />
+      <param name="x_m1" type="mdesc" byVal="true" />
+      <param name="x_m2" type="mdesc" byVal="true" />
+    </paramSection>
+    <localSection>
+      <local name="l_n" type="num" size="1" />
+      <local name="l_p" type="point" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  l_p=appro(x_p,x_tr)
+  movej(l_p,x_tl,x_m1)
+  movel(x_p,x_tl,x_m2)
+  close(x_tl)
+  movel(l_p,x_tl,x_m2)
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

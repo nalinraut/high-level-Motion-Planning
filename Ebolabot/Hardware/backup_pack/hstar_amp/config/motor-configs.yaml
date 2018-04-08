@@ -1,0 +1,14 @@
+amp-motor:
+  control_mode: 0
+  pid_kp: 1 
+  pid_ki: 0 
+  pid_kd: 0 
+  int_cap: 50
+  error_detection: false 
+  current_limit: 8
+  ovl: 35
+  uvl: 15 
+  max_rpm: 60000
+  motor_accel: 60000 
+  motor_decel: 60000 
+  pole_pairs: 4

@@ -1,0 +1,56 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+SET(KLAMPT_ROOT "home/motion/Klampt")
+SET (CMAKE_MODULE_PATH "./CMakeModules")
+SET(KRISLIBRARY_ROOT "${KLAMPT_ROOT}/Library" CACHE PATH "Library subdirectory" FORCE)
+FIND_PACKAGE(KrisLibrary REQUIRED)
+ADD_DEFINITIONS(${KRISLIBRARY_DEFINITIONS})
+INCLUDE_DIRECTORIES(. ${KRISLIBRARY_INCLUDE_DIRS} )
+
+
+SET (CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/CMakeModules")
+SET(ROSDEPS rosconsole roscpp roscpp_serialization rostime )
+MESSAGE("ROS VERSION ${ROS_VERSION}")
+FIND_PACKAGE(ROS)
+IF(ROS_FOUND)
+  MESSAGE("ROS FOUND! path ${ROS_PATH}")
+  SET(ROS_WS /home/motion/ros_ws CACHE STRING "ROS workspace including Baxter SDK")
+  INCLUDE_DIRECTORIES(${ROS_PATH}/include ${ROS_WS}/install/include)
+
+  #motion server: physical robot
+  
+  FIND_PACKAGE(LibJPEG)
+  INCLUDE_DIRECTORIES(${LIBJPEG_INCLUDE_DIR} )
+  FIND_PACKAGE(ZLIB)
+  INCLUDE_DIRECTORIES(${ZLIB_INCLUDE_DIR})
+  FIND_PACKAGE(Libpng)
+  INCLUDE_DIRECTORIES(${LIBPNG_INCLUDE_DIR})
+
+  FIND_PACKAGE(FFmpeg REQUIRED COMPONENTS avutil avcodec avformat swscale swresample)
+  INCLUDE_DIRECTORIES(${FFMPEG_INCLUDE_DIRS})
+  
+  IF(LIBJPEG_FOUND AND LIBPNG_FOUND AND ZLIB_FOUND)
+    MESSAGE("LIBJPEG, ZLIB, and LIBPNG FOUND SUCCESS - proceeding with jpeg compilation")  
+    ADD_EXECUTABLE(RealSense_ROS_Emitter realsense_ros_emitter.cpp)
+    TARGET_LINK_LIBRARIES(RealSense_ROS_Emitter ${KRISLIBRARY_LIBRARIES} ${ROS_LIBRARIES} ${LIBJPEG_LIBRARY} ${LIBPNG_LIBRARY} ${ZLIB_LIBRARY} )
+  ELSE(LIBJPEG_FOUND AND LIBPNG_FOUND AND ZLIB_FOUND)
+    IF(NOT(LIBJPEG_FOUND))
+      MESSAGE("LIBJPEG NOT FOUND")
+    ENDIF(NOT(LIBJPEG_FOUND))
+    IF(NOT(LIBPNG_FOUND))
+      MESSAGE("LIBPNG NOT FOUND")
+    ENDIF(NOT(LIBPNG_FOUND))
+    IF(NOT(ZLIB_FOUND))
+      MESSAGE("ZLIB NOT FOUND")
+    ENDIF(NOT(ZLIB_FOUND))
+    MESSAGE("Realsense emitter will be functional except for any processes that require decompressing images such as point cloud reconstruction")
+    ADD_EXECUTABLE(RealSense_ROS_Emitter realsense_ros_emitter_no_compress.cpp)
+    TARGET_LINK_LIBRARIES(RealSense_ROS_Emitter ${KRISLIBRARY_LIBRARIES} ${ROS_LIBRARIES})
+  ENDIF(LIBJPEG_FOUND AND LIBPNG_FOUND AND ZLIB_FOUND)
+
+ENDIF(ROS_FOUND)
+
+#show all the included directories for debug
+get_property(dirs DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY INCLUDE_DIRECTORIES)
+foreach(dir ${dirs})
+  message(STATUS "dir='${dir}'")
+endforeach()

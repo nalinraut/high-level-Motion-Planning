@@ -1,0 +1,3 @@
+global KISS train loss 4979.000000 error 0.199778 clustererror 0.199778
+
+global KISS test loss 536.000000 error 0.218000 clustererror 0.218000

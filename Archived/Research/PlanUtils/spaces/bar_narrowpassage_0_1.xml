@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rigid2d_cspace visibilityEpsilon="0.001" angleWeight="0.3">
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <!-- borders -->
+      <aabb bmin = "0 0" bmax = "0.02 1"/>
+      <aabb bmin = "0.98 0" bmax = "1 1"/>
+      <aabb bmin = "0 0" bmax = "1 0.02"/>
+      <aabb bmin = "0 0.98" bmax = "1 1"/>
+
+      <!-- bottom -->
+      <aabb bmin = "0.3 0" bmax = "0.7 0.45"/>
+      <!-- top -->
+      <aabb bmin = "0.3 0.55" bmax = "0.7 1"/>
+    </geometry2d>
+  </obstacles>
+
+  <robot>
+    <geometry2d>
+      <aabb bmin = "-0.02 -0.05" bmax = "0.02 0.05"/>
+    </geometry2d>
+  </robot>
+
+  <planning_query name="same side">
+    <start>
+      <config data="3 0.2 0.75 0"/>
+    </start>
+    <goal>
+      <config data="3 0.8 0.75 0"/>
+    </goal>
+  </planning_query>
+
+  <planning_query name="opposite side">
+    <start>
+      <config data="2 0.2 0.25 0"/>
+    </start>
+    <goal>
+      <config data="2 0.8 0.75 0"/>
+    </goal>
+  </planning_query>
+
+</rigid2d_cspace>

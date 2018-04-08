@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find reflex_sf)/launch/left_hand.launch" />
+  <include file="$(find reflex_sf)/launch/right_hand.launch" />
+</launch>

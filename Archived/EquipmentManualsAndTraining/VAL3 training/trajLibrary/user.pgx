@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="user" public="false" >
+    <description />
+    <paramSection/>
+    <localSection>
+      <local name="l_nKey" type="num" size="1" />
+      <local name="l_nSelect" type="num" size="1" />
+      <local name="l_n" type="num" size="1" />
+      <local name="l_nLoad" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  title(sTitle)
+  userPage()
+  l_nSelect=0
+  libList(&quot;data\&quot;,sLibraries)
+  while taskStatus(&quot;main&quot;)&gt;=0
+    cls()
+    put(&quot;Current Library: &quot;)
+    put(part:sName)
+    put(&quot;  ver: &quot;)
+    putln(part:nVersion)
+    put(&quot;Count: &quot;)
+    putln(nCount)
+    put(&quot;Time : &quot;)
+    putln(nTime)
+    putln(&quot;&quot;)
+    for l_n=0 to size(sLibraries)-1
+      if l_n==l_nSelect
+        put(&quot;&gt;&quot;)
+      else
+        put(&quot; &quot;)
+      endIf
+      putln(sLibraries[l_n])
+    endFor
+    gotoxy(0,13)
+    if bLoadedLibrary==true
+      if bRun==true
+        put(&quot;STOP&quot;)
+      else
+        put(&quot;RUN&quot;)
+      endIf
+    endIf
+    gotoxy(5,13)
+    if bRun==false
+      put(&quot;LOAD&quot;)
+    endIf
+    gotoxy(35,13)
+    if bQuit==false
+      put(&quot;QUIT&quot;)
+    endIf
+    l_nKey=getKey()
+    switch l_nKey
+      case 261
+        l_nSelect=l_nSelect-1
+      break
+      case 266
+        l_nSelect=l_nSelect+1
+      break
+      case 271
+        if bLoadedLibrary==true
+          bRun=!bRun
+        endIf
+      break
+      case 272
+        if bRun==false
+          l_nLoad=part:libLoad(&quot;data\&quot;+sLibraries[l_nSelect])
+          if l_nLoad==0
+            bLoadedLibrary=true
+          else
+            bLoadedLibrary=false
+          endIf
+        endIf
+      break
+      case 278
+        bQuit=true
+      break
+    endSwitch
+    delay(0.2)
+  endWhile
+end
+
+      
+      </code>
+    </source>
+  </program>
+</programList>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="resetTrajectory" public="true" >
+    <description />
+    <paramSection>
+      <param name="t" type="num" byVal="true" />
+      <param name="res" type="bool" byVal="false" />
+    </paramSection>
+    <localSection>
+      <local name="curTime" type="num" size="1" />
+      <local name="splitIndex" type="num" size="1" />
+      <local name="splitU" type="num" size="1" />
+      <local name="q" type="joint" size="1" />
+      <local name="n" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  //resets the trajectory at time t.  false is returned if t is before the current time
+  curTime=0
+  if bExecute
+    curTime=clock()-nTimeStart
+  endIf
+  //check for exceeding current time
+  if t&lt;curTime
+    res=false
+    return
+  endIf
+  setMutex(bTrajMutex)
+  call trajGetIndex(t,splitIndex,splitU)
+  if splitIndex&lt;0
+    popUpMsg(&quot;resetMotion(): strange, split index is negative?&quot;)
+    bTrajMutex=false
+    res=false
+    return
+  endIf
+  n=size(nTrajTimes)-1
+  if splitIndex&gt;nTrajMaxIndex
+    //past the end of the path -- add a milestone from the last config/time
+    q=jTrajMilestones[nTrajMaxIndex%n+1]
+    call setSegment(splitIndex,q,nTrajTimes[nTrajMaxIndex%n+1],q,splitU)
+  else
+    call evalSegment(splitIndex,splitU,q)
+    call setSegment(splitIndex,jTrajMilestones[splitIndex%n],nTrajTimes[splitIndex%n],q,splitU*(nTrajTimes[splitIndex%n+1]-nTrajTimes[splitIndex%n]))
+    nTrajMaxIndex=splitIndex
+  endIf
+  bTrajMutex=false
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

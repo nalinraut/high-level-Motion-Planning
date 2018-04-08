@@ -1,0 +1,3 @@
+local covariance train loss 30.750000 error 0.844000 clustererror 0.056000
+
+local covariance test loss 59.290000 error 0.904000 clustererror 0.150000

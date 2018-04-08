@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rigid2d_cspace visibilityEpsilon="0.001" angleWeight="0.2">
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <aabb bmin = "0 0.3" bmax = "1 1"/>
+      <aabb bmin = "0 -0.1" bmax = "1 0"/>
+
+      <!-- R first stroke -->
+      <circle center="0.2 0.03" radius="0.01"/>
+      <circle center="0.2 0.06" radius="0.01"/>
+      <circle center="0.2 0.09" radius="0.01"/>
+      <circle center="0.2 0.12" radius="0.01"/>
+      <circle center="0.2 0.15" radius="0.01"/>
+      <circle center="0.2 0.18" radius="0.01"/>
+      <circle center="0.2 0.21" radius="0.01"/>
+      <circle center="0.2 0.24" radius="0.01"/>
+      <circle center="0.2 0.27" radius="0.01"/>
+
+      <circle center="0.23 0.27" radius="0.01"/>
+      <circle center="0.26 0.27" radius="0.01"/>
+      <circle center="0.29 0.24" radius="0.01"/>
+      <circle center="0.32 0.21" radius="0.01"/>
+      <circle center="0.32 0.18" radius="0.01"/>
+      <circle center="0.29 0.15" radius="0.01"/>
+      <circle center="0.26 0.12" radius="0.01"/>
+      <circle center="0.23 0.12" radius="0.01"/>
+
+      <!-- R leg -->
+      <circle center="0.26 0.09" radius="0.01"/>
+      <circle center="0.29 0.06" radius="0.01"/>
+      <circle center="0.32 0.03" radius="0.01"/>
+
+      <!-- S  -->
+      <circle center="0.48 0.06" radius="0.01"/>
+      <circle center="0.51 0.03" radius="0.01"/>
+      <circle center="0.54 0.03" radius="0.01"/>
+      <circle center="0.57 0.03" radius="0.01"/>
+      <circle center="0.60 0.06" radius="0.01"/>
+      <circle center="0.60 0.09" radius="0.01"/>
+      <circle center="0.57 0.12" radius="0.01"/>
+      <circle center="0.54 0.15" radius="0.01"/>
+      <circle center="0.51 0.15" radius="0.01"/>
+      <circle center="0.48 0.18" radius="0.01"/>
+      <circle center="0.48 0.21" radius="0.01"/>
+      <circle center="0.48 0.24" radius="0.01"/>
+      <circle center="0.51 0.27" radius="0.01"/>
+      <circle center="0.54 0.27" radius="0.01"/>
+      <circle center="0.57 0.27" radius="0.01"/>
+      <circle center="0.60 0.24" radius="0.01"/>
+
+      <!-- S  -->
+      <circle center="0.73 0.06" radius="0.01"/>
+      <circle center="0.76 0.03" radius="0.01"/>
+      <circle center="0.79 0.03" radius="0.01"/>
+      <circle center="0.82 0.03" radius="0.01"/>
+      <circle center="0.85 0.06" radius="0.01"/>
+      <circle center="0.85 0.09" radius="0.01"/>
+      <circle center="0.82 0.12" radius="0.01"/>
+      <circle center="0.79 0.15" radius="0.01"/>
+      <circle center="0.76 0.15" radius="0.01"/>
+      <circle center="0.73 0.18" radius="0.01"/>
+      <circle center="0.73 0.21" radius="0.01"/>
+      <circle center="0.73 0.24" radius="0.01"/>
+      <circle center="0.76 0.27" radius="0.01"/>
+      <circle center="0.79 0.27" radius="0.01"/>
+      <circle center="0.82 0.27" radius="0.01"/>
+      <circle center="0.85 0.24" radius="0.01"/>
+
+
+    </geometry2d>
+  </obstacles>
+
+  <robot>
+     <geometry2d>
+        <aabb bmin="-0.01 -0.01" bmax="0.075 0.01" />
+        <aabb bmin="-0.01 -0.075" bmax="0.01 0.01" />
+     </geometry2d>
+  </robot>
+
+</rigid2d_cspace>

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="monitor" public="true" >
+    <description />
+    <paramSection/>
+    <localSection>
+      <local name="t" type="num" size="1" />
+      <local name="nMode" type="num" size="1" />
+      <local name="nStatus" type="num" size="1" />
+      <local name="bAllOk" type="bool" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  // check on system status
+  // updates the sMessage string
+  while !bEnd
+    // start with an empty message
+    bAllOk=isCalibrated() and isPowered() and speedScale()==100
+    if bAllOk
+      nMode=workingMode(nStatus)
+      bAllOk=(nStatus==0)
+    endIf
+    bOkStart=bAllOk
+    if !isCalibrated()
+      // not calibrated error
+      sMessage[0]=&quot;***Arm is NOT calibrated***&quot;
+      watch(isCalibrated(),nMessageDelay)
+      sMessage[0]=&quot;&quot;
+    endIf
+    // check that working mode is local or remote
+    if workingMode()!=3 and workingMode()!=4
+      sMessage[0]=&quot;***Change mode to LOCAL or REMOTE***&quot;
+      watch(workingMode()==3 or workingMode()==4,nMessageDelay)
+      sMessage[0]=&quot;&quot;
+    endIf
+    // check arm power
+    if !isPowered()
+      if workingMode()==4
+        //remote mode
+        if esStatus()&lt;2
+          // no e-stop we turn on power
+          sMessage[0]=&quot;Enabling arm power&quot;
+          enablePower()
+          delay(3)
+          sMessage[0]=&quot;&quot;
+        else
+          // e-stop is open (in remote)
+          sMessage[0]=&quot;***E-Stop is open***&quot;
+          bOkStart=false
+          watch(esStatus()&lt;2,nMessageDelay)
+          sMessage[0]=&quot;&quot;
+        endIf
+      else
+        // not in remote, tell the operator to turn on arm power
+        sMessage[0]=&quot;***press the ARM POWER button***&quot;
+        watch(isPowered(),nMessageDelay)
+        sMessage[0]=&quot;&quot;
+      endIf
+    else
+      nMode=workingMode(nStatus)
+      if nStatus!=0
+        if nMode==1 and (nStatus&gt;1 and nStatus&lt;6)
+          // system is in manual jogging mode
+          sMessage[0]=&quot;***Turn off jogging mode***&quot;
+          t=clock()
+          do
+            nMode=workingMode(nStatus)
+          until nMode!=1 or nStatus&lt;2 or nStatus&gt;5 or clock()-t&gt;nMessageDelay
+          sMessage[0]=&quot;&quot;
+        else
+          // system is in hold or conencting move
+          sMessage[0]=&quot;***Press the MOVE/HOLD button***&quot;
+          t=clock()
+          do
+            nMode=workingMode(nStatus)
+          until nStatus==0 or clock()-t&gt;nMessageDelay
+          sMessage[0]=&quot;&quot;
+        endIf
+      endIf
+    endIf
+    if speedScale()!=100
+      // speed is not set to 100%
+      sMessage[0]=&quot;***Set speed to 100%***&quot;
+      bAllOk=false
+      watch(speedScale()==100,nMessageDelay)
+      sMessage[0]=&quot;&quot;
+      bAllOk=true
+    endIf
+    //allow start if all checks pass
+    if bAllOk
+      bOkStart=true
+    endIf
+    delay(0)
+  endWhile
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

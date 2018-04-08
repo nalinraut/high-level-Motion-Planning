@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<multirobot2d_cspace>
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <!-- borders -->
+      <aabb bmin = "0 0" bmax = "0.02 1"/>
+      <aabb bmin = "0.98 0" bmax = "1 1"/>
+      <aabb bmin = "0 0" bmax = "1 0.02"/>
+      <aabb bmin = "0 0.98" bmax = "1 1"/>
+
+      <!-- bottom -->
+      <aabb bmin = "0.3 0" bmax = "0.7 0.47"/>
+      <!-- top -->
+      <aabb bmin = "0.3 0.53" bmax = "0.7 1"/>
+    </geometry2d>
+  </obstacles>
+  <robot>
+    <geometry2d>
+       <circle center="0 0" radius="0.025" />
+    </geometry2d>
+  </robot>
+  <robot>
+    <geometry2d>
+       <circle center="0 0" radius="0.025" />
+    </geometry2d>
+  </robot>
+  <robot>
+    <geometry2d>
+       <circle center="0 0" radius="0.025" />
+    </geometry2d>
+  </robot>
+</multirobot2d_cspace>

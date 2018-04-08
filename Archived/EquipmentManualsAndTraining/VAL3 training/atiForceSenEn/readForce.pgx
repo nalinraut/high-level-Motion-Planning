@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<programList xmlns="ProgramNameSpace">
+  <program name="readForce" public="true">
+    <description />
+    <paramSection>
+      <param name="x_nStatus" type="num" byVal="false" />
+      <param name="x_nForce" type="num" byVal="false" />
+      <param name="x_nMonitor" type="num" byVal="false" />
+      <param name="x_bZero" type="bool" byVal="false" />
+      <param name="x_bClear" type="bool" byVal="false" />
+    </paramSection>
+    <localSection>
+      <local name="l_n" type="num" size="1" />
+      <local name="l_nRec" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  //Header begin
+  //Description of Program
+  // Reads ATI Force Sensor values
+  // Usually ran in a synchronous task
+  //
+  //Input parameters
+  // none
+  //
+  //Output parameters
+  // num    x_nStatus : Returns status of sensor
+  // num    x_nForce  : Array of 6 num that returns force and moment values
+  // num    x_nMonitor: Array of 2 num that sets monitor bits
+  // bool   x_bZero   : Set to zero (tare) sensor, reset when request is sent
+  // bool   x_bClear  ; set to clear monitor conditions, reset when reguest is sent
+  //
+  //Examples
+  // taskCreateSync "readForce",0.004,bOverRun,readForce(nStatus,nForce,nMonitor,bZero,bClear)
+  //
+  //History
+  // Creation: 10-Jul-2009, J Cook
+  // Modification: dd-mmm-yyyy, name, description
+  //  description continued
+  //
+  //Header end
+  do
+    nSend[16]=round(limit(x_nMonitor[1],0,255))
+    nSend[17]=round(limit(x_nMonitor[0],0,255))
+    if x_bZero==true
+      nSend[19]=bOr(nSend[19],1)
+    endIf
+    if x_bClear==true
+      nSend[19]=bOr(nSend[19],2)
+    endIf
+    nSent=sioSet(sFs,nSend)
+    if nSent!=size(nSend)
+      x_nStatus=-1
+    else
+      nSend[19]=0
+    endIf
+    nReceived=sioGet(sFs,nRec)
+    if nReceived!=16
+      x_nStatus=-2
+    endIf
+    if nRec[0]==nHeader[0] and nRec[1]==nHeader[1]
+      x_nStatus=(nRec[3]+nRec[2]*256)
+      for l_n=0 to 5
+        x_nForce[l_n]=(nRec[(l_n*2)+5]+nRec[(l_n*2)+4]*256)
+        if x_nForce[l_n]&gt;power(2,15)
+          x_nForce[l_n]=x_nForce[l_n]-power(2,16)
+        endIf
+        if l_n&lt;=2
+          x_nForce[l_n]=x_nForce[l_n]/nScaleForce
+        else
+          x_nForce[l_n]=x_nForce[l_n]/nScaleMoment
+        endIf
+      endFor
+    else
+      x_nStatus=-3
+    endIf
+    delay(0)
+  until false
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

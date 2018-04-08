@@ -1,0 +1,10 @@
+max_vel_x: 0.4
+max_vel_y: 0.4
+max_vel_z: 0.4
+frame_id: odom
+goal_dist_tolerance: 0.05
+goal_angle_tolerance: 0.10
+drive_type: mecanum 
+debug: false 
+print_rate: 0.3
+use_action_server: true 

@@ -1,0 +1,7 @@
+{
+  "task":"PPUJointPose",
+  "pan":0,   #radians, from -pi to pi
+  "tilt":0,  #radians, from 0 to pi/2
+  "ext":0,   #percent
+  "speed":1
+}

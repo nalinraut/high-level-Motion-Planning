@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<world>
+  <robot name="walker" file="data/footed_2d_biped.rob"/>
+  <terrain file="data/terrains/stair.tri" scale="1 1 -3"/>
+</world>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<point2d_cspace>
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <!-- bottom -->
+      <aabb bmin = "0.2 0" bmax = "0.8 0.2"/>
+      <!-- top -->
+      <aabb bmin = "0.2 0.4" bmax = "0.8 0.8"/>
+      <!-- left -->
+      <aabb bmin = "0.2 0.22" bmax = "0.4 0.4"/>
+      <!-- middle -->
+      <aabb bmin = "0.42 0.2" bmax = "0.58 0.38"/>
+      <!-- right -->
+      <aabb bmin = "0.6 0.22" bmax = "0.8 0.4"/>
+    </geometry2d>
+  </obstacles>
+
+  <planning_query name="opposite side">
+    <start>
+      <config data="2 0.1 0.3"/>
+    </start>
+    <goal>
+      <config data="2 0.9 0.3"/>
+    </goal>
+  </planning_query>
+
+</point2d_cspace>

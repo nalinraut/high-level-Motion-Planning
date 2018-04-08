@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<programList xmlns="ProgramNameSpace">
+  <program name="new" public="false">
+    <description />
+    <paramSection />
+    <localSection />
+    <source>
+      <code>begin
+  
+  io:bOut0 = true
+  delay(0.1)
+  io:bOut0 = false
+  
+  if io:bIn0 == true
+    //
+    
+  endIf
+  
+  num = aioSet(aio, nValue)
+  num = aioGet(aio)
+  
+  io:myClient = "ABC"
+  sText = io:mySever
+  
+  
+  nRec = sioGet(sio, nChar)
+  
+  nSent = sioSet(sio, nChar)
+  
+  
+  
+  
+  
+end
+</code>
+    </source>
+  </program>
+</programList>

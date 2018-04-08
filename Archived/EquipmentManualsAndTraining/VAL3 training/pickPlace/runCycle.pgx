@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="runCycle" public="false" >
+    <description />
+    <paramSection/>
+    <localSection>
+      <local name="l_pApproach" type="point" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+
+  l_pApproach=appro(pPick,trAbove)
+  movej(l_pApproach,tGripper,mFast)
+  movel(pPick,tGripper,mSlow)
+  close(tGripper)
+  movel(l_pApproach,tGripper,mSlow)
+  l_pApproach=appro(pPlace,trAbove)
+  movej(l_pApproach,tGripper,mFast)
+  movel(pPlace,tGripper,mSlow)
+  open(tGripper)
+  movel(l_pApproach,tGripper,mSlow)
+end
+
+      
+      </code>
+    </source>
+  </program>
+</programList>

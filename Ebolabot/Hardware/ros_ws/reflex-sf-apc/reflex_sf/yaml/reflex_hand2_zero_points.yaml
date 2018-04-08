@@ -1,0 +1,4 @@
+reflex_hand2_f1: {zero_point: 1.902136176978195}
+reflex_hand2_f2: {zero_point: 6.057690131360397}
+reflex_hand2_f3: {zero_point: 2.179786699585496}
+reflex_hand2_preshape: {zero_point: 5.350524988145116}

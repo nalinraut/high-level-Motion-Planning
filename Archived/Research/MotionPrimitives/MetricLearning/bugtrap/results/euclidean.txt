@@ -1,0 +1,2 @@
+euclidean train loss 7795527.779369 error 0.705559 clustererror 0.705559
+

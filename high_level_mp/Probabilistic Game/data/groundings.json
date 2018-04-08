@@ -1,0 +1,32 @@
+{
+	"g1": {
+		"type": "boolean",
+		"var_num": 7,
+		"value": 0
+	},
+  	"g2": {
+		"type": "boolean",
+		"var_num": 7,
+		"value": 1
+	},
+  	"g3": {
+		"type": "boolean",
+		"var_num": 8,
+		"value": 0
+	},
+  	"g4": {
+		"type": "boolean",
+		"var_num": 8,
+		"value": 1
+	},
+  	"g5": {
+		"type": "boolean",
+		"var_num": 9,
+		"value": 0
+	},
+  	"g6": {
+		"type": "boolean",
+		"var_num": 9,
+		"value": 1
+	}
+}

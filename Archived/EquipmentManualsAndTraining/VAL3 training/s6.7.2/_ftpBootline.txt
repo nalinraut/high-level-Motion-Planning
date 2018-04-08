@@ -1,0 +1,7 @@
+user #LOGIN# #PASSWORD#
+hash off
+asc
+cd /sys
+lcd #TEMP#\sys
+mget *.dat
+quit

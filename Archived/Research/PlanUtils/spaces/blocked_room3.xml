@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rigid2d_cspace visibilityEpsilon="0.001" angleWeight="0.2">
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <!-- horizontal lines -->
+      <aabb bmin = "0 0.32" bmax = "0.12 0.34"/>
+      <aabb bmin = "0.22 0.32" bmax = "0.45 0.34"/>
+      <aabb bmin = "0.55 0.32" bmax = "0.78 0.34"/>
+      <aabb bmin = "0.88 0.32" bmax = "1.0 0.34"/>
+
+      <aabb bmin = "0 0.65" bmax = "0.12 0.67"/>
+      <aabb bmin = "0.22 0.65" bmax = "0.45 0.67"/>
+      <aabb bmin = "0.55 0.65" bmax = "0.78 0.67"/>
+      <aabb bmin = "0.88 0.65" bmax = "1.0 0.67"/>
+
+
+      <!-- vertical lines -->
+      <aabb bmin = "0.32 0" bmax = "0.34 0.12"/>
+      <aabb bmin = "0.32 0.22" bmax = "0.34 0.45"/>
+      <aabb bmin = "0.32 0.55" bmax = "0.34 0.78"/>
+      <aabb bmin = "0.32 0.88" bmax = "0.34 1.0"/>
+
+      <aabb bmin = "0.65 0" bmax = "0.67 0.12"/>
+      <aabb bmin = "0.65 0.22" bmax = "0.67 0.45"/>
+      <aabb bmin = "0.65 0.55" bmax = "0.67 0.78"/>
+      <aabb bmin = "0.65 0.88" bmax = "0.67 1.0"/>
+
+      <!-- Cell 1,2 -->
+      <circle center="0.4 0.06" radius="0.02"/>
+      <circle center="0.5 0.06" radius="0.02"/>
+      <circle center="0.6 0.06" radius="0.02"/>
+      <circle center="0.4 0.16" radius="0.02"/>
+      <circle center="0.5 0.16" radius="0.02"/>
+      <circle center="0.6 0.16" radius="0.02"/>
+      <circle center="0.4 0.26" radius="0.02"/>
+      <circle center="0.5 0.26" radius="0.02"/>
+      <circle center="0.6 0.26" radius="0.02"/>
+
+      <!-- Cell 1,3 -->
+      <circle center="0.74 0.06" radius="0.02"/>
+      <circle center="0.84 0.06" radius="0.02"/>
+      <circle center="0.94 0.06" radius="0.02"/>
+      <circle center="0.74 0.16" radius="0.02"/>
+      <circle center="0.84 0.16" radius="0.02"/>
+      <circle center="0.94 0.16" radius="0.02"/>
+      <circle center="0.74 0.26" radius="0.02"/>
+      <circle center="0.84 0.26" radius="0.02"/>
+      <circle center="0.94 0.26" radius="0.02"/>
+
+      <!-- Cell 1,2 -->
+      <circle center="0.06 0.4" radius="0.02"/>
+      <circle center="0.16 0.4" radius="0.02"/>
+      <circle center="0.26 0.4" radius="0.02"/>
+      <circle center="0.06 0.5" radius="0.02"/>
+      <circle center="0.16 0.5" radius="0.02"/>
+      <circle center="0.26 0.5" radius="0.02"/>
+      <circle center="0.06 0.6" radius="0.02"/>
+      <circle center="0.16 0.6" radius="0.02"/>
+      <circle center="0.26 0.6" radius="0.02"/>
+
+      <!-- Cell 2,2 -->
+      <circle center="0.4 0.4" radius="0.02"/>
+      <circle center="0.5 0.4" radius="0.02"/>
+      <circle center="0.6 0.4" radius="0.02"/>
+      <circle center="0.4 0.5" radius="0.02"/>
+      <circle center="0.5 0.5" radius="0.02"/>
+      <circle center="0.6 0.5" radius="0.02"/>
+      <circle center="0.4 0.6" radius="0.02"/>
+      <circle center="0.5 0.6" radius="0.02"/>
+      <circle center="0.6 0.6" radius="0.02"/>
+
+      <!-- Cell 2,3 -->
+      <circle center="0.74 0.4" radius="0.02"/>
+      <circle center="0.84 0.4" radius="0.02"/>
+      <circle center="0.94 0.4" radius="0.02"/>
+      <circle center="0.74 0.6" radius="0.02"/>
+      <circle center="0.84 0.6" radius="0.02"/>
+      <circle center="0.94 0.6" radius="0.02"/>
+      <circle center="0.74 0.5" radius="0.02"/>
+      <circle center="0.84 0.5" radius="0.02"/>
+      <circle center="0.94 0.5" radius="0.02"/>
+
+      <!-- Cell 3,2 -->
+      <circle center="0.06 0.74" radius="0.02"/>
+      <circle center="0.16 0.74" radius="0.02"/>
+      <circle center="0.26 0.74" radius="0.02"/>
+      <circle center="0.06 0.84" radius="0.02"/>
+      <circle center="0.16 0.84" radius="0.02"/>
+      <circle center="0.26 0.84" radius="0.02"/>
+      <circle center="0.06 0.94" radius="0.02"/>
+      <circle center="0.16 0.94" radius="0.02"/>
+      <circle center="0.26 0.94" radius="0.02"/>
+
+      <!-- Cell 3,2 -->
+      <circle center="0.4 0.74" radius="0.02"/>
+      <circle center="0.5 0.74" radius="0.02"/>
+      <circle center="0.6 0.74" radius="0.02"/>
+      <circle center="0.4 0.84" radius="0.02"/>
+      <circle center="0.5 0.84" radius="0.02"/>
+      <circle center="0.6 0.84" radius="0.02"/>
+      <circle center="0.4 0.94" radius="0.02"/>
+      <circle center="0.5 0.94" radius="0.02"/>
+      <circle center="0.6 0.94" radius="0.02"/>
+
+
+    </geometry2d>
+  </obstacles>
+
+  <robot>
+     <geometry2d>
+        <aabb bmin="-0.01 -0.01" bmax="0.1 0.01" />
+        <aabb bmin="-0.01 -0.1" bmax="0.01 0.01" />
+     </geometry2d>
+  </robot>
+
+</rigid2d_cspace>

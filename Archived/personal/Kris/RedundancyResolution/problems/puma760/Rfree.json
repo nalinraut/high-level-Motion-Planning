@@ -1,0 +1,11 @@
+{
+	"eelocal": [0, 0, 0.21],
+	"domain": [[-2.0, -2.0, -0.25], [2.0, 2.0, 3.5]],
+	"orientation": "free",
+	"links": ["Link 1", "Link 2", "Link 3", "Link 4", "Link 5", "Link 6"],
+	"filename": "data/robots/puma760.rob",
+	"link": "Link 6",
+	"output": "output/puma760/Rfree_W2000",
+	"useCollision": true,
+	"Nw": 2000
+}

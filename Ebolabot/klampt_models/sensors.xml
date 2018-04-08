@@ -1,0 +1,8 @@
+<sensors>
+	<JointPositionSensor name="encoders" />
+	<JointVelocitySensor name="dencoders" />
+	<LaserRangeSensor name="lidar" link="2" Tsensor="-0.707 0 0.707  0.707 0 0.707  0 1 0   0.27 0.47 0.22"  depthMaximum="4.0" depthMinimum="0.1" depthResolution="0.01" depthVarianceLinear="0.0001" xSweepMagnitude="2.35619445" measurementCount="270"/>
+	<CameraSensor name="torso_kinect" link="5" Tsensor="0 0 -1   -1 0 0  0 1 0   0.2 0.0 0.05"  xres="512" yres="424" xfov="1.23" yfov="1.047197551" zmin="0.4" zmax="4" zresolution="0.001" zvarianceLinear="0.00001" />
+	<CameraSensor name="left_realsense" link="20" Tsensor="0 1 0   1 0 0    0 0 -1   0.062 0.01 0.09"  xres="480" yres="360" xfov="1.186823891" yfov="0.942477796" zmin="0.15" zmax="1.5" zresolution="0.001" zvarianceLinear="0.00001" />
+	<CameraSensor name="right_realsense" link="40" Tsensor="0 1 0   1 0 0    0 0 -1   0.062 0.01 0.09"  xres="480" yres="360" xfov="1.186823891" yfov="0.942477796" zmin="0.15" zmax="1.5" zresolution="0.001" zvarianceLinear="0.00001" />
+</sensors>

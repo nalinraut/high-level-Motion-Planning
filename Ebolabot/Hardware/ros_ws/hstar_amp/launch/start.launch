@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find hstar_amp)/launch/base.launch" />
+  <include file="$(find hstar_amp)/launch/base_joystick.launch" />
+
+</launch>

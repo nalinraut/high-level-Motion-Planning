@@ -1,0 +1,32 @@
+j0:
+  motor_gain: 200
+  enc2m: 0.000833333
+  hall2m: 0.000833333
+  motor_dir: 1
+  enc_dir: 1
+  enc_type: enc 
+  config-lookup: amp-motor
+j1:
+  motor_gain: 200
+  enc2m: 0.000833333
+  hall2m: 0.000833333
+  motor_dir: -1
+  enc_dir: -1
+  enc_type: enc 
+  config-lookup: amp-motor
+j2:
+  motor_gain: 200
+  enc2m: 0.000833333
+  hall2m: 0.000833333
+  motor_dir: -1
+  enc_dir: -1
+  enc_type: enc 
+  config-lookup: amp-motor
+j3:
+  motor_gain: 200
+  enc2m: 0.000833333
+  hall2m: 0.000833333
+  motor_dir: 1
+  enc_dir: 1
+  enc_type: enc 
+  config-lookup: amp-motor

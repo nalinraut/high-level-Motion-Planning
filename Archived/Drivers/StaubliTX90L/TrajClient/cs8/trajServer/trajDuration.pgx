@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="trajDuration" public="true" >
+    <description />
+    <paramSection>
+      <param name="tDuration" type="num" byVal="false" />
+    </paramSection>
+    <localSection>
+      <local name="n" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  //returns the remaining motion queue duration in tDuration
+  n=(size(nTrajTimes)-1)
+  call trajEndTime(tDuration)
+  tDuration=tDuration-(clock()-nTimeStart)
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

@@ -1,0 +1,16 @@
+#---------------------------------------#
+#  lcd 
+#---------------------------------------#
+# change
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="13CP0425", MODE="0666", SYMLINK+="ros/lcd"
+# add 
+ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="13CP0425", MODE="0666", SYMLINK+="ros/lcd", RUN+="/usr/local/bin/ht-usb-device lcd", OWNER="user"
+# remove 
+ACTION=="remove", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="13CP0425", MODE="0666", SYMLINK+="ros/lcd", RUN+="/usr/local/bin/ht-usb-device lcd"
+
+# change
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="12AP1107", MODE="0666", SYMLINK+="ros/lcd"
+# add 
+ACTION=="add", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="12AP1107", MODE="0666", SYMLINK+="ros/lcd", RUN+="/usr/local/bin/ht-usb-device lcd", OWNER="user"
+# remove 
+ACTION=="remove", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="12AP1107", MODE="0666", SYMLINK+="ros/lcd", RUN+="/usr/local/bin/ht-usb-device lcd"

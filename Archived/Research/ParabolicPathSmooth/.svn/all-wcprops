@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/hauserk/!svn/ver/7/ParabolicPathSmooth
+END
+Math.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/hauserk/!svn/ver/6/ParabolicPathSmooth/Math.h
+END
+doxygen.conf
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/hauserk/!svn/ver/6/ParabolicPathSmooth/doxygen.conf
+END
+DynamicPath.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/hauserk/!svn/ver/45/ParabolicPathSmooth/DynamicPath.cpp
+END
+ParabolicRamp.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/hauserk/!svn/ver/47/ParabolicPathSmooth/ParabolicRamp.h
+END
+DynamicPath.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/hauserk/!svn/ver/46/ParabolicPathSmooth/DynamicPath.h
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/hauserk/!svn/ver/45/ParabolicPathSmooth/readme.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/hauserk/!svn/ver/6/ParabolicPathSmooth/Makefile
+END
+ParabolicRamp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/hauserk/!svn/ver/45/ParabolicPathSmooth/ParabolicRamp.cpp
+END

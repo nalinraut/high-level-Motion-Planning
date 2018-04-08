@@ -1,0 +1,11 @@
+# =====================
+# For AMP mobile base
+# =====================
+
+export HSTAR_AMP_LIDAR_DEVICE_0=/dev/ros/hokuyo_H1411313
+export HSTAR_AMP_LIDAR_DEVICE_1=/dev/ros/hokuyo_H1304252
+export HSTAR_AMP_ROBOTEQ_DEVICE_0=/dev/ros/roboteq_sbl1360_8D7621584955
+export HSTAR_AMP_ROBOTEQ_DEVICE_1=/dev/ros/roboteq_sbl1360_8D69326A5450
+export HSTAR_AMP_ROBOTEQ_DEVICE_2=/dev/ros/roboteq_sbl1360_8D73416B4955
+export HSTAR_AMP_ROBOTEQ_DEVICE_3=/dev/ros/roboteq_sbl1360_8D6823695450
+export HSTAR_AMP_LCD_DEVICE=/dev/ros/lcd

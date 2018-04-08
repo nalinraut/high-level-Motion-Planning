@@ -1,0 +1,9 @@
+mesh "ico_medium.stl"
+geomscale 0.08 0.08 0.08
+mass .5
+autoMass
+kFriction 1.5
+kStiffness 500000
+kDamping 30000
+kRestitution 0
+

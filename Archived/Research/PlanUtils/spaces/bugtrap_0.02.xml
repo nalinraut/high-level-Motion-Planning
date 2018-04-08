@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A dual bugtrap with bugtrap width 0.05, side passage width 0.02-->
+<point2d_cspace>
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <aabb bmin = "0.1 0.02" bmax = "0.15 0.475"/>
+      <aabb bmin = "0.1 0.525" bmax = "0.15 0.98"/>
+      <aabb bmin = "0.85 0.02" bmax = "0.9 0.475"/>
+      <aabb bmin = "0.85 0.525" bmax = "0.9 0.98"/>
+      <aabb bmin = "0.1 0.02" bmax = "0.85 0.07"/>
+      <aabb bmin = "0.1 0.93" bmax = "0.9 0.98"/>
+      <aabb bmin = "0.475 0.02" bmax = "0.525 0.98"/>
+    </geometry2d>
+  </obstacles>
+
+  <planning_query name="trap to trap">
+    <start>
+      <config data="2 0.3 0.5"/>
+    </start>
+    <goal>
+      <config data="2 0.6 0.5"/>
+    </goal>
+  </planning_query>
+
+</point2d_cspace>

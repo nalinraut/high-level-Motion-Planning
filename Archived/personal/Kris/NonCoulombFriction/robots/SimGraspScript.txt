@@ -1,0 +1,71 @@
+        # Finger
+	finger = Design.Finger(phalangesLength=[0.043, 0.043, 0.043, 0.01], phalangesMass=[0.07, 0.07, 0.07, 0.01])        
+        finger.setBaseJointOffset(0.0345)
+        finger.setGeometry(['spinyHand/phalanx.stl',  'spinyHand/phalanx.stl',  'spinyHand/phalanx.stl', 'spinyHand/fingernail.stl'])
+        finger.setViscousFriction(600000)        
+        finger.buildFile()
+
+        hand = Design.Hand([0, 0, 0.2])
+        
+        hand.addFinger(finger, 0, [-0.025, 0.0165, 0.015])
+        hand.addFinger(finger, 150, [-0.025, 0.0495, 0.015], 'rotaryBase')       
+        hand.addFinger(finger, 180, [-0.025, -0.0495, 0.015], 'rotaryBase')
+        hand.addFinger(finger, 0, [-0.025, -0.0165, 0.015])
+        
+        hand.setBaseJointMass([0.09, 0.09, 0.09, 0.09])
+        hand.setPalmGeometry('spinyHand/palm.stl', palmDiameter=0.13, palmMass=2.2)
+        hand.setfingerBaseGeometry('spinyHand/fingerBase.stl', fingerBaseDiameter=0.03)
+
+        hand.setViscousFriction(600000)
+        hand.buildFile()
+        
+        # Object 
+        objPos = [0, 0, 0.28]
+        frictionCoef = 0.2
+        graspObject = Design.GraspObject('sphere', objPos, frictionCoef)
+        graspObject.setOrient([0, 90, 0])
+        graspObject.setDimension([0.1, 0.1, 0.1])
+        graspObject.buildFile()
+        
+        # Hand Controller
+        handController = HandController.HandController(hand)    #for the class that is called later, it is global and visible
+        handController.defineActiveDof((0, 0), [(0, 1), (0, 2), (0, 3)])
+        handController.defineActiveDof((1, 0), [(1, 1), (1, 2), (1, 3)]) 
+        handController.defineActiveDof((2, 0), [(2, 1), (2, 2), (2, 3)])
+        handController.defineActiveDof((3, 0), [(3, 1), (3, 2), (3, 3)])
+        handController.defineActiveDof((1, -1), [])
+        handController.defineActiveDof((2, -1), [])
+
+        handController.setDofTranRadius((0, 0), 0.005)
+        handController.setDofTranRadius((0, 1), 0.005)
+        handController.setDofTranRadius((0, 2), 0.005)
+        handController.setDofTranRadius((0, 3), 0.005)
+        handController.setDofTranRadius((1, 0), 0.005)
+        handController.setDofTranRadius((1, 1), 0.005)
+        handController.setDofTranRadius((1, 2), 0.005)
+        handController.setDofTranRadius((1, 3), 0.005)
+        handController.setDofTranRadius((2, 0), 0.005)
+        handController.setDofTranRadius((2, 1), 0.005)
+        handController.setDofTranRadius((2, 2), 0.005)
+        handController.setDofTranRadius((2, 3), 0.005)
+        handController.setDofTranRadius((3, 0), 0.005)
+        handController.setDofTranRadius((3, 1), 0.005)
+        handController.setDofTranRadius((3, 2), 0.005)
+        handController.setDofTranRadius((3, 3), 0.005)
+        k = 0.003 #joint stiffness, Nm/deg
+        handController.setDofStiffness((0, 0), k/2)        
+        handController.setDofStiffness((0, 1), k)
+        handController.setDofStiffness((0, 2), k)
+        handController.setDofStiffness((0, 3), k)
+        handController.setDofStiffness((1, 0), k/2)        
+        handController.setDofStiffness((1, 1), k)
+        handController.setDofStiffness((1, 2), k)
+        handController.setDofStiffness((1, 3), k)
+        handController.setDofStiffness((2, 0), k/2)        
+        handController.setDofStiffness((2, 1), k)
+        handController.setDofStiffness((2, 2), k)
+        handController.setDofStiffness((2, 3), k)
+        handController.setDofStiffness((3, 0), k/2)        
+        handController.setDofStiffness((3, 1), k)
+        handController.setDofStiffness((3, 2), k)
+        handController.setDofStiffness((3, 3), k)

@@ -1,0 +1,8 @@
+mesh "meshes/heinz.ply"
+geomscale 1 1 1
+mass 0.956
+autoMass
+kStiffness 300000
+kDamping 30000
+kRestitution 0
+

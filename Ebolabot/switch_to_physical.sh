@@ -1,0 +1,16 @@
+#!/bin/bash
+cp Common/system_config_physical.json Common/system_config.json
+echo "Switching system configuration to physical mode, ready to run on actual robot."
+echo ""
+echo "To activate Ebolabot motion:"
+echo "1. Turn on robot and onboard computers."
+echo "2. SSH to motion computer"
+echo "3. Navigate to ros_ws and run '. ebolabot_start.sh'"
+echo "4. Run 'roslaunch ebolabot ebolabot.launch'"
+echo "5. In Ebolabot folder, run './motion_computer_start.sh'"
+echo "6. On local machine, run './TaskGUIDemo''"
+echo ""
+echo "To activate cameras:"
+echo "1. Remote desktop onto vision computers and start the RealSenseService on both"
+echo "2. In a new console window in Ebolabot folder, run './vision_start_all.sh'"
+echo ""

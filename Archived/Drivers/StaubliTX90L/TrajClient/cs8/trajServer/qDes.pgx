@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="qDes" public="true" >
+    <description />
+    <paramSection>
+      <param name="t" type="num" byVal="true" />
+      <param name="qt" type="joint" byVal="false" />
+    </paramSection>
+    <localSection>
+      <local name="u" type="num" size="1" />
+      <local name="i" type="num" size="1" />
+      <local name="n" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  //Returns the current desired configuration, and advances the current index, if necessary
+  //Note: not protected by the trajectory mutex
+  n=size(nTrajTimes)-1
+  //seek to the right trajectory segment
+  call trajGetIndex(t,i,u)
+  if i&gt;=0
+    nTrajCurIndex=i
+  endIf
+  if nTrajMaxIndex&lt;0
+    //trajectory queue is empty
+    qt=herej()
+  elseIf nTrajCurIndex&lt;=nTrajMaxIndex
+    //valid trajectory segment -- interpolate
+    call evalSegment(nTrajCurIndex,u,qt)
+  else
+    //reached end of trajectory queue -- qdes is a constant
+    qt=jTrajMilestones[nTrajMaxIndex%n+1]
+  endIf
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

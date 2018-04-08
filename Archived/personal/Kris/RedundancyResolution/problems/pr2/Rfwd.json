@@ -1,0 +1,10 @@
+{"eelocal": [0.17, 0, 0],
+ "domain": [[-0.5, -0.4, -0.3], [1.2, 1.5, 3.0]],
+ "orientation": "fixed",
+ "fixedOrientation": "so3.identity()",
+ "links": ["l_shoulder_pan_link", "l_shoulder_lift_link", "l_upper_arm_link", "l_elbow_flex_link", "l_forearm_roll_link", "l_forearm_link", "l_wrist_flex_link", "l_wrist_roll_link"],
+ "filename": "data/robots/pr2.rob",
+ "link": "l_gripper_palm_link",
+ "useCollision": true,
+ "Nw": 2000
+}

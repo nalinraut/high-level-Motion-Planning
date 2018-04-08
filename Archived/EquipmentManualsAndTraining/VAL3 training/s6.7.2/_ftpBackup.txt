@@ -1,0 +1,79 @@
+user #LOGIN# #PASSWORD#
+hash on
+lcd #TEMP#\sys
+cd /sys
+asc
+get bootline.dat
+bin
+get bootrom.sys
+get vxworks
+get men
+get men_hp
+get men007
+get men07n
+get teknor
+get cs8.out
+mget *.b
+lcd #TEMP#\sys\configs
+cd /sys/configs
+asc
+mget *.res
+get options.cf
+get options.cfx
+bin
+get system.cf
+get fontsize.cfx
+lcd #TEMP#\sys\app
+cd /sys/app
+mget *.o
+lcd #TEMP#\sys\mcp
+cd /sys/mcp
+mget *.mcp
+lcd #TEMP#\sys\templates
+cd /sys/templates
+asc
+mget *.cfx
+lcd #TEMP#\sys\Starc
+cd /sys/Starc
+asc
+get versions.cfx
+cd /sys/Starc/drive
+lcd #TEMP#\sys\Starc\drive
+bin
+mget *.emb*
+cd /sys/Starc/dsi
+lcd #TEMP#\sys\Starc\dsi
+mget *.hex*
+cd /sys/Starc/dsp1
+lcd #TEMP#\sys\Starc\dsp1
+mget *.hex*
+cd /sys/Starc/dsp2
+lcd #TEMP#\sys\Starc\dsp2
+mget *.hex*
+cd /sys/Starc/fpga
+lcd #TEMP#\sys\Starc\fpga
+mget *.hex*
+cd /sys/Starc/lib
+lcd #TEMP#\sys\Starc\lib
+mget *.o
+lcd #TEMP#\usr\configs
+cd /usr/configs
+asc
+mget *.cf
+mget *.cfx
+lcd #TEMP#\usr\configs\profiles
+cd /usr/configs/profiles
+asc
+mget *.cfx
+cd /usr/applicom/io
+lcd #TEMP#\usr\applicom\io
+bin
+mget *
+asc
+get /usr/applicom/modbus/modbus.xml #TEMP#\usr\applicom\modbus\modbus.xml
+bin
+get /usr/temp/pdrv.sys #TEMP#\usr\temp\pdrv.sys
+asc
+get /log/errors.log #TEMP#\log\errors.log
+get /log/errors.old #TEMP#\log\errors.old
+quit

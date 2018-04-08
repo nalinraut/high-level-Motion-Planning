@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<programList xmlns="ProgramNameSpace">
+  <program name="initialize" public="false">
+    <description />
+    <paramSection />
+    <localSection />
+    <source>
+      <code>begin
+  // initialize global variables
+  // called by start
+  // will finish before we start other tasks
+  // numbers
+  nCurTime=0
+  nMessageDelay=5
+  //strings
+  sMessage[0]=""
+  sMessage[1]=""
+  sMessage[2]=""
+  sTitle="Trajectory"
+  // io links
+  //dioLink(diPartReady,io:bIn0)
+  //dioLink(doReqNewPart,io:bOut0)
+  //control signals
+  bOkStart=false
+  bEnd=false
+  bQuit=false
+  bExecute=false
+  bOverrun=false
+  //trajectory parameters
+  bTrajMutex=false
+  nTimeStart=0
+  nTrajCurIndex=0
+  nTrajMaxIndex=-1
+  //initialize IO
+  sioLink(sioIn,io:server)
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

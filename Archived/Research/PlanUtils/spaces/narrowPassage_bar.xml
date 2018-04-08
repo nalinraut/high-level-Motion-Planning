@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rigid2d_cspace>
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <!-- bottom -->
+      <aabb bmin = "0.3 0" bmax = "0.7 0.475"/>
+      <!-- top -->
+      <aabb bmin = "0.3 0.525" bmax = "0.7 1"/>
+    </geometry2d>
+  </obstacles>
+  <robot>
+    <geometry2d>
+       <aabb bmin="-0.05 -0.01" bmax="0.05 0.01" />
+    </geometry2d>
+  </robot>
+</rigid2d_cspace>

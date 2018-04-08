@@ -1,0 +1,10 @@
+hokuyo_front:
+  frame_id: frame_laser_front
+  scan_topic: scan_front
+  min_ang: -1.5
+  max_ang: 2.08
+hokuyo_back:
+  frame_id: frame_laser_back
+  scan_topic: scan_back
+  min_ang: -1.5
+  max_ang: 2.08

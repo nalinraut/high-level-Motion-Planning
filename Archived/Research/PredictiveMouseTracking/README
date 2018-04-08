@@ -1,0 +1,6 @@
+Author: Kris Hauser
+
+Code and data for the RSS 2012 paper "Recognition, prediction, and planning
+for assisted teleoperation of freeform tasks".  This particular package 
+handles learning of time series models and prediction of mouse cursor movement.
+

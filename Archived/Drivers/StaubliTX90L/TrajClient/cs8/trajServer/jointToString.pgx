@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="jointToString" public="true" >
+    <description />
+    <paramSection>
+      <param name="j" type="joint" byVal="false" />
+      <param name="str" type="string" byVal="false" />
+    </paramSection>
+    <localSection/>
+    <source>
+      <code>begin
+  str=toString(&quot;.3&quot;,j.j1)+&quot; &quot;+toString(&quot;.3&quot;,j.j2)+&quot; &quot;+toString(&quot;.3&quot;,j.j3)+&quot; &quot;+toString(&quot;.3&quot;,j.j4)+&quot; &quot;+toString(&quot;.3&quot;,j.j5)+&quot; &quot;+toString(&quot;.3&quot;,j.j6)
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

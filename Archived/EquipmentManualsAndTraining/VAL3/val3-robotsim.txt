@@ -1,0 +1,31 @@
+Translating between VAL3 and RobotSim code
+
+* VAL3 -> RobotSim structures *
+Joint	->	Config
+Trsf	->	RigidTransform
+Point	->	no analogue (use IK)
+
+* Motion descriptors *
+accel, decel	->	Robot::accMax
+vel		->	Robot::velMax Robot::velMin
+tvel, rvel	->	no analogue (use IK)
+blending	->	constructed explicitly (see DynamicPath::TryShortcut)
+
+* Movements *
+Motion stack	-> 	Current stored on RampND PathTrackingController::ramp 
+			Future stored on DynamicPath PathTrackingController::path
+movej(config,tool,etc) -> DynamicPath::Append(config)
+movel()		->	no analogue (use IK)
+movec()		->	no analogue (use IK)
+
+* Querying configration *
+herej()	(current commanded joint) ->	RobotController::xcur
+here()	(current commanded point) ->	Config q = RobotController::xcur
+					Robot::UpdateConfig(q)
+					Robot::links[link].T_World*toolPoint
+
+Dynamic parameters
+getJntForce
+getGravity
+externalForce
+

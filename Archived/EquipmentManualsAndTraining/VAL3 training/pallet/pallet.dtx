@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dataList xmlns="DataNameSpace" >
+  <aioSection>
+  </aioSection>
+  <boolSection>
+    <bool name="bQuit" public="false" privilege="0" >
+      <valueBool index="0" value="false" />
+    </bool>
+    <bool name="bRun" public="false" privilege="0" >
+      <valueBool index="0" value="true" />
+    </bool>
+  </boolSection>
+  <configRsSection>
+  </configRsSection>
+  <configSection>
+  </configSection>
+  <configVrbSection>
+  </configVrbSection>
+  <dioSection>
+  </dioSection>
+  <frameSection>
+    <frame name="world" public="false" privilege="0" >
+      <fFather name="" alias="" fatherIndex="0" />
+      <valueFrame index="0" >
+        <tfValue x="0" y="0" z="0" rx="0" ry="0" rz="0" />
+      </valueFrame>
+    </frame>
+    <frame name="fPallet" public="false" privilege="0" >
+      <fFather name="world" alias="" fatherIndex="0" />
+      <valueFrame index="0" >
+        <tfValue x="0" y="0" z="0" rx="0" ry="0" rz="0" />
+      </valueFrame>
+    </frame>
+  </frameSection>
+  <jointRsSection>
+  </jointRsSection>
+  <jointSection>
+    <joint name="jHome" public="false" privilege="0" >
+      <valueJoint index="0" >
+        <jointValue j1="0" j2="26.562898" j3="105.877608" j4="0" j5="47.559493" j6="0" />
+      </valueJoint>
+    </joint>
+  </jointSection>
+  <jointVrbSection>
+  </jointVrbSection>
+  <mdescSection>
+    <mdesc name="mFast" public="false" privilege="0" >
+      <valueMdesc index="0" >
+        <mdescValue accel="100" vel="100" decel="100" tmax="99999" rmax="99999" blend="joint" leave="20" reach="20" />
+      </valueMdesc>
+    </mdesc>
+    <mdesc name="mSlow" public="true" privilege="0" >
+      <valueMdesc index="0" >
+        <mdescValue accel="25" vel="50" decel="25" tmax="99999" rmax="99999" blend="joint" leave="2" reach="2" />
+      </valueMdesc>
+    </mdesc>
+  </mdescSection>
+  <numSection>
+    <num name="nCount" public="false" privilege="0" >
+      <valueNum index="0" value="5" />
+    </num>
+    <num name="nTime" public="false" privilege="0" >
+      <valueNum index="0" value="3.938" />
+    </num>
+    <num name="nTimeStart" public="false" privilege="0" >
+      <valueNum index="0" value="150.968" />
+    </num>
+    <num name="nRow" public="false" privilege="0" >
+      <valueNum index="0" value="0" />
+    </num>
+    <num name="nCol" public="false" privilege="0" >
+      <valueNum index="0" value="0" />
+    </num>
+    <num name="nRowDistance" public="false" privilege="0" >
+      <valueNum index="0" value="0" />
+    </num>
+    <num name="nColDistance" public="false" privilege="0" >
+      <valueNum index="0" value="0" />
+    </num>
+    <num name="nRowLast" public="false" privilege="0" >
+      <valueNum index="0" value="0" />
+    </num>
+    <num name="nColLast" public="false" privilege="0" >
+      <valueNum index="0" value="0" />
+    </num>
+  </numSection>
+  <pointRsSection>
+  </pointRsSection>
+  <pointSection>
+    <point name="pPick" public="false" privilege="0" >
+      <pFather name="world" alias="" fatherIndex="0" />
+      <valuePoint index="0" >
+        <tpValue x="262.182948" y="182.567808" z="-134.707003" rx="-0.000136" ry="-179.99904" rz="-0.000216" />
+        <cpValue shoulder="lefty" elbow="epositive" wrist="wpositive" />
+      </valuePoint>
+    </point>
+    <point name="pPlace" public="false" privilege="0" >
+      <pFather name="world" alias="" fatherIndex="0" />
+      <valuePoint index="0" >
+        <tpValue x="262.182635" y="-223.701159" z="-134.706925" rx="-0.001168" ry="-179.999273" rz="0.000147" />
+        <cpValue shoulder="lefty" elbow="epositive" wrist="wpositive" />
+      </valuePoint>
+    </point>
+    <point name="pOrigin" public="false" privilege="0" >
+      <pFather name="world" alias="" fatherIndex="0" />
+      <valuePoint index="0" >
+        <tpValue x="0" y="0" z="0" rx="0" ry="0" rz="0" />
+        <cpValue shoulder="ssame" elbow="esame" wrist="wsame" />
+      </valuePoint>
+    </point>
+    <point name="pAxisX" public="false" privilege="0" >
+      <pFather name="world" alias="" fatherIndex="0" />
+      <valuePoint index="0" >
+        <tpValue x="0" y="0" z="0" rx="0" ry="0" rz="0" />
+        <cpValue shoulder="ssame" elbow="esame" wrist="wsame" />
+      </valuePoint>
+    </point>
+    <point name="pAxisY" public="false" privilege="0" >
+      <pFather name="world" alias="" fatherIndex="0" />
+      <valuePoint index="0" >
+        <tpValue x="0" y="0" z="0" rx="0" ry="0" rz="0" />
+        <cpValue shoulder="ssame" elbow="esame" wrist="wsame" />
+      </valuePoint>
+    </point>
+  </pointSection>
+  <pointVrbSection>
+  </pointVrbSection>
+  <sioSection>
+  </sioSection>
+  <stringSection>
+    <string name="sTitle" public="false" privilege="0" >
+      <valueString index="0" value="Pick and Place" />
+    </string>
+  </stringSection>
+  <toolSection>
+    <tool name="flange" public="false" privilege="0" >
+      <tFather name="" alias="" fatherIndex="0" />
+      <valueTool index="0" >
+        <ttValue x="0" y="0" z="0" rx="0" ry="0" rz="0" />
+        <io name="valve1" alias="io" ioIndex="0" open="0" close="0" />
+      </valueTool>
+    </tool>
+    <tool name="tGripper" public="false" privilege="0" >
+      <tFather name="flange" alias="" fatherIndex="0" />
+      <valueTool index="0" >
+        <ttValue x="0" y="0" z="0" rx="0" ry="0" rz="0" />
+        <io name="valve1" alias="io" ioIndex="0" open="0.1" close="0.1" />
+      </valueTool>
+    </tool>
+  </toolSection>
+  <trsfSection>
+    <trsf name="trAbove" public="false" privilege="0" >
+      <valueTrsf index="0" >
+        <trsfValue x="0" y="0" z="-100" rx="0" ry="0" rz="0" />
+      </valueTrsf>
+    </trsf>
+  </trsfSection>
+</dataList>

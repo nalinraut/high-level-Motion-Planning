@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="main" public="false" >
+    <description />
+    <paramSection/>
+    <localSection/>
+    <source>
+      <code>begin
+  while bQuit==false
+    call home()
+    if bRun==true
+      nTimeStart=clock()
+      call runCycle()
+      nTime=clock()-nTimeStart
+      nCount=nCount+1
+    endIf
+    delay(0)
+  endWhile
+end
+
+      
+      </code>
+    </source>
+  </program>
+</programList>

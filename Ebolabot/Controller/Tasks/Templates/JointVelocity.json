@@ -1,0 +1,7 @@
+{
+  "task":"JointVelocity",
+  "limb":"left",
+  "position":[0,0,0,0,0,0,0],
+  "speed":1,
+  "safe":0
+}

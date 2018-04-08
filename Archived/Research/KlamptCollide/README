@@ -1,0 +1,7 @@
+Klamp't Contact Generation Code
+Kris Hauser
+
+This contains just the core contact generation code used in Klamp't.
+It may be useful for interface with other simulators.
+
+Requires KrisLibrary, which in turn requires TinyXML and Assimp.

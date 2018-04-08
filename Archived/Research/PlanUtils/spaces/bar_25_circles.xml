@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rigid2d_cspace visibilityEpsilon="0.001" angleWeight="0.3">
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <robot>
+    <geometry2d>
+      <aabb bmin = "-0.02 -0.05" bmax = "0.02 0.05"/>
+    </geometry2d>
+  </robot>
+  <obstacles>
+    <geometry2d>
+      <circle center="0.3 0.1" radius = "0.06"/>
+      <circle center="0.5 0.1" radius = "0.06"/>
+      <circle center="0.7 0.1" radius = "0.06"/>
+      <circle center="0.9 0.1" radius = "0.06"/>
+
+      <circle center="0.1 0.3" radius = "0.06"/>
+      <circle center="0.3 0.3" radius = "0.06"/>
+      <circle center="0.5 0.3" radius = "0.06"/>
+      <circle center="0.7 0.3" radius = "0.06"/>
+      <circle center="0.9 0.3" radius = "0.06"/>
+
+      <circle center="0.1 0.5" radius = "0.06"/>
+      <circle center="0.3 0.5" radius = "0.06"/>
+      <circle center="0.5 0.5" radius = "0.06"/>
+      <circle center="0.7 0.5" radius = "0.06"/>
+      <circle center="0.9 0.5" radius = "0.06"/>
+
+      <circle center="0.1 0.7" radius = "0.06"/>
+      <circle center="0.3 0.7" radius = "0.06"/>
+      <circle center="0.5 0.7" radius = "0.06"/>
+      <circle center="0.7 0.7" radius = "0.06"/>
+      <circle center="0.9 0.7" radius = "0.06"/>
+
+
+      <circle center="0.1 0.9" radius = "0.06"/>
+      <circle center="0.3 0.9" radius = "0.06"/>
+      <circle center="0.5 0.9" radius = "0.06"/>
+      <circle center="0.7 0.9" radius = "0.06"/>
+
+    </geometry2d>
+  </obstacles>
+
+  <planning_query name="corner to corner">
+    <start>
+      <config data="3 0.1 0.1 0"/>
+    </start>
+    <goal>
+      <config data="3 0.9 0.9 0"/>
+    </goal>
+  </planning_query>
+
+</rigid2d_cspace>

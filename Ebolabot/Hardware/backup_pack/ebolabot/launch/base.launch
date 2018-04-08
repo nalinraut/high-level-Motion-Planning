@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find hstar_amp)/launch/base.launch" ns="hstar_amp1"/>
+  <!-- <include file="$(find hstar_amp)/launch/base_auto.launch" ns="hstar_amp1"/> -->
+</launch>

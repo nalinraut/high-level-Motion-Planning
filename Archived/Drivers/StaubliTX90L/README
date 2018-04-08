@@ -1,0 +1,15 @@
+Author: Kris Hauser
+
+C++ and Python client code for interfacing with the Staubli CS8C controllers.
+
+There are two versions, 1 and 3.  The same server version must be run on the
+CS8C as the client version.
+
+Version 1 (TrajClient) works with piecewise linear paths and operates with
+relative times.  It is a bit easier to program with, but is much harder to
+do hard real-time trajectory updates.
+
+Version 3 (TrajClient3) works with Hermite spline paths and operates with
+absolute times.  It is a bit harder to program with, because you must
+synchronize your commands to the clock of the controller, but it does allow
+hard real-time trajectory updates.

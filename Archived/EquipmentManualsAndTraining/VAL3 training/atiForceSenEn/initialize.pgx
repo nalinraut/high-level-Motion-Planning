@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<programList xmlns="ProgramNameSpace">
+  <program name="initialize" public="true">
+    <description />
+    <paramSection>
+      <param name="x_sSocket" type="string" byVal="true" />
+      <param name="x_nLink" type="num" byVal="false" />
+    </paramSection>
+    <localSection />
+    <source>
+      <code>begin
+  //Header begin
+  //Description of Program
+  // ATI Force Sensor intialization
+  //
+  //Input parameters
+  // String x_sSocket: TCP/IP client socket to be connected to sensor
+  //
+  //Output parameters
+  // num    x_nLink  : Return code, 1 is success
+  //
+  //Examples
+  // call initialize( "io:sAtiFs",nOk)
+  //
+  //History
+  // Creation: 10-Jul-2009, J Cook
+  // Modification: dd-mmm-yyyy, name, description
+  //  description continued
+  //
+  //Header end
+  nPort=49151
+  nSioTimeOut=5
+  x_nLink=getData(x_sSocket,sFs)
+  if x_nLink&gt;0
+    sioCtrl(sFs,"port",nPort)
+    sioCtrl(sFs,"timeout",nSioTimeOut)
+  endIf
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<launch>
+
+
+  <!--====================================================-->
+  <!--  load params -->
+  <!--====================================================-->
+  <rosparam file="$(find hstar_amp)/config/app.yaml" command="load"/>
+  <rosparam file="$(find hstar_amp)/config/motor-configs.yaml" command="load" ns="joint_configs"/>
+  <rosparam file="$(find hstar_amp)/config/joint-configs.yaml" command="load" ns="joint_configs"/>
+
+
+  <!--====================================================-->
+  <!--  run hardware drivers -->
+  <!--====================================================-->
+  <node name="driver0"
+        pkg="roboteq_driver"
+        type="driver_node"
+        ns="roboteq_driver">
+    <param name="port" value="$(env HSTAR_AMP_ROBOTEQ_DEVICE_0)"/>
+  </node>
+
+  <node name="driver1"
+        pkg="roboteq_driver"
+        type="driver_node"
+        ns="roboteq_driver">
+    <param name="port" value="$(env HSTAR_AMP_ROBOTEQ_DEVICE_1)"/>
+  </node>
+
+  <node name="driver2"
+        pkg="roboteq_driver"
+        type="driver_node"
+        ns="roboteq_driver">
+    <param name="port" value="$(env HSTAR_AMP_ROBOTEQ_DEVICE_2)"/>
+  </node>
+
+  <node name="driver3"
+        pkg="roboteq_driver"
+        type="driver_node"
+        ns="roboteq_driver">
+    <param name="port" value="$(env HSTAR_AMP_ROBOTEQ_DEVICE_3)"/>
+  </node>
+
+  <!--====================================================-->
+  <!--  run base controller -->
+  <!--====================================================-->
+  <node name="base_driver"
+        pkg="hstar_amp"
+        type="roboteq_base_driver.py"
+        output="screen">
+      <param name="publish_tf" value="true"/>
+  </node>
+
+    <!--===============================================--> 
+  <!--  mux commands -->
+  <!--===============================================--> 
+  <node name="cmd_mux"
+        pkg="hstar_amp"
+        type="cmd_mux.py"
+        output="screen">
+  </node>
+
+  <!--===============================================--> 
+  <!--  convert task-space cmd to joint-space cmd    -->
+  <!--===============================================--> 
+  <node name="ts_to_js_mechanum"
+        pkg="hstar_amp"
+        type="ts_to_js_converter.py"
+        output="screen">
+    <param name="app_type" value="mecanum"/>
+    <param name="topic_prefix" value="base/output/cmd"/>
+  </node>
+
+
+  <node name="global_pose_publisher"
+        pkg="hstar_amp"
+        type="global_pose_publisher">
+  </node>
+
+</launch>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="user" public="false" >
+    <description />
+    <paramSection/>
+    <localSection/>
+    <source>
+      <code>begin
+  title(sTitle)
+  userPage()
+  while taskStatus(&quot;main&quot;)&gt;=0
+    cls()
+    put(&quot;Count: &quot;)
+    putln(nCount)
+    put(&quot;Time : &quot;)
+    putln(nTime)
+    delay(0)
+  endWhile
+end
+
+      
+      </code>
+    </source>
+  </program>
+</programList>

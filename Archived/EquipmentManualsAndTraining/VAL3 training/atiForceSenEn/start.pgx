@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<programList xmlns="ProgramNameSpace">
+  <program name="start" public="false">
+    <description />
+    <paramSection />
+    <localSection>
+      <local name="l_n" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  //Header begin
+  //Description of Program
+  // ATI Force Sensor
+  // run as test of sensor
+  // or use applicaiton as library
+  //
+  //Input parameters
+  // none
+  //
+  //Output parameters
+  // none
+  //
+  //Examples
+  // run
+  //
+  //History
+  // Creation: 10-Jul-2009, J Cook
+  // Modification: dd-mmm-yyyy, name, description
+  //  description continued
+  //
+  //Header end
+  call initialize("io:sAtiFs",l_n)
+  taskCreateSync "readForce",0.004,bOverRun,readForce(nStatus,nForce,nMonitor,bZero,bClear)
+  taskCreate "user",100,user()
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

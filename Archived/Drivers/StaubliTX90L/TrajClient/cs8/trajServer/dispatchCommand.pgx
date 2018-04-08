@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="dispatchCommand" public="false" >
+    <description />
+    <paramSection>
+      <param name="cmd" type="string" byVal="true" />
+      <param name="args" type="string" byVal="true" />
+      <param name="reply" type="string" byVal="false" />
+    </paramSection>
+    <localSection>
+      <local name="value" type="num" size="1" />
+      <local name="jTemp" type="joint" size="1" />
+      <local name="pTemp" type="point" size="1" />
+      <local name="res" type="bool" size="1" />
+      <local name="nRes" type="num" size="1" />
+      <local name="njTemp" type="num" size="6" />
+      <local name="i" type="num" size="1" />
+      <local name="jTemp2" type="joint" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  switch cmd
+    case &quot;echo&quot;
+      reply=args
+    break
+    case &quot;version&quot;
+      reply=&quot;1.0&quot;
+    break
+    case &quot;rate&quot;
+      reply=&quot;250&quot;
+    break
+    case &quot;check&quot;
+      call checkTrajectory(reply)
+    break
+    case &quot;am&quot;
+      //add milestone
+      call parseValue(args,value)
+      call parseJoint(args,jTemp)
+      if !bParseError
+        call addMilestone(jTemp,value,nRes)
+        if nRes&gt;=0
+          reply=toString(&quot;&quot;,nRes)
+        else
+          reply=&quot;Error&quot;
+        endIf
+      endIf
+    break
+    case &quot;gct&quot;
+      //get current time
+      reply=toString(&quot;.3&quot;,clock()-nTimeStart)
+    break
+    case &quot;gd&quot;
+      //get trajectory duration
+      call trajDuration(value)
+      reply=toString(&quot;.3&quot;,value)
+    break
+    case &quot;get&quot;
+      //get trajectory end time
+      call trajEndTime(value)
+      reply=toString(&quot;.3&quot;,value)
+    break
+    case &quot;gej&quot;
+      //get trajectory end configuration
+      if nTrajMaxIndex&lt;0
+        call jointToString(herej(),reply)
+      else
+        call jointToString(jTrajMilestones[nTrajMaxIndex%(size(nTrajTimes)-1)+1],reply)
+      endIf
+    break
+    case &quot;gev&quot;
+      //get trajectory end velocity
+      if nTrajMaxIndex&lt;0 or nTrajCurIndex&gt;nTrajMaxIndex
+        jTemp={0,0,0,0,0,0}
+        call jointToString(jTemp,reply)
+      else
+        i=nTrajMaxIndex%(size(nTrajTimes)-1)
+        jTemp=jTrajMilestones[i]
+        jTemp2=jTrajMilestones[i+1]
+        value=1/(nTrajTimes[i+1]-nTrajTimes[i])
+        njTemp[0]=(jTemp2.j1-jTemp.j1)*value
+        njTemp[1]=(jTemp2.j2-jTemp.j2)*value
+        njTemp[2]=(jTemp2.j3-jTemp.j3)*value
+        njTemp[3]=(jTemp2.j4-jTemp.j4)*value
+        njTemp[4]=(jTemp2.j5-jTemp.j5)*value
+        njTemp[5]=(jTemp2.j6-jTemp.j6)*value
+        call numToString(njTemp,reply)
+      endIf
+    break
+    case &quot;gms&quot;
+      //get maximum number of segments
+      reply=toString(&quot;&quot;,size(nTrajTimes)-1)
+    break
+    case &quot;gcs&quot;
+      //get number of currently used segments
+      reply=toString(&quot;&quot;,nTrajMaxIndex-nTrajCurIndex+1)
+    break
+    case &quot;rtabs&quot;
+      //reset trajectory (absolute time)
+      call parseValue(args,value)
+      if !bParseError
+        call resetTrajectory(value,res)
+        if res
+          reply=&quot;&quot;
+        else
+          reply=&quot;Error&quot;
+        endIf
+      endIf
+    break
+    case &quot;rtrel&quot;
+      //reset trajectory (relative time)
+      call parseValue(args,value)
+      if !bParseError
+        call resetTrajectory(clock()-nTimeStart+value,res)
+        if res
+          reply=&quot;&quot;
+        else
+          reply=&quot;Error&quot;
+        endIf
+      endIf
+    break
+    case &quot;gj&quot;
+      //get configuration
+      jTemp=herej()
+      call jointToString(jTemp,reply)
+    break
+    case &quot;gx&quot;
+      //get transformation
+      pTemp=here(flange,world)
+      reply=toString(&quot;.3&quot;,pTemp.trsf.x)+&quot; &quot;+toString(&quot;.3&quot;,pTemp.trsf.y)+&quot; &quot;+toString(&quot;.3&quot;,pTemp.trsf.z)+&quot; &quot;+toString(&quot;.3&quot;,pTemp.trsf.rx)+&quot; &quot;+toString(&quot;.3&quot;,pTemp.trsf.ry)+&quot; &quot;+toString(&quot;.3&quot;,pTemp.trsf.rz)
+    break
+    case &quot;gv&quot;
+      //get velocities
+      call numToString(ngVels,reply)
+    break
+    case &quot;gjmin&quot;
+      //get joint minimum
+      call jointToString(jMin,reply)
+    break
+    case &quot;gjmax&quot;
+      //get joint maximum
+      call jointToString(jMax,reply)
+    break
+    case &quot;gvl&quot;
+      //get velocity limits
+      call numToString(nVelMax,reply)
+    break
+    case &quot;gal&quot;
+      //get acceleration limits
+      call numToString(nAccMax,reply)
+    break
+    case &quot;gdl&quot;
+      //get deceleration limits
+      call numToString(nDecMax,reply)
+    break
+    case &quot;sjmin&quot;
+      //set joint minimum
+      call parseValue(args,njTemp)
+      if !bParseError
+        jMin.j1=max(jMin0.j1,njTemp[0])
+        jMin.j2=max(jMin0.j2,njTemp[1])
+        jMin.j3=max(jMin0.j3,njTemp[2])
+        jMin.j4=max(jMin0.j4,njTemp[3])
+        jMin.j5=max(jMin0.j5,njTemp[4])
+        jMin.j6=max(jMin0.j6,njTemp[5])
+        reply=&quot;&quot;
+      endIf
+    break
+    case &quot;sjmax&quot;
+      call parseValue(args,njTemp)
+      if !bParseError
+        jMax.j1=min(jMin0.j1,njTemp[0])
+        jMax.j2=min(jMin0.j2,njTemp[1])
+        jMax.j3=min(jMin0.j3,njTemp[2])
+        jMax.j4=min(jMin0.j4,njTemp[3])
+        jMax.j5=min(jMin0.j5,njTemp[4])
+        jMax.j6=min(jMin0.j6,njTemp[5])
+        reply=&quot;&quot;
+      endIf
+    break
+    case &quot;svl&quot;
+      call parseValue(args,njTemp)
+      if !bParseError
+        for i=0 to 5
+          nVelMax[i]=min(nVelMax0[i],njTemp[i])
+        endFor
+        reply=&quot;&quot;
+      endIf
+    break
+    case &quot;sal&quot;
+      call parseValue(args,njTemp)
+      if !bParseError
+        for i=0 to 5
+          nAccMax[i]=min(nAccMax0[i],njTemp[i])
+        endFor
+        reply=&quot;&quot;
+      endIf
+    break
+    case &quot;sdl&quot;
+      call parseValue(args,njTemp)
+      if !bParseError
+        for i=0 to 5
+          nDecMax[i]=min(nDecMax0[i],njTemp[i])
+        endFor
+        reply=&quot;&quot;
+      endIf
+    break
+    default
+      logMsg(&quot;Invalid command &quot;+cmd+&quot;, id &quot;+sMsgId)
+      reply=&quot;Invalid&quot;
+    break
+  endSwitch
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="runCycle" public="false" >
+    <description />
+    <paramSection/>
+    <localSection>
+      <local name="l_nIndex" type="num" size="1" />
+      <local name="l_nLast" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  l_nLast=size(pTraj)-1
+  for l_nIndex= 0 to l_nLast
+    //movej(pTraj[l_nIndex],tGripper,mFast)
+    movel(pTraj[l_nIndex],tGripper,mFast)
+  endFor
+  waitEndMove()
+end
+
+      
+      </code>
+    </source>
+  </program>
+</programList>

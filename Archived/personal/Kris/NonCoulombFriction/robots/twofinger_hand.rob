@@ -1,0 +1,25 @@
+### Hand File ###
+
+TParent \
+1.0  0.0  0.0  0.0  1.0  0.0  0.0  0.0  1.0  0  0  0.0 
+
+parents  -1  
+axis  0 0 1  
+
+qMinDeg  0  
+qMaxDeg  0 
+velMaxDeg  0  
+accMaxDeg  0  
+torqueMax  inf
+
+qDeg  0  
+mass  0.5 
+automass
+
+geometry  "spinyHand/block.tri"
+geomscale  1
+
+joint  weld  0
+
+mount  0  "finger_notendon.rob" 1.0  0.0  0.0  0.0  0.0 -1.0   0.0  1.0  0.0  0.0035  0  0 as finger1
+mount  0  "finger_notendon.rob" -1.0  0.0  0.0  0.0  0.0  1.0  0.0  1.0  0.0  -0.0035  0  0 as finger2

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<freeform>
+  <task name="Reach" >
+    <gmr file="old_reach_32.xml" maxComponents="10" samplingStrategy="fit"/>
+  </task>
+  <task name="Track" >
+    <gmr file="old_traj_33.xml" maxComponents="10" samplingStrategy="fit"/>
+  </task>
+</freeform>

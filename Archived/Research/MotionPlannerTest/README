@@ -1,0 +1,17 @@
+Motion planning test files
+Kris Hauser
+
+Contains code for playing with and visualizing planners. 
+
+Requires KrisLibrary, which requires tinyxml and optionally Assimp.
+
+The main.cpp program can launch a bunch of sandbox programs, which are fairly
+poorly organized right now.
+
+The Plan program (plan.cpp) lets you plan for point robots and planar rigid
+robots using a variety of motion planners.  You can visualize plans and
+roadmaps or just run tests from the command line.
+
+The KlamptPlan program (klamptplan.cpp) lets you plan for Klamp't robots.
+You can visualize plans and roadmaps or just run tests from the command line.
+Requires Klampt.

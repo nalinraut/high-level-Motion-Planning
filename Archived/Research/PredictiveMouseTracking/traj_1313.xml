@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<predictor>
+  <setup name="traj" numVariables="12" timestep="0.025" observation = "widget dx;widget dy" hidden="target x rel;target y rel;target dx [-1];target dy [-1]" />
+  <preprocessor scale="31.16858931
+31.16858931
+171.6264663
+171.6264663
+5.690319769
+5.690319769
+" offset="0 0 0 0 0 0 " />
+  <observation_model gmm="models/traj_obs_h3_b1.gmm" hidden="0 1 2 3 " observation="4 5" history="6 7; 8 9; 10 11" goal="0 1"/>
+  <transition_model gmm="models/traj_trans_h3_b1.gmm" current="0 1 2 3 " history="4 5; 6 7; 8 9" next="10 11 12 13" init="models/traj_init.gmm"/>
+</predictor>

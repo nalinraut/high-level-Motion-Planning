@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rigid2d_cspace visibilityEpsilon="0.001" angleWeight="0.2">
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <!-- borders -->
+      <aabb bmin = "0 0" bmax = "0.02 1"/>
+      <aabb bmin = "0.98 0" bmax = "1 1"/>
+      <aabb bmin = "0 0" bmax = "1 0.02"/>
+      <aabb bmin = "0 0.98" bmax = "1 1"/>
+
+      <!-- wall between LL and LR room -->
+      <aabb bmin = "0.6 0" bmax = "0.625 0.2"/>
+      <aabb bmin = "0.6 0.3" bmax = "0.625 0.6"/>
+
+      <!-- wall between LR and U room -->
+      <aabb bmin = "0.625 0.575" bmax = "0.8 0.6"/>
+      <aabb bmin = "0.9 0.575" bmax = "1.0 0.6"/>
+
+      <!-- wall between LL and U room -->
+      <aabb bmin = "0.0 0.575" bmax = "0.3 0.6"/>
+      <aabb bmin = "0.4 0.575" bmax = "0.6 0.6"/>
+
+      <!-- obstacles LL -->
+      <circle center="0.25 0.45" radius="0.1" />
+      <circle center="0.45 0.5" radius="0.07" />
+      <circle center="0.3 0.13" radius="0.1" />
+      <circle center="0.4 0.28" radius="0.07" />
+      <circle center="0.5 0.35" radius="0.05" />
+
+      <!-- obstacles LL to LR -->
+      <circle center="0.55 0.25" radius="0.05" />
+      <circle center="0.67 0.23" radius="0.05" />
+
+      <!-- obstacles U -->
+      <circle center="0.8 0.9" radius="0.05" />
+      <circle center="0.5 0.7" radius="0.075" />
+
+      <!-- obstacles U to LR -->
+      <circle center="0.85 0.5" radius="0.075" />
+
+      <!-- obstacles LR -->
+      <circle center="0.75 0.37" radius="0.075" />
+    </geometry2d>
+  </obstacles>
+
+  <robot>
+     <geometry2d>
+        <aabb bmin="-0.01 -0.01" bmax="0.1 0.01" />
+        <aabb bmin="-0.01 -0.1" bmax="0.01 0.01" />
+     </geometry2d>
+  </robot>
+
+</rigid2d_cspace>

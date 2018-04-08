@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="robotMotion" public="false" >
+    <description>Trajectory execution loop -- typically should be a synchronized task</description>
+    <paramSection/>
+    <localSection>
+      <local name="nLastCmdTime" type="num" size="1" />
+      <local name="nVels" type="num" size="6" />
+      <local name="speed" type="num" size="1" />
+      <local name="k" type="num" size="1" />
+      <local name="jActual" type="joint" size="1" />
+      <local name="nCorrectionCoef" type="num" size="1" />
+      <local name="dt" type="num" size="1" />
+      <local name="decel" type="bool" size="1" />
+      <local name="dtActual" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  //real-time loop that sends setVelCmd messages every 4ms according to the trajectory in
+  //qDes(t,q)
+  nLastCmdTime=0
+  nCorrectionCoef=0.1
+  $velJoint(flange,mFast)
+  while !bQuit
+    // read and execute the current trajectory
+    if bExecute
+      nCurTime=clock()
+      //Initialize derivatives if this is the first execution
+      if nLastCmdTime==0
+        jStart=herej()
+        nTimeStart=nCurTime
+        jEstimate=herej()
+        nLastCmdTime=nCurTime
+        for k=0 to 5
+          ngVels[k]=nVels[k]=0
+        endFor
+      endIf
+      if nCurTime&gt;nLastCmdTime+0.001
+        //Get the current desired configuration
+        setMutex(bTrajMutex)
+        call qDes(clock()-nTimeStart,jCmd)
+        bTrajMutex=false
+        //call qDesTriangle(clock()-nTimeStart,jCmd)
+        //call qDesSinusoid(clock()-nTimeStart,jCmd)
+        if clock()&gt;nCurTime
+          bOverrun=true
+          nCurTime=clock()
+        endIf
+        dtActual=nCurTime-nLastCmdTime
+        //dt = 0.004
+        dt=dtActual
+        speed=1/dt
+        //TODO: do we want to use joint feedback?
+        //NO
+        jActual=herej()
+        //integrate predicted position
+        //        jEstimate.j1=jEstimate.j1+ngVels[0]*dtActual
+        //        jEstimate.j2=jEstimate.j2+ngVels[1]*dtActual
+        //        jEstimate.j3=jEstimate.j3+ngVels[2]*dtActual
+        //        jEstimate.j4=jEstimate.j4+ngVels[3]*dtActual
+        //        jEstimate.j5=jEstimate.j5+ngVels[4]*dtActual
+        //        jEstimate.j6=jEstimate.j6+ngVels[5]*dtActual
+        jEstimate.j1=jEstimate.j1+nCorrectionCoef*(jActual.j1-jEstimate.j1)
+        jEstimate.j2=jEstimate.j2+nCorrectionCoef*(jActual.j2-jEstimate.j2)
+        jEstimate.j3=jEstimate.j3+nCorrectionCoef*(jActual.j3-jEstimate.j3)
+        jEstimate.j4=jEstimate.j4+nCorrectionCoef*(jActual.j4-jEstimate.j4)
+        jEstimate.j5=jEstimate.j5+nCorrectionCoef*(jActual.j5-jEstimate.j5)
+        jEstimate.j6=jEstimate.j6+nCorrectionCoef*(jActual.j6-jEstimate.j6)
+        //pure feedforward
+        nVels[0]=(jCmd.j1-jEstimate.j1)*speed
+        nVels[1]=(jCmd.j2-jEstimate.j2)*speed
+        nVels[2]=(jCmd.j3-jEstimate.j3)*speed
+        nVels[3]=(jCmd.j4-jEstimate.j4)*speed
+        nVels[4]=(jCmd.j5-jEstimate.j5)*speed
+        nVels[5]=(jCmd.j6-jEstimate.j6)*speed
+        //pure feedback
+        //        nVels[0] = (jCmd.j1 - jActual.j1)*speed
+        //        nVels[1] = (jCmd.j2 - jActual.j2)*speed
+        //        nVels[2] = (jCmd.j3 - jActual.j3)*speed
+        //        nVels[3] = (jCmd.j4 - jActual.j4)*speed
+        //        nVels[4] = (jCmd.j5 - jActual.j5)*speed
+        //        nVels[5] = (jCmd.j6 - jActual.j6)*speed
+        //feedforward with optional scaled feedback
+        //        nVels[0] = (jCmd.j1 - jEstimate.j1)*speed + (jCmd.j1 - jActual.j1)*speed*nCorrectionCoef
+        //        nVels[1] = (jCmd.j2 - jEstimate.j2)*speed + (jCmd.j2 - jActual.j2)*speed*nCorrectionCoef
+        //        nVels[2] = (jCmd.j3 - jEstimate.j3)*speed + (jCmd.j3 - jActual.j3)*speed*nCorrectionCoef
+        //        nVels[3] = (jCmd.j4 - jEstimate.j4)*speed + (jCmd.j4 - jActual.j4)*speed*nCorrectionCoef
+        //        nVels[4] = (jCmd.j5 - jEstimate.j5)*speed + (jCmd.j5 - jActual.j5)*speed*nCorrectionCoef
+        //        nVels[5] = (jCmd.j6 - jEstimate.j6)*speed + (jCmd.j6 - jActual.j6)*speed*nCorrectionCoef
+        if bCheckVels
+          //check velocity limits
+          for k=0 to 5
+            if abs(nVels[k])&gt;nVelMax[k]
+              if !bCheckVelsQuiet
+                sMessage[2]=&quot;Vel[&quot;+toString(&quot;.&quot;,k)+&quot;] = &quot;+toString(&quot;.&quot;,nVels[k])+&quot; &gt; &quot;+toString(&quot;.&quot;,nVelMax[k])
+                if bCheckVelsAbort
+                  sMessage[0]=&quot;*** Aborted by velocity threhold ***&quot;
+                  resetMotion()
+                  bQuit=true
+                endIf
+              endIf
+              nVels[k]=limit(nVels[k],-nVelMax[k],nVelMax[k])
+            endIf
+          endFor
+        endIf
+        if bCheckAccs
+          //check acceleration/deceleration limits
+          for k=0 to 5
+            decel=(abs(nVels[k])&lt;abs(ngVels[k]))
+            if decel and abs(nVels[k]-ngVels[k])&gt;nDecMax[k]*dt
+              if !bCheckAccsQuiet
+                sMessage[2]=&quot;Dec[&quot;+toString(&quot;.&quot;,k)+&quot;] = &quot;+toString(&quot;.&quot;,(nVels[k]-ngVels[k])/dt)+&quot; &gt; &quot;+toString(&quot;.&quot;,nDecMax[k])
+                if bCheckAccsAbort
+                  sMessage[0]=&quot;*** Aborted by deceleration threhold ***&quot;
+                  resetMotion()
+                  bQuit=true
+                endIf
+              endIf
+              nVels[k]=limit(nVels[k],ngVels[k]-nDecMax[k]*dt,ngVels[k]+nDecMax[k]*dt)
+            elseIf abs(nVels[k]-ngVels[k])&gt;nAccMax[k]*dt
+              if !bCheckAccsQuiet
+                sMessage[2]=&quot;Acc[&quot;+toString(&quot;.&quot;,k)+&quot;] = &quot;+toString(&quot;.&quot;,(nVels[k]-ngVels[k])/dt)+&quot; &gt; &quot;+toString(&quot;.&quot;,nAccMax[k])
+                if bCheckAccsAbort
+                  sMessage[0]=&quot;*** Aborted by acceleration threhold ***&quot;
+                  resetMotion()
+                  bQuit=true
+                endIf
+              endIf
+              nVels[k]=limit(nVels[k],ngVels[k]-nAccMax[k]*dt,ngVels[k]+nAccMax[k]*dt)
+            endIf
+          endFor
+        endIf
+        //execute the motion
+        $setVelCmd(nVels)
+        ngVels[0]=nVels[0]
+        ngVels[1]=nVels[1]
+        ngVels[2]=nVels[2]
+        ngVels[3]=nVels[3]
+        ngVels[4]=nVels[4]
+        ngVels[5]=nVels[5]
+        //integrate predicted position
+        jEstimate.j1=jEstimate.j1+nVels[0]*dtActual
+        jEstimate.j2=jEstimate.j2+nVels[1]*dtActual
+        jEstimate.j3=jEstimate.j3+nVels[2]*dtActual
+        jEstimate.j4=jEstimate.j4+nVels[3]*dtActual
+        jEstimate.j5=jEstimate.j5+nVels[4]*dtActual
+        jEstimate.j6=jEstimate.j6+nVels[5]*dtActual
+        nLastCmdTime=nCurTime
+      endIf
+    endIf
+    if bOverrun
+      nOverruns=nOverruns+1
+      sMessage[0]=&quot;Synchronous task overrun &quot;+toString(&quot;&quot;,nOverruns)
+      bOverrun=false
+    endIf
+    delay(0)
+  endWhile
+  // when robot finshes, shut down everything else
+  resetMotion()
+  bEnd=true
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

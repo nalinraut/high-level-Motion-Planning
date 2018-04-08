@@ -1,0 +1,27 @@
+<!-- -*- mode: XML -*- -->
+
+<launch>
+    <node name="dynamixel_manager_hand1" pkg="dynamixel_controllers" type="controller_manager.py" required="false" output="screen">
+        <rosparam>
+            namespace: dxl_manager
+            serial_ports:
+                reflex_hand1_port:
+                    port_name: "/dev/ttyUSB0"
+                    baud_rate: 57142
+                    min_motor_id: 1
+                    max_motor_id: 4
+                    update_rate: 20
+        </rosparam>
+    </node>
+
+    <rosparam file="$(find reflex_sf)/yaml/reflex_hand1.yaml" command="load"/>
+    <rosparam file="$(find reflex_sf)/yaml/reflex_hand1_zero_points.yaml" command="load"/>
+
+    <node name="reflex_hand1_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
+          args="--manager=dxl_manager
+                --port reflex_hand1_port 
+                reflex_hand1_f1 reflex_hand1_f2 reflex_hand1_f3 reflex_hand1_preshape"
+          output="screen"/>
+
+    <node name="reflex_hand1_controller" pkg="reflex_sf" type="reflex_sf_hand.py" args="hand1" output="screen" />
+</launch>

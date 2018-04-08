@@ -1,0 +1,4 @@
+Author: Kris Hauser
+
+Command-line utilities for building and visualizing probabilistic
+roadmap-based or RRT-based motion planners.

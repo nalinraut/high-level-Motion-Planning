@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Unidirectional RRT with radius 0.1 extension limit-->
+<planner type="rrt" perturbationRadius="0.1" bidirectional="0"/>

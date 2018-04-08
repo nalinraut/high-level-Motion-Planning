@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<point2d_cspace>
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <circle center="0.328821 0.113082" radius="0.0797885" />
+      <circle center="0.269007 0.605853" radius="0.0797885" />
+      <circle center="0.0253879 0.690252" radius="0.0797885" />
+      <circle center="0.196069 0.268604" radius="0.0797885" />
+      <circle center="0.601861 0.289165" radius="0.0797885" />
+      <circle center="0.645302 0.357345" radius="0.0797885" />
+      <circle center="0.91451 0.37222" radius="0.0797885" />
+      <circle center="0.770168 0.469864" radius="0.0797885" />
+      <circle center="0.625173 0.955674" radius="0.0797885" />
+      <circle center="0.987985 0.938786" radius="0.0797885" />
+      <circle center="0.755105 0.470231" radius="0.0797885" />
+      <circle center="0.7262 0.0841421" radius="0.0797885" />
+      <circle center="0.384968 0.138463" radius="0.0797885" />
+      <circle center="0.958577 0.35954" radius="0.0797885" />
+      <circle center="0.130496 0.358738" radius="0.0797885" />
+      <circle center="0.231072 0.0553969" radius="0.0797885" />
+      <circle center="0.877618 0.656444" radius="0.0797885" />
+      <circle center="0.226788 0.646274" radius="0.0797885" />
+      <circle center="0.579136 0.471335" radius="0.0797885" />
+      <circle center="0.897854 0.112048" radius="0.0797885" />
+      <circle center="0.183874 0.63175" radius="0.0797885" />
+      <circle center="0.757167 0.293352" radius="0.0797885" />
+      <circle center="0.297933 0.336668" radius="0.0797885" />
+      <circle center="0.956145 0.998074" radius="0.0797885" />
+      <circle center="0.428587 0.583374" radius="0.0797885" />
+      <circle center="0.720956 0.119" radius="0.0797885" />
+      <circle center="0.114038 0.298973" radius="0.0797885" />
+      <circle center="0.60847 0.504974" radius="0.0797885" />
+      <circle center="0.657913 0.470471" radius="0.0797885" />
+      <circle center="0.475123 0.670374" radius="0.0797885" />
+      <circle center="0.430878 0.63722" radius="0.0797885" />
+      <circle center="0.468752 0.304335" radius="0.0797885" />
+      <circle center="0.698579 0.208785" radius="0.0797885" />
+      <circle center="0.553253 0.723504" radius="0.0797885" />
+      <circle center="0.640538 0.995859" radius="0.0797885" />
+      <circle center="0.855943 0.171358" radius="0.0797885" />
+      <circle center="0.174337 0.179063" radius="0.0797885" />
+      <circle center="0.508184 0.672194" radius="0.0797885" />
+      <circle center="0.280401 0.863317" radius="0.0797885" />
+      <circle center="0.430584 0.246358" radius="0.0797885" />
+      <circle center="0.614131 0.542373" radius="0.0797885" />
+      <circle center="0.969439 0.949483" radius="0.0797885" />
+      <circle center="0.701969 0.668537" radius="0.0797885" />
+      <circle center="0.996462 0.24966" radius="0.0797885" />
+      <circle center="0.991002 0.598079" radius="0.0797885" />
+      <circle center="0.34604 0.122902" radius="0.0797885" />
+      <circle center="0.839966 0.329971" radius="0.0797885" />
+      <circle center="0.06986 0.0258321" radius="0.0797885" />
+      <circle center="0.308804 0.784396" radius="0.0797885" />
+      <circle center="0.513619 0.752675" radius="0.0797885" />
+    </geometry2d>
+  </obstacles>
+</point2d_cspace>

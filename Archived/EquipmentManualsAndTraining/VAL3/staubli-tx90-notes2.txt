@@ -1,0 +1,65 @@
+* Pneumatics *
+
+P1 in back => A1 A2 B1 B2
+P2 in back Direct port
+No exhaust for clean room model
+
+
+* Controller outputs *
+UserIO
+  Outputs work in manual mode (1, 2 on pendant toggle outputs 0 and 1)
+BasicIO (3-8ms processing in HW, software sync at 4ms)
+  16 inputs/outputs
+FaultIO
+FastIO (50 us processing in HW)
+  latch mechanism that records feedback (?) config in register, updated 200us
+  readLatch()
+  SECTEUR_OK - loss of power to auxiliary power 195V, 80-90ms until reset
+    file access will be halted on a brownout
+RsiIO, CpuIO (temperature sensors)
+  RSI ~ 10 + room  (caution > 40)
+  CPU ~ 20 + room  (caution > 50)
+  clean out controller ports
+EncoderIO (external encoder input on card)
+
+Sockets can be created
+  Client actual IP, port, etc
+  Server port, etc, # of clients (max 4)
+    losing connection: up to 30 seconds before socket closed
+
+2 serial ports (not in emulator)
+
+
+* Programming I/O *
+Read into library io:bIn0
+dioLink/sioLink
+aioGet/aioSet 
+IO not changed until end of program slice
+sioGet/sioSet (see cognex camera, ATI force sensor examples)
+
+
+* Motion Addon *
+Carried part moves
+Velocity commands:
+  setCartPosAccel?
+  velFrame, velJoint, velTool, setVelCmd
+Calibration
+  setOffset
+  setDH (needs 6axisAbosluteRobot)
+Forget drv* stuff
+Feedforward
+  alterAtc, getFeedForward
+Boxcar delay? internal filter in servo system for commanded positions
+getJntPosRef- command before the boxcar filter. herej is after boxcar
+getJntForce - forces applied by motor (standard now)
+getDrvForce - doesn't take into account gearing
+addInertia/setInertia - 
+setMaxJntVel/Tvel
+setFriction
+setBoxcarFreq
+
+FTP motion.o file onto the controller in sys/app/
+Flash drive partitions: sys, log, usr
+Executables: into SRS and emulator
+
+VxWorks 5.4?

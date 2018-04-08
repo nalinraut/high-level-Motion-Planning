@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="putButton" public="true" >
+    <description />
+    <paramSection>
+      <param name="n" type="num" byVal="true" />
+      <param name="s" type="string" byVal="true" />
+    </paramSection>
+    <localSection/>
+    <source>
+      <code>begin
+  // puts a label above a function key
+  // valid inputs are 1 through 8 and a string
+  // wil shorten the string to 4 characters
+  n=n-1
+  if n&gt;=0 and n&lt;=7
+    gotoxy(n*5,13)
+    if len(s)&gt;4
+      s=left(s,3)+&quot;.&quot;
+    endIf
+    put(s)
+  endIf
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

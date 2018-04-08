@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="manager" default="kinectVisionManager" />
+
+  <node pkg="nodelet" type="nodelet" name="$(arg manager)" args="manager"/>
+
+  <node pkg="nodelet" type="nodelet" name="KinectMetricConversion" args="load depth_image_proc/convert_metric $(arg manager)">
+    <remap from="image_raw" to="/kinect2/hd/image_depth_rect"/>
+    <remap from="image" to="/kinect2/hd/image_depth_metric"/>
+  </node>
+
+  <node pkg="nodelet" type="nodelet" name="Kinect2RectifiedPoints" args="load depth_image_proc/point_cloud_xyzrgb  $(arg manager)">
+    <remap from="rgb/image_rect_color" to="/kinect2/hd/image_color_rect"/>
+    <remap from="rgb/camera_info" to="/kinect2/hd/camera_info"/>
+    <remap from="depth_registered/image_rect" to="/kinect2/hd/image_depth_metric"/>
+    <remap from="depth_registered/points" to="/kinect2/hd/points"/>
+    <param name="queue_size" type="int" value="5"/>
+    <param name="interpolation" value="0" />
+  </node>
+
+</launch>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<programList xmlns="ProgramNameSpace">
+  <program name="sioSetString" public="true">
+    <description />
+    <paramSection>
+      <param name="s" type="sio" byVal="true" />
+      <param name="str" type="string" byVal="true" />
+    </paramSection>
+    <localSection>
+      <local name="i" type="num" size="1" />
+      <local name="n" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  if bSioSetError
+    return
+  endIf
+  i=0
+  while i&lt;len(str)
+    n=sioSet(sioIn,asc(str,i))
+    if n&lt;0
+      bSioSetError=true
+      return
+    endIf
+    i=i+1
+  endWhile
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

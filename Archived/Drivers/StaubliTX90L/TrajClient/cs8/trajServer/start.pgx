@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="start" public="true" >
+    <description />
+    <paramSection/>
+    <localSection/>
+    <source>
+      <code>begin
+  // trajectory server
+  // Kris Hauser
+  // framework based on James Cook&apos;s template code
+  // based on code by Santhosh Govindaraj
+  //
+  call initialize()
+  taskCreateSync &quot;robot&quot;,0.004,bOverrun,robotMotion()
+  taskCreate &quot;monitor&quot;,100,monitor()
+  taskCreate &quot;user&quot;,100,userInterface()
+  taskCreate &quot;handleIO&quot;,100,handleIO()
+  //taskCreate &quot;clientSim&quot;,100,clientSim()
+end
+
+      </code>
+    </source>
+  </program>
+</programList>

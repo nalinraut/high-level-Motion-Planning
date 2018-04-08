@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<point2d_cspace>
+  <domain bmin = "0 0" bmax = "1 1"/>
+  <obstacles>
+    <geometry2d>
+      <circle center="0.0869634 0.893697" radius="0.230329" />
+      <circle center="0.18529 0.688407" radius="0.230329" />
+      <circle center="0.732015 0.0674998" radius="0.230329" />
+      <circle center="0.66174 0.613605" radius="0.230329" />
+      <circle center="0.0380699 0.251546" radius="0.230329" />
+      <circle center="0.516349 0.353971" radius="0.230329" />
+      <circle center="0.864747 0.203735" radius="0.230329" />
+      <circle center="0.287383 0.770756" radius="0.230329" />
+      <circle center="0.235221 0.302597" radius="0.230329" />
+      <circle center="0.760411 0.761692" radius="0.230329" />
+      <circle center="0.293552 0.430307" radius="0.230329" />
+      <circle center="0.704671 0.894619" radius="0.230329" />
+      <circle center="0.279541 0.970014" radius="0.230329" />
+      <circle center="0.112587 0.324297" radius="0.230329" />
+      <circle center="0.08893 0.313112" radius="0.230329" />
+      <circle center="0.206169 0.764964" radius="0.230329" />
+      <circle center="0.194624 0.926692" radius="0.230329" />
+      <circle center="0.519195 0.541664" radius="0.230329" />
+      <circle center="0.253551 0.818081" radius="0.230329" />
+      <circle center="0.908454 0.881348" radius="0.230329" />
+      <circle center="0.266737 0.982453" radius="0.230329" />
+      <circle center="0.691508 0.785435" radius="0.230329" />
+      <circle center="0.380345 0.476734" radius="0.230329" />
+      <circle center="0.27662 0.642441" radius="0.230329" />
+      <circle center="0.161633 0.46023" radius="0.230329" />
+      <circle center="0.0767178 0.322577" radius="0.230329" />
+      <circle center="0.0386657 0.152758" radius="0.230329" />
+      <circle center="0.50175 0.0580638" radius="0.230329" />
+      <circle center="0.115935 0.791707" radius="0.230329" />
+      <circle center="0.567149 0.867452" radius="0.230329" />
+    </geometry2d>
+  </obstacles>
+</point2d_cspace>

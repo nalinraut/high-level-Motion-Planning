@@ -1,0 +1,20 @@
+{
+  "torso_enabled":true,
+  "left_gripper_enabled":true,
+  "right_gripper_enabled":true,
+  "left_gripper":"reflex",
+  "right_gripper":"reflex",
+  "base_enabled":true,
+  "klampt_model":"klampt_models/ebolabot_col.rob",
+  "motion_computer_ip":"tcp://192.168.0.101:8001",
+  "state_server_computer_ip":"tcp://192.168.0.101:4568",
+  "torso_vision_computer_ip":null,
+  "left_hand_vision_computer_ip":null,
+  "right_hand_vision_computer_ip":null,
+  "pointer_arduino_ip":null,
+  "remote_start_arduino_ip":null,
+  "ui_computer_ip":"localhost",
+  "gamepad_port":null,
+  "slider_port":null,
+  "haptic_server_computer_ip":"tcp://192.168.0.103:3456"
+}

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<programList xmlns="ProgramNameSpace" >
+  <program name="initialize" public="false" >
+    <description />
+    <paramSection/>
+    <localSection>
+      <local name="l_n" type="num" size="1" />
+    </localSection>
+    <source>
+      <code>begin
+  l_n=setFrame(pPathOrigin,pPathX,pPathY,fPath)
+  if l_n==0
+    bQuit=false
+  else
+    bQuit=true
+  endIf
+  bLoadedLibrary=false
+  bRun=false
+  nCount=0
+  nTime=0
+end
+
+      
+      </code>
+    </source>
+  </program>
+</programList>

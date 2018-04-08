@@ -1,0 +1,10 @@
+user #LOGIN# #PASSWORD#
+hash on
+bin
+mkdir /sys/mcp
+cd /sys/mcp
+lcd
+lcd flash\sys\mcp
+mdelete *.mcp
+mput *.mcp
+quit

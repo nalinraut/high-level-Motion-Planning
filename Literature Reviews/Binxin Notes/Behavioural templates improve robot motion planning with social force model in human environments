@@ -1,0 +1,12 @@
+Summary:
+This paper introduced a method that imporves the human behavior predictive accuracy of Social Force Model (SFM) under the discrete events like pedestrain moving.
+
+Method:
+The paper introduced an experiment firstly using video and audio devices to collect human bahaviors data. Then categorize them by applying the statistical model on human behavior analysis.
+And finally use these data as parameters of SFM to predict human behaviors.
+
+Note:
+The Social Force Model (SFM) is an predict model that analyze the human behavior by using physical kinetic and dynamic simulations. It can predict human behavior on a contineous flow of motion
+since the limitation of physical laws. However, it lack of ability to handle the short, discrete events of human behavior.
+
+The address of paper: http://ieeexplore.ieee.org.ezproxy.wpi.edu/xpls/icp.jsp?arnumber=6648081
